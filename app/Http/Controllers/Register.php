@@ -12,10 +12,10 @@ class Register extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function Register() {
-        echo json_encode(Request::post());
-        if (isset($_POST['email']) && isset($POST['password'])) {
-            return $_POST['email'] . " - " . $_POST['password'];
+    public function Register(Request $request) {
+        $_in = $request->input();
+        if (isset($_in['email']) && isset($_in['password'])) {
+            return $_in['email'] . " - " . $_in['password'];
         }
         return "reg";
     }
