@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/', 'Controller@Home');
+Route::get('/', 'Controller@Home');
 
-Route::post('/register', 'Register@Register');
+Route::post('authentication', 'Register@auth');
+
+Route::post('mail', 'Register@mail');

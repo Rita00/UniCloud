@@ -12,6 +12,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function Home() {
-        return "Hello World! <br> This is a test! <br>  <a href='/register'>Go register</a>";
+        return view("home");
     }
 }
