@@ -13,6 +13,9 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/authentication',
-        '/mail'
+        '/mail',
+        '/logout',
+        '/register',
+        '/login'
     ];
 }

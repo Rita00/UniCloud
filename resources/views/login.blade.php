@@ -6,19 +6,16 @@
         <title>UniCloud</title>
     </head>
     <body>
-        <form method="post" action="/authentication">
+        <form method="post">
             <label>email
                 <input type="text" name="email">
             </label> <br>
             <label>password
                 <input type="password" name="password">
             </label> <br>
-            <input type="submit" value="Sign Up" name="signup">
-            <input type="submit" value="Log In" name="login">
+            <input type="submit" value="Log In">
         </form>
-
-        <form method="post" action="/mail">
-            <input type="submit" value="Mail">
-        </form>
+        <a href="/register">Create new account</a>
+        @include('partials.formerrors')
     </body>
 </html>

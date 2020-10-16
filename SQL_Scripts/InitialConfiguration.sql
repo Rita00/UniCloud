@@ -1,6 +1,11 @@
-create table user (
-    email varchar(128),
-    password varchar(128) not null,
+create table users
+(
+    name varchar (256) not null,
+    email          varchar(256) not null,
+    password       varchar(256) not null,
+    remember_token varchar(256),
+    updated_at datetime,
+    created_at datetime,
+    email_verified_at datetime,
     primary key (email)
 );
-

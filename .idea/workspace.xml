@@ -19,17 +19,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2891232f-75a2-4e65-bd9d-ae1fcd638f02" name="Default Changelist" comment="Create structure for login, sign up and error presentation.">
-      <change afterPath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/error.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="2891232f-75a2-4e65-bd9d-ae1fcd638f02" name="Default Changelist" comment="Fixed Register parameters handling">
+      <change afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/formerrors.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UniCloud_BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UniCloud_BackEnd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Register.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +58,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="3b84cbc3-7e43-46f1-8cac-15baccb3e108" />
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="814c84df-962e-43a6-9866-c56d122d9b5b" />
     </execution>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -52,6 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -165,6 +185,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iugNZQ8Faey2Cj08RPGeXtxcbP" />
@@ -177,32 +198,23 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/partials" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views\partials" />
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views" />
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\app\Http\Controllers" />
     </key>
-  </component>
-  <component name="RunManager" selected="Database Script.InitialConfiguration.sql">
-    <configuration name="InitialConfiguration.sql" type="DatabaseScript" editBeforeRun="true">
-      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/d22509e1-fe56-41d8-9bc9-2002e5adfbe6/console.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
-    </configuration>
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -242,14 +254,24 @@
     <option name="LAST_COMMIT_MESSAGE" value="Create structure for login, sign up and error presentation." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="194" y="254" key="#SQL_Dialects" timestamp="1602782005049">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="243" y="321" key="#SQL_Dialects" timestamp="1602877715547">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1602782005049" />
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602781713820">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="243" y="321" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1602877715547" />
+    <state x="451" y="90" width="1092" height="814" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602877694923">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1602781713820" />
+    <state x="451" y="90" width="1092" height="814" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602877694923" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602879476067">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602879476067" />
+    <state x="736" y="402" width="447" height="265" key="ComposerInitDialogKey" timestamp="1602874705503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="402" width="447" height="265" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1602874705503" />
     <state x="625" y="310" key="Github.ShareDialog" timestamp="1602778529316">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -258,26 +280,43 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="375" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602778541542" />
-    <state width="1024" height="175" key="GridCell.Tab.0.bottom" timestamp="1602867057935">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom" timestamp="1602883778380">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1024" height="175" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602867057935" />
-    <state width="1024" height="175" key="GridCell.Tab.0.center" timestamp="1602867057935">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602883778380" />
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602877928384" />
+    <state width="1293" height="282" key="GridCell.Tab.0.center" timestamp="1602883778380">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1024" height="175" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602867057935" />
-    <state width="1024" height="175" key="GridCell.Tab.0.left" timestamp="1602867057935">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1293" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602883778380" />
+    <state width="1293" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602877928384" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left" timestamp="1602883778380">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1024" height="175" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602867057935" />
-    <state width="1024" height="175" key="GridCell.Tab.0.right" timestamp="1602867057935">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602883778380" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602877928384" />
+    <state width="1293" height="282" key="GridCell.Tab.0.right" timestamp="1602883778380">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1024" height="175" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602867057935" />
+    <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602883778380" />
+    <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602877928384" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1602867143889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602867143889" />
+    <state x="756" y="340" width="408" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1602878257874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="340" width="408" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602878257874" />
+    <state x="803" y="223" width="442" height="594" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602884222613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="223" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602884222613" />
+    <state x="803" y="223" width="442" height="594" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602879098199" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602780609734">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

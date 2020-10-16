@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Controller@Home');
+Route::get('/', 'Controller@welcome');
 
-Route::post('authentication', 'Register@auth');
+Route::get('/register', function (){
+    if (auth()->check()) return redirect('/');
+    return view("register");
+});
 
-Route::post('mail', 'Register@mail');
+Route::post('/register', 'Controller@register');
+
+Route::get('/login', function (){
+    if (auth()->check()) return redirect('/');
+    return view("login");
+});
+
+Route::post('/login', 'Controller@login');
+
+Route::get('logout', 'Controller@logout');
+
+Route::post('mail', 'Controller@mail');
