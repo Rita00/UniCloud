@@ -8,6 +8,9 @@
 </head>
 <body>
     @include('partials.navbar')
+{{--    <form method="post" action="/mail">--}}
+{{--        <input type="Submit">--}}
+{{--    </form>--}}
 <h3>Tabela Random Para Encher</h3>
 <table>
     <tr>

@@ -31,7 +31,7 @@
     <li><a href="/">Contact</a></li>
     <li><a href="/">About</a></li>
     @if (auth()->check())
-        <li><a href="/">{{auth()->user()['name']}}</a></li>
+        <li><a href="/profile">{{\Illuminate\Support\Facades\Auth::user()['name']}}</a></li>
         <li><a href="/logout">Logout</a></li>
     @else
         <li><a href="/login">Login</a></li>

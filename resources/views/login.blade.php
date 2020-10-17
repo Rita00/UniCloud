@@ -13,6 +13,9 @@
             <label>password
                 <input type="password" name="password">
             </label> <br>
+            <label>Remember me?
+                <input type="checkbox" name="remember">
+            </label>
             <input type="submit" value="Log In">
         </form>
         <a href="/register">Create new account</a>

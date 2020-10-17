@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', 'Controller@welcome');
 
-Route::get('/register', function (){
+Route::get('register', function (){
     if (auth()->check()) return redirect('/');
     return view("register");
 });
 
-Route::post('/register', 'Controller@register');
+Route::post('register', 'Controller@register');
 
-Route::get('/login', function (){
+Route::get('login', function (){
     if (auth()->check()) return redirect('/');
     return view("login");
-});
+})->name('login');
 
-Route::post('/login', 'Controller@login');
+Route::post('login', 'Controller@login');
 
 Route::get('logout', 'Controller@logout');
 
-Route::post('mail', 'Controller@mail');
+Route::get('check', 'Controller@verifyMail');
+
+Route::get('resend', function (){
+    return view("resend");
+})->name('resend');
+
+Route::post('resend', 'Controller@resendConfirmationMail');
+
+Route::get('profile', function (){
+    return view('profile');
+})->middleware("verified");

@@ -7,31 +7,43 @@ use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function register() {
+    public function register(Request $request)
+    {
         $this->validate(request(), [
+            'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed'
         ]);
-        try{
+        try {
             $user = User::create(request(['name', 'email', 'password']));
-        }catch (QueryException $e){
-                return back()->withErrors([
-                    'message' => 'The provided email is already registered'
-                ]);
+            $this->sendConfirmationMail($request);
+        } catch (QueryException $e) {
+            return back()->withErrors([
+                'message' => 'The provided email is already registered'
+            ]);
         }
         auth()->login($user);
-        return redirect()->to('/');
+        return redirect("/");
     }
 
-    public function login() {
-        if (auth()->attempt(request(['email', 'password'])) == false) {
+    public function login(Request $request)
+    {
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password'],
+        ];
+//        echo json_encode($credentials);
+        if (auth()->attempt($credentials, $request['remember']) == false) {
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again'
             ]);
@@ -45,13 +57,37 @@ class Controller extends BaseController
         return redirect()->to('/');
     }
 
-    public function welcome(){
+    public function welcome()
+    {
         return view("welcome");
     }
 
-    public function mail() {
-        Mail::send('error', array('error' => "This is a test email"), function ($message) {
-            $message->to("rita.lapao00@gmail.com", "Rita Rodrigues")->subject("Test mail");
+    public function sendConfirmationMail($request)
+    {
+        $ref = bcrypt($request['email']);
+        DB::update("update users set verify_token = ? where email = ?", array($ref, $request['email']));
+        $ref = env('APP_URL'. 'unicloud.devo') . "/check?ref=" . $ref;
+        Mail::send('mail.verify', array('link' => $ref), function ($message) use ($request) {
+            $message->to($request['email'], $request['name'])->subject("Welcome to UniCloud");
         });
+    }
+
+    public function resendConfirmationMail()
+    {
+        $this->sendConfirmationMail(auth()->user());
+        return redirect("/");
+    }
+
+    public function verifyMail(Request $request)
+    {
+        $users = User::all();
+        foreach ($users as $user){
+            echo json_encode($user->hasVerifiedEmail());
+        }
+//        $results = DB::select("select * from users where verify_token = ?", array($request['ref']));
+//        if (count($results) == 1) {
+//            DB::update("update users set email_verified_at = NOW(), verify_token = null where verify_token = ?", array($request['ref']));
+//        }
+//        return redirect("/"); // todo with message?
     }
 }
