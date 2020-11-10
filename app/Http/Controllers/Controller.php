@@ -26,10 +26,16 @@ class Controller extends BaseController
         ]);
         try {
             $user = User::create(request(['name', 'email', 'password']));
-            $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
             return back()->withErrors([
                 'message' => 'The provided email is already registered'
+            ]);
+        }
+        try {
+            $this->sendConfirmationMail($request);
+        } catch (QueryException $e) {
+            return back()->withErrors([
+                'message' => 'Confirmation email sending failed'
             ]);
         }
         auth()->login($user);

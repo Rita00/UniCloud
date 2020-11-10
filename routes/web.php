@@ -44,4 +44,4 @@ Route::post('resend', 'Controller@resendConfirmationMail');
 
 Route::get('profile', function (){
     return view('profile');
-})->middleware("verified");
+})->middleware("auth");

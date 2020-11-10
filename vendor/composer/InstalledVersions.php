@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '14d1396c1e8d7f9b48a6457dcd212ec171074cb9',
+    'reference' => '83f1e3b2d337efec88d178f8de4d36bc8bc29683',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -139,12 +139,12 @@ private static $installed = array (
     ),
     'doctrine/dbal' => 
     array (
-      'pretty_version' => '2.10.4',
-      'version' => '2.10.4.0',
+      'pretty_version' => '2.11.3',
+      'version' => '2.11.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '47433196b6390d14409a33885ee42b6208160643',
+      'reference' => 'fb5d5f2f26babf8dce217b1eb88300c22bb703a4',
     ),
     'doctrine/event-manager' => 
     array (
@@ -202,12 +202,12 @@ private static $installed = array (
     ),
     'facade/flare-client-php' => 
     array (
-      'pretty_version' => '1.3.6',
-      'version' => '1.3.6.0',
+      'pretty_version' => '1.3.7',
+      'version' => '1.3.7.0',
       'aliases' => 
       array (
       ),
-      'reference' => '451fadf38e9f635e7f8e1f5b3cf5c9eb82f11799',
+      'reference' => 'fd688d3c06658f2b3b5f7bb19f051ee4ddf02492',
     ),
     'facade/ignition' => 
     array (
@@ -220,39 +220,39 @@ private static $installed = array (
     ),
     'facade/ignition-contracts' => 
     array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'aeab1ce8b68b188a43e81758e750151ad7da796b',
+      'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
     ),
     'fideloper/proxy' => 
     array (
-      'pretty_version' => '4.4.0',
-      'version' => '4.4.0.0',
+      'pretty_version' => '4.4.1',
+      'version' => '4.4.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9beebf48a1c344ed67c1d36bb1b8709db7c3c1a8',
+      'reference' => 'c073b2bd04d1c90e04dc1b787662b558dd65ade0',
     ),
     'filp/whoops' => 
     array (
-      'pretty_version' => '2.7.3',
-      'version' => '2.7.3.0',
+      'pretty_version' => '2.9.0',
+      'version' => '2.9.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5d5fe9bb3d656b514d455645b3addc5f7ba7714d',
+      'reference' => '2ec31f3adc54c71a59c5e3c2143d7a0e2f8899f8',
     ),
     'fruitcake/laravel-cors' => 
     array (
-      'pretty_version' => 'v2.0.2',
-      'version' => '2.0.2.0',
+      'pretty_version' => 'v2.0.3',
+      'version' => '2.0.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '4b19bfc3bd422948af37a42a62fad7f49025894a',
+      'reference' => '01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
     ),
     'fzaninotto/faker' => 
     array (
@@ -534,7 +534,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '14d1396c1e8d7f9b48a6457dcd212ec171074cb9',
+      'reference' => '83f1e3b2d337efec88d178f8de4d36bc8bc29683',
     ),
     'laravel/tinker' => 
     array (
@@ -556,12 +556,12 @@ private static $installed = array (
     ),
     'league/commonmark' => 
     array (
-      'pretty_version' => '1.5.5',
-      'version' => '1.5.5.0',
+      'pretty_version' => '1.5.6',
+      'version' => '1.5.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => '45832dfed6007b984c0d40addfac48d403dc6432',
+      'reference' => 'a56e91e0fa1f6d0049153a9c34f63488f6b7ce61',
     ),
     'league/flysystem' => 
     array (
@@ -574,21 +574,21 @@ private static $installed = array (
     ),
     'league/mime-type-detection' => 
     array (
-      'pretty_version' => '1.5.0',
-      'version' => '1.5.0.0',
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'ea2fbfc988bade315acd5967e6d02274086d0f28',
+      'reference' => '353f66d7555d8a90781f6f5e7091932f9a4250aa',
     ),
     'mockery/mockery' => 
     array (
-      'pretty_version' => '1.3.3',
-      'version' => '1.3.3.0',
+      'pretty_version' => '1.4.2',
+      'version' => '1.4.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '60fa2f67f6e4d3634bb4a45ff3171fa52215800d',
+      'reference' => '20cab678faed06fac225193be281ea0fddb43b93',
     ),
     'monolog/monolog' => 
     array (
@@ -614,12 +614,12 @@ private static $installed = array (
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.41.3',
-      'version' => '2.41.3.0',
+      'pretty_version' => '2.41.4',
+      'version' => '2.41.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e148788eeae9b9b7b87996520358b86faad37b52',
+      'reference' => '6571aec754a648ef476a8d8f57993f7bc965afe4',
     ),
     'nikic/php-parser' => 
     array (
@@ -893,12 +893,12 @@ private static $installed = array (
     ),
     'scrivo/highlight.php' => 
     array (
-      'pretty_version' => 'v9.18.1.2',
-      'version' => '9.18.1.2',
+      'pretty_version' => 'v9.18.1.3',
+      'version' => '9.18.1.3',
       'aliases' => 
       array (
       ),
-      'reference' => 'efb6e445494a9458aa59b0af5edfa4bdcc6809d9',
+      'reference' => '6a1699707b099081f20a488ac1f92d682181018c',
     ),
     'sebastian/code-unit-reverse-lookup' => 
     array (
