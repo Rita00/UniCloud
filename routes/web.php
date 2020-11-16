@@ -45,3 +45,7 @@ Route::post('resend', 'Controller@resendConfirmationMail');
 Route::get('profile', function (){
     return view('profile');
 })->middleware("auth");
+
+//Routes para upload
+Route::post('upload', 'UploadController@store');
+Route::view('upload','upload');

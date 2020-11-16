@@ -20,248 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2891232f-75a2-4e65-bd9d-ae1fcd638f02" name="Default Changelist" comment="Email confirmation. Resend email option when trying to access an area where your emai confirmation is required">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/UniCloud_BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UniCloud_BackEnd.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pgi_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/upload.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/carbon" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/carbon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/carbon.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/commonmark" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/commonmark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/commonmark.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/doctrine-dbal" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/doctrine-dbal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/doctrine-dbal.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/.doctrine-project.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/SECURITY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/UPGRADE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/ci/github/phpunit.oci8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/ci/github/phpunit.pdo-oci.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/ArrayStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/ArrayStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/CacheException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/CacheException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/QueryCacheProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/QueryCacheProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/ResultCacheStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/ResultCacheStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/ConnectionException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/ConnectionException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connections/MasterSlaveConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connections/MasterSlaveConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDB2Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDB2Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDriverException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDriverException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractPostgreSQLDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractPostgreSQLDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLAnywhereDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLAnywhereDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver/PortWithoutHost.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLiteDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLiteDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DrizzlePDOMySql/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DrizzlePDOMySql/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DrizzlePDOMySql/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DrizzlePDOMySql/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ExceptionConverterDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ExceptionConverterDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Exception.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Exception.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOIbm/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOIbm/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOOracle/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOOracle/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOPgSql/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOPgSql/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlite/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlite/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOSqlsrv/Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PingableConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PingableConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ResultStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ResultStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/SQLAnywhereConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/SQLAnywhereConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/SQLAnywhereStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLAnywhere/SQLAnywhereStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Driver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Driver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/LastInsertId.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/LastInsertId.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ServerInfoAwareConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ServerInfoAwareConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/StatementIterator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/StatementIterator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/Listeners/MysqlSessionInit.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/Listeners/MysqlSessionInit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/Listeners/OracleSessionInit.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/Listeners/OracleSessionInit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaColumnDefinitionEventArgs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaColumnDefinitionEventArgs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaDropTableEventArgs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaDropTableEventArgs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaIndexDefinitionEventArgs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Event/SchemaIndexDefinitionEventArgs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/DriverException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/DriverException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/InvalidArgumentException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/InvalidArgumentException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/FetchMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/FetchMode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Logging/EchoSQLLogger.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Logging/EchoSQLLogger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Logging/SQLLogger.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Logging/SQLLogger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/ParameterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/ParameterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/AbstractPlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/AbstractPlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/DB2Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/DB2Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/DrizzlePlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/DrizzlePlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/KeywordList.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/KeywordList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/OraclePlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/OraclePlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL91Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL91Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL92Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL92Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere11Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere11Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere12Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere12Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywherePlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywherePlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAzurePlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAzurePlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServer2005Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServer2005Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServer2008Platform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServer2008Platform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServerPlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLServerPlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SqlitePlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SqlitePlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/CompositeExpression.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/CompositeExpression.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/ExpressionBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/ExpressionBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtilsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtilsException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/AbstractAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/AbstractAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/AbstractSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/AbstractSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Column.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Column.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Comparator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Comparator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/DB2SchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/DB2SchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/MySqlSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/MySqlSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/OracleSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/OracleSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SQLServerSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SQLServerSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Schema.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Schema.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SchemaException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SchemaException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Sequence.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Sequence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SqliteSchemaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SqliteSchemaManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/AbstractSchemaSynchronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/AbstractSchemaSynchronizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/SchemaSynchronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/SchemaSynchronizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/SingleDatabaseSynchronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Synchronizer/SingleDatabaseSynchronizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/TableDiff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/TableDiff.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Visitor/CreateSchemaSqlCollector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Visitor/CreateSchemaSqlCollector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/PoolingShardConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/PoolingShardConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/PoolingShardManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/PoolingShardManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureFederationsSynchronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureFederationsSynchronizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureShardManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureShardManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/Schema/MultiTenantVisitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/SQLAzure/Schema/MultiTenantVisitor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardChoser/MultiTenantShardChoser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardChoser/MultiTenantShardChoser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardChoser/ShardChoser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardChoser/ShardChoser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardingException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Sharding/ShardingException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/ImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/ImportCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/ReservedWordsCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/ReservedWordsCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/RunSqlCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/RunSqlCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConsoleRunner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConsoleRunner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Helper/ConnectionHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Helper/ConnectionHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/ConversionException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/ConversionException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TypeRegistry.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TypeRegistry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Types.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Version.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Version.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/psalm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/psalm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/flare-client-php/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/flare-client-php/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/flare-client-php/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/flare-client-php/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/flare-client-php/src/Flare.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/flare-client-php/src/Flare.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/php-cs-fixer.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/php-cs-fixer.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/psalm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/psalm.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/run-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition-contracts/.github/workflows/run-tests.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition-contracts/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition-contracts/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/fideloper/proxy/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/fideloper/proxy/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/fruitcake/laravel-cors/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/fruitcake/laravel-cors/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/bin/commonmark" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/bin/commonmark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/AbstractBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/AbstractBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Context.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Context.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/RelativeNormalizerStrategy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/RelativeNormalizerStrategy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/docs/mockery/configuration.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/docs/mockery/configuration.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/docs/reference/argument_validation.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/docs/reference/argument_validation.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/docs/reference/phpunit_integration.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/docs/reference/phpunit_integration.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV6.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV7.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerTrait.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditionsForV7AndPrevious.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditionsForV8.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCaseSetUpForV7AndPrevious.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCaseSetUpForV8.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Container.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Container.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Expectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Expectation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/MockConfiguration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/MockConfiguration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/MockConfigurationBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/MockConfigurationBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/LegacyMockInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/LegacyMockInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Mock.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Mock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Reflector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/mockery/mockery/library/Mockery/Reflector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/bin/carbon" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/bin/carbon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterval.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterval.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Exceptions/NotLocaleAwareException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Exceptions/NotLocaleAwareException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Factory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/cy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/cy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/lt.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/lt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/PHPStan/Macro.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/PHPStan/Macro.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/PHPStan/MacroScanner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/PHPStan/MacroScanner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Comparison.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Comparison.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Converter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Converter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Date.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Date.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Difference.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Difference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/IntervalRounding.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/IntervalRounding.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Mixin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Mixin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Modifiers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Modifiers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Options.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Options.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Rounding.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Rounding.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Serialization.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Serialization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Timestamp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Units.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Traits/Units.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Translator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Translator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/scrivo/highlight.php/HighlightUtilities/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/scrivo/highlight.php/HighlightUtilities/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,6 +49,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -424,6 +192,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
+      <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views" />
+      <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views\mail" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views" />
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources" />
@@ -431,15 +205,11 @@
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views\auth" />
       <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views\partials" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views" />
-      <recent name="C:\xampp\htdocs\UniCloud_BackEnd\resources\views\mail" />
-    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="artisan ui vue --auth" />
       <command value="artisan config:cache" />
+      <command value="artisan ui vue --auth" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -461,6 +231,7 @@
       <workItem from="1603561142050" duration="2646000" />
       <workItem from="1603733821335" duration="68000" />
       <workItem from="1603734627343" duration="44000" />
+      <workItem from="1605459388955" duration="17465000" />
     </task>
     <task id="LOCAL-00001" summary="Setup structure for main website.&#10;Completed authentication processes.&#10;Some personalization of main page when authenticated.">
       <created>1602886612490</created>
@@ -509,10 +280,11 @@
     <state x="451" y="90" width="1092" height="814" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602877694923" />
     <state x="338" y="96" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.839@0.23.1440.839" timestamp="1603324947039" />
     <state x="338" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.840@0.23.1440.840" timestamp="1603561554001" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602957096867">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="518" y="245" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605466688282">
+      <screen x="0" y="25" width="1440" height="831" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602957096867" />
+    <state x="518" y="245" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.831@0.25.1440.831" timestamp="1605466688282" />
     <state x="552" y="347" width="491" height="249" key="ComposerInitDialogKey" timestamp="1603363108643">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
@@ -581,11 +353,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="340" width="408" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602878257874" />
-    <state x="803" y="223" width="442" height="594" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602893167242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1605488812290">
+      <screen x="0" y="25" width="1440" height="831" />
     </state>
     <state x="803" y="223" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602893167242" />
     <state x="803" y="223" width="442" height="594" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602879098199" />
+    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1440.831@0.25.1440.831" timestamp="1605488812290" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602780609734">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -594,12 +367,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602888939882" />
-    <state x="531" y="236" width="672" height="677" key="run.anything.popup" timestamp="1602895074235">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="398" y="213" width="670" height="542" key="run.anything.popup" timestamp="1605468034768">
+      <screen x="0" y="25" width="1440" height="831" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602862440672" />
     <state x="531" y="236" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602888693933" />
     <state x="531" y="236" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602895074235" />
+    <state x="398" y="213" width="670" height="541" key="run.anything.popup/0.25.1440.830@0.25.1440.830" timestamp="1605459792993" />
+    <state x="398" y="213" width="670" height="542" key="run.anything.popup/0.25.1440.831@0.25.1440.831" timestamp="1605468034768" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1602887323855">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
