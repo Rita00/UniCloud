@@ -6,3 +6,5 @@ vendor/*
 .idea/workspace.xml
 .idea/UniCloud_BackEnd.iml
 vendor/
+.idea/workspace.xml
+*.xml

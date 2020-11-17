@@ -22,6 +22,8 @@
     <list default="true" id="2891232f-75a2-4e65-bd9d-ae1fcd638f02" name="Default Changelist" comment="Email confirmation. Resend email option when trying to access an area where your emai confirmation is required">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/upload.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +229,7 @@
       <workItem from="1603733821335" duration="68000" />
       <workItem from="1603734627343" duration="44000" />
       <workItem from="1605459388955" duration="20326000" />
-      <workItem from="1605568129715" duration="103000" />
+      <workItem from="1605568129715" duration="7580000" />
     </task>
     <task id="LOCAL-00001" summary="Setup structure for main website.&#10;Completed authentication processes.&#10;Some personalization of main page when authenticated.">
       <created>1602886612490</created>
@@ -354,12 +356,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="340" width="408" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602878257874" />
-    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1605490740979">
+    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1605572198197">
       <screen x="0" y="25" width="1440" height="831" />
     </state>
     <state x="803" y="223" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1280.720@0.0.1920.1040" timestamp="1602893167242" />
     <state x="803" y="223" width="442" height="594" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602879098199" />
-    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1440.831@0.25.1440.831" timestamp="1605490740979" />
+    <state x="76" y="117" width="1243" height="738" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1440.831@0.25.1440.831" timestamp="1605572198197" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602780609734">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

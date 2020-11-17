@@ -18,6 +18,9 @@ create table files
     category     varchar(256)  not null,
     sub_category varchar(256)  not null,
     description  varchar(1024) null,
+    tag1  varchar(256) null,
+    tag2  varchar(256) null,
+    tag3  varchar(256) null,
     uploaded_by  varchar(256)  not null,
     uploaded_at  datetime      not null,
     constraint files_id_uindex

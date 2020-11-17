@@ -29,17 +29,9 @@
 
 		form {
 		float: right;
-		padding: 80px 0px;
+		padding: 80px 0;
 		width: 100%;
 		background-color: #f1f1f1;
-		}
-
-		.center {
-		padding: 10px 50px; /* top and bottom, right and left */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100px;
 		}
 
 		.text {
@@ -125,7 +117,7 @@
 	<body onload="changeType()">
         @include('partials.navbar')
 		<header>
-		<img src="https://scontent.fopo2-1.fna.fbcdn.net/v/t1.15752-9/123401405_712146202993148_5407512905508389517_n.png?_nc_cat=109&ccb=2&_nc_sid=ae9488&_nc_ohc=jLyptFLMBFQAX92X8po&_nc_oc=AQkpNLTBLa-kmTrRr0erWmOd8YhFsNHov5-QH1ms5bmCLJPLVrYKSc0bLmAW3PdXjPvlhYJnDXBqUKH2DvOvGYZv&_nc_ht=scontent.fopo2-1.fna&oh=4817f8dfedef82be28e4db2dadd0eceb&oe=5FD10658" alt="Logo" width=10% height=10%>
+		<img src="https://www.facebook.com/unicloudpt/photos/a.120314763217886/123060066276689/?type=1&theater" alt="Logo" width=10% height=10%>
 		</header>
 		<form method="post" enctype="multipart/form-data">
 
@@ -135,7 +127,7 @@
             <input type="file" id="uploadedfile" name="uploadedfile"><br>
 
             <label for="name">Nome do ficheiro</label>
-            <input type="text" name="name">
+            <input type="text" id="name" name="name"><br>
 
             <label for="category">Categoria</label>
 			<select name="category" id="category" onchange="changeType()">
@@ -145,7 +137,7 @@
 			</select><br>
 
             <label for="description">Descrição</label>
-            <input type="text" name="description"><br>
+            <input type="text" id="description" name="description"><br>
 
 			<div id="teoric">
 				<input type="radio" name="subCategory" id="subCategory00" value="handmade_notes">
@@ -160,7 +152,7 @@
 				<label for="subCategory04">Outros</label><br>
 			</div>
 			<div id="pratic">
-				<input type="radio" name="subCategory" id="subCategory10" value="enunciation">
+				<input type="radio" name="subCategory" id="subCategory10" value="enunciations">
 				<label for="subCategory10" >Enunciados</label>
 				<input type="radio" name="subCategory" id="subCategory11" value="exercises">
 				<label for="subCategory11">Exercicios Resolvidos</label>
@@ -170,7 +162,7 @@
 				<label for="subCategory13">Outros</label><br>
 			</div>
 			<div id="exams">
-				<input type="radio" name="subCategory" id="subCategory20" value="midterm">
+				<input type="radio" name="subCategory" id="subCategory20" value="midterms">
 				<label for="subCategory20">Frequencias</label>
 				<input type="radio" name="subCategory" id="subCategory21" value="tests">
 				<label for="subCategory21">Testes</label>
@@ -179,8 +171,25 @@
 				<input type="radio" name="subCategory" id="subCategory23" value="others">
 				<label for="subCategory23">Outros</label><br>
 			</div>
+
+            <div id="tags">
+                <label for="tag1">Tag1</label>
+                <input type="text" name="tag1" id="tag1"><br>
+                <label for="tag2">Tag2</label>
+                <input type="text" name="tag2" id="tag2"><br>
+                <label for="tag3">Tag3</label>
+                <input type="text" name="tag3" id="tag3"><br>
+            </div>
+
             <input type="submit" value="Return" class="button" style="vertical-align:middle">
             <input type="submit" value="Upload" class="button" style="vertical-align:middle">
+
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
 		</form>
+
 	</body>
 </html>
