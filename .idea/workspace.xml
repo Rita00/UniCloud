@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2891232f-75a2-4e65-bd9d-ae1fcd638f02" name="Default Changelist" comment="Email confirmation. Resend email option when trying to access an area where your emai confirmation is required">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_Scripts/InitialConfiguration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/upload.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +227,9 @@
       <workItem from="1603733821335" duration="68000" />
       <workItem from="1603734627343" duration="44000" />
       <workItem from="1605459388955" duration="20326000" />
-      <workItem from="1605568129715" duration="7580000" />
+      <workItem from="1605568129715" duration="7633000" />
+      <workItem from="1605578425045" duration="109000" />
+      <workItem from="1605578661101" duration="2064000" />
     </task>
     <task id="LOCAL-00001" summary="Setup structure for main website.&#10;Completed authentication processes.&#10;Some personalization of main page when authenticated.">
       <created>1602886612490</created>

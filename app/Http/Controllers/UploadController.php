@@ -20,7 +20,11 @@ class UploadController extends Controller{
         ];
         $validator = Validator::make($request->all(),$validationRules);
         if ($validator->fails()) {
-            return "<script>alert('Missing Input(s):');window.location.href='/upload';</script>";
+            $message='Missing Input(s):';
+            foreach ($validator->getMessageBag()->toArray() as $error){
+                $message .= " ".$error[0];
+            }
+            return "<script>alert('$message');window.location.href='/upload';</script>";
         }else{
             $data = $this->addToDB($request);
             $path = $request->file('uploadedfile')->storeAs('/files',$this->getFileID($data));
