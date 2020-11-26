@@ -29,7 +29,7 @@
     <li><a href="/">Home</a></li>
     <li><a href="/">News</a></li>
     <li><a href="/">Contact</a></li>
-    <li><a href="/">About</a></li>
+    <li><a href="/upload">Upload</a></li>
     @if (auth()->check())
         <li><a href="/profile">{{\Illuminate\Support\Facades\Auth::user()['name']}}</a></li>
         <li><a href="/logout">Logout</a></li>

@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class Controller extends BaseController
 {
@@ -26,10 +28,16 @@ class Controller extends BaseController
         ]);
         try {
             $user = User::create(request(['name', 'email', 'password']));
-            $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
             return back()->withErrors([
                 'message' => 'The provided email is already registered'
+            ]);
+        }
+        try {
+            $this->sendConfirmationMail($request);
+        } catch (QueryException $e) {
+            return back()->withErrors([
+                'message' => 'Confirmation email sending failed'
             ]);
         }
         auth()->login($user);

@@ -1,6 +1,10 @@
-
 .DS_Store
 .idea/*
 composer.lock
 composer.json
 vendor/*
+.idea/workspace.xml
+.idea/UniCloud_BackEnd.iml
+vendor/
+.idea/workspace.xml
+*.xml

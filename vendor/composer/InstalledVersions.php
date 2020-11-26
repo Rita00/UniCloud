@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '72389f1d024063c409726128b0c76ce47cbf07ad',
+    'reference' => '83f1e3b2d337efec88d178f8de4d36bc8bc29683',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -139,12 +139,12 @@ private static $installed = array (
     ),
     'doctrine/dbal' => 
     array (
-      'pretty_version' => '2.10.4',
-      'version' => '2.10.4.0',
+      'pretty_version' => '2.11.3',
+      'version' => '2.11.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '47433196b6390d14409a33885ee42b6208160643',
+      'reference' => 'fb5d5f2f26babf8dce217b1eb88300c22bb703a4',
     ),
     'doctrine/event-manager' => 
     array (
@@ -220,12 +220,12 @@ private static $installed = array (
     ),
     'facade/ignition-contracts' => 
     array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'aeab1ce8b68b188a43e81758e750151ad7da796b',
+      'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
     ),
     'fideloper/proxy' => 
     array (
@@ -238,12 +238,12 @@ private static $installed = array (
     ),
     'filp/whoops' => 
     array (
-      'pretty_version' => '2.9.1',
-      'version' => '2.9.1.0',
+      'pretty_version' => '2.9.0',
+      'version' => '2.9.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '307fb34a5ab697461ec4c9db865b20ff2fd40771',
+      'reference' => '2ec31f3adc54c71a59c5e3c2143d7a0e2f8899f8',
     ),
     'fruitcake/laravel-cors' => 
     array (
@@ -534,7 +534,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '72389f1d024063c409726128b0c76ce47cbf07ad',
+      'reference' => '83f1e3b2d337efec88d178f8de4d36bc8bc29683',
     ),
     'laravel/tinker' => 
     array (
@@ -556,12 +556,12 @@ private static $installed = array (
     ),
     'league/commonmark' => 
     array (
-      'pretty_version' => '1.5.7',
-      'version' => '1.5.7.0',
+      'pretty_version' => '1.5.6',
+      'version' => '1.5.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => '11df9b36fd4f1d2b727a73bf14931d81373b9a54',
+      'reference' => 'a56e91e0fa1f6d0049153a9c34f63488f6b7ce61',
     ),
     'league/flysystem' => 
     array (
@@ -583,12 +583,12 @@ private static $installed = array (
     ),
     'mockery/mockery' => 
     array (
-      'pretty_version' => '1.3.3',
-      'version' => '1.3.3.0',
+      'pretty_version' => '1.4.2',
+      'version' => '1.4.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '60fa2f67f6e4d3634bb4a45ff3171fa52215800d',
+      'reference' => '20cab678faed06fac225193be281ea0fddb43b93',
     ),
     'monolog/monolog' => 
     array (
@@ -614,12 +614,12 @@ private static $installed = array (
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.41.5',
-      'version' => '2.41.5.0',
+      'pretty_version' => '2.41.4',
+      'version' => '2.41.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c4a9caf97cfc53adfc219043bcecf42bc663acee',
+      'reference' => '6571aec754a648ef476a8d8f57993f7bc965afe4',
     ),
     'nikic/php-parser' => 
     array (
@@ -893,12 +893,12 @@ private static $installed = array (
     ),
     'scrivo/highlight.php' => 
     array (
-      'pretty_version' => 'v9.18.1.4',
-      'version' => '9.18.1.4',
+      'pretty_version' => 'v9.18.1.3',
+      'version' => '9.18.1.3',
       'aliases' => 
       array (
       ),
-      'reference' => 'ee8007a215a27cb9c078e0328fb5de901d74ef9b',
+      'reference' => '6a1699707b099081f20a488ac1f92d682181018c',
     ),
     'sebastian/code-unit-reverse-lookup' => 
     array (

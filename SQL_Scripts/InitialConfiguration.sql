@@ -9,3 +9,23 @@ create table users
     email_verified_at datetime,
     primary key (email)
 );
+
+create table files
+(
+    id           int auto_increment,
+    file_name    varchar(256)  not null,
+    name         varchar(256)  not null,
+    category     varchar(256)  not null,
+    sub_category varchar(256)  not null,
+    description  varchar(1024) null,
+    tag1  varchar(256) null,
+    tag2  varchar(256) null,
+    tag3  varchar(256) null,
+    uploaded_by  varchar(256)  not null,
+    uploaded_at  datetime      not null,
+    constraint files_id_uindex
+        unique (id)
+);
+
+alter table files
+    add primary key (id);
