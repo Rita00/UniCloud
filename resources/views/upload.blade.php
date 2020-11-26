@@ -119,7 +119,7 @@
 		<header>
 		<img src="https://www.facebook.com/unicloudpt/photos/a.120314763217886/123060066276689/?type=1&theater" alt="Logo" width=10% height=10%>
 		</header>
-		<form method="post" enctype="multipart/form-data">
+		<form method="post" enctype="multipart/form-data" id="uploadForm">
 
 			<h3 class="text">Upload</h3>
 
@@ -137,7 +137,7 @@
 			</select><br>
 
             <label for="description">Descrição</label>
-            <input type="text" id="description" name="description"><br>
+            <textarea form="uploadForm" id="description" name="description"></textarea><br>
 
 			<div id="teoric">
 				<input type="radio" name="subCategory" id="subCategory00" value="handmade_notes">
