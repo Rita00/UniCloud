@@ -15,24 +15,10 @@ namespace Composer\Repository;
 /**
  * Installed array repository.
  *
- * This is used as an in-memory InstalledRepository mostly for testing purposes
+ * This is used for serving the RootPackage inside an in-memory InstalledRepository
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
 class InstalledArrayRepository extends WritableArrayRepository implements InstalledRepositoryInterface
 {
-    public function getRepoName()
-    {
-        return 'installed '.parent::getRepoName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function isFresh()
-    {
-        // this is not a completely correct implementation but there is no way to
-        // distinguish an empty repo and a newly created one given this is all in-memory
-        return $this->count() === 0;
-    }
 }

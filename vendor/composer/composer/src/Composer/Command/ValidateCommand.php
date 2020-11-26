@@ -42,7 +42,6 @@ class ValidateCommand extends BaseCommand
                 new InputOption('no-check-all', null, InputOption::VALUE_NONE, 'Do not validate requires for overly strict/loose constraints'),
                 new InputOption('no-check-lock', null, InputOption::VALUE_NONE, 'Do not check if lock file is up to date'),
                 new InputOption('no-check-publish', null, InputOption::VALUE_NONE, 'Do not check for publish errors'),
-                new InputOption('no-check-version', null, InputOption::VALUE_NONE, 'Do not report a warning if the version field is present'),
                 new InputOption('with-dependencies', 'A', InputOption::VALUE_NONE, 'Also validate the composer.json of all installed dependencies'),
                 new InputOption('strict', null, InputOption::VALUE_NONE, 'Return a non-zero exit code for warnings as well as errors'),
                 new InputArgument('file', InputArgument::OPTIONAL, 'path to composer.json file'),
@@ -87,9 +86,8 @@ EOT
         $checkAll = $input->getOption('no-check-all') ? 0 : ValidatingArrayLoader::CHECK_ALL;
         $checkPublish = !$input->getOption('no-check-publish');
         $checkLock = !$input->getOption('no-check-lock');
-        $checkVersion = $input->getOption('no-check-version') ? 0 : ConfigValidator::CHECK_VERSION;
         $isStrict = $input->getOption('strict');
-        list($errors, $publishErrors, $warnings) = $validator->validate($file, $checkAll, $checkVersion);
+        list($errors, $publishErrors, $warnings) = $validator->validate($file, $checkAll);
 
         $lockErrors = array();
         $composer = Factory::create($io, $file, $input->hasParameterOption('--no-plugins'));
@@ -109,7 +107,7 @@ EOT
                 $path = $composer->getInstallationManager()->getInstallPath($package);
                 $file = $path . '/composer.json';
                 if (is_dir($path) && file_exists($file)) {
-                    list($errors, $publishErrors, $warnings) = $validator->validate($file, $checkAll, $checkVersion);
+                    list($errors, $publishErrors, $warnings) = $validator->validate($file, $checkAll);
 
                     $this->outputResult($io, $package->getPrettyName(), $errors, $warnings, $checkPublish, $publishErrors);
 
@@ -122,8 +120,9 @@ EOT
 
         $commandEvent = new CommandEvent(PluginEvents::COMMAND, 'validate', $input, $output);
         $eventCode = $composer->getEventDispatcher()->dispatch($commandEvent->getName(), $commandEvent);
+        $exitCode = max($eventCode, $exitCode);
 
-        return max($eventCode, $exitCode);
+        return $exitCode;
     }
 
     private function outputResult($io, $name, &$errors, &$warnings, $checkPublish = false, $publishErrors = array(), $checkLock = false, $lockErrors = array(), $printSchemaUrl = false)

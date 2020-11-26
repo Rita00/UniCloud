@@ -61,11 +61,11 @@ class ClassMapGenerator
      */
     public static function createMap($path, $excluded = null, IOInterface $io = null, $namespace = null, $autoloadType = null, &$scannedFiles = array())
     {
-        $basePath = $path;
         if (is_string($path)) {
+            $basePath = $path;
             if (is_file($path)) {
                 $path = array(new \SplFileInfo($path));
-            } elseif (is_dir($path) || strpos($path, '*') !== false) {
+            } elseif (is_dir($path)) {
                 $path = Finder::create()->files()->followLinks()->name('/\.(php|inc|hh)$/')->in($path);
             } else {
                 throw new \RuntimeException(
@@ -113,10 +113,10 @@ class ClassMapGenerator
 
             $classes = self::findClasses($filePath);
             if (null !== $autoloadType) {
-                $classes = self::filterByNamespace($classes, $filePath, $namespace, $autoloadType, $basePath, $io);
+                list($classes, $validClasses) = self::filterByNamespace($classes, $filePath, $namespace, $autoloadType, $basePath, $io);
 
                 // if no valid class was found in the file then we do not mark it as scanned as it might still be matched by another rule later
-                if ($classes) {
+                if ($validClasses) {
                     $scannedFiles[$realPath] = true;
                 }
             } else {
@@ -126,7 +126,8 @@ class ClassMapGenerator
 
             foreach ($classes as $class) {
                 // skip classes not within the given namespace prefix
-                if (null === $autoloadType && null !== $namespace && '' !== $namespace && 0 !== strpos($class, $namespace)) {
+                // TODO enable in Composer v1.11 or 2.0 whichever comes first
+                if (/* null === $autoloadType && */ null !== $namespace && '' !== $namespace && 0 !== strpos($class, $namespace)) {
                     continue;
                 }
 
@@ -195,15 +196,19 @@ class ClassMapGenerator
         // warn only if no valid classes, else silently skip invalid
         if (empty($validClasses)) {
             foreach ($rejectedClasses as $class) {
-                if ($io) {
-                    $io->writeError("<warning>Class $class located in ".preg_replace('{^'.preg_quote(getcwd()).'}', '.', $filePath, 1)." does not comply with $namespaceType autoloading standard. Skipping.</warning>");
-                }
+                trigger_error(
+                    "Class $class located in ".preg_replace('{^'.preg_quote(getcwd()).'}', '.', $filePath, 1)." does not comply with $namespaceType autoloading standard. It will not autoload anymore in Composer v2.0.",
+                    E_USER_DEPRECATED
+                );
             }
 
-            return array();
+            // TODO enable in Composer 2.0
+            //return array();
         }
 
-        return $validClasses;
+        // TODO enable in Composer 2.0 & unskip test in AutoloadGeneratorTest::testPSRToClassMapIgnoresNonPSRClasses
+        //return $validClasses;
+        return array($classes, $validClasses);
     }
 
     /**
@@ -251,7 +256,7 @@ class ClassMapGenerator
         // strip strings
         $contents = preg_replace('{"[^"\\\\]*+(\\\\.[^"\\\\]*+)*+"|\'[^\'\\\\]*+(\\\\.[^\'\\\\]*+)*+\'}s', 'null', $contents);
         // strip leading non-php code if needed
-        if (strpos($contents, '<?') !== 0) {
+        if (substr($contents, 0, 2) !== '<?') {
             $contents = preg_replace('{^.+?<\?}s', '<?', $contents, 1, $replacements);
             if ($replacements === 0) {
                 return array();

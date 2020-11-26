@@ -4,6 +4,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) princi
 
 ## [Unreleased][unreleased]
 
+<<<<<<< HEAD
 ## [1.5.6] - 2020-10-17
 
 ### Changed
@@ -15,6 +16,8 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) princi
  - Fixed replacement blocks not inheriting the start line number of the container they're replacing (#579)
  - Fixed Table of Contents blocks not having correct start/end line numbers (#579)
 
+=======
+>>>>>>> parent of 763fe62... coisas
 ## [1.5.5] - 2020-09-13
 
 ### Changed
@@ -392,8 +395,12 @@ No changes were made since 1.0.0-rc1.
    - Removed `DelimiterStack::iterateByCharacters()` (use the new `processDelimiters()` method instead)
    - Removed the protected `DelimiterStack::findMatchingOpener()` method
 
+<<<<<<< HEAD
 [unreleased]: https://github.com/thephpleague/commonmark/compare/1.5.6...1.5
 [1.5.6]: https://github.com/thephpleague/commonmark/compare/1.5.5...1.5.6
+=======
+[unreleased]: https://github.com/thephpleague/commonmark/compare/1.5.5...1.5
+>>>>>>> parent of 763fe62... coisas
 [1.5.5]: https://github.com/thephpleague/commonmark/compare/1.5.4...1.5.5
 [1.5.4]: https://github.com/thephpleague/commonmark/compare/1.5.3...1.5.4
 [1.5.3]: https://github.com/thephpleague/commonmark/compare/1.5.2...1.5.3

@@ -23,12 +23,11 @@ use Symfony\Component\Finder\Finder;
  */
 class Filesystem
 {
-    /** @var ProcessExecutor */
     private $processExecutor;
 
     public function __construct(ProcessExecutor $executor = null)
     {
-        $this->processExecutor = $executor;
+        $this->processExecutor = $executor ?: new ProcessExecutor();
     }
 
     public function remove($file)
@@ -58,7 +57,7 @@ class Filesystem
             ->depth(0)
             ->in($dir);
 
-        return \count($finder) === 0;
+        return count($finder) === 0;
     }
 
     public function emptyDirectory($dir, $ensureDirectoryExists = true)
@@ -116,7 +115,7 @@ class Filesystem
             throw new \RuntimeException('Aborting an attempted deletion of '.$directory.', this was probably not intended, if it is a real use case please report it.');
         }
 
-        if (!\function_exists('proc_open')) {
+        if (!function_exists('proc_open')) {
             return $this->removeDirectoryPhp($directory);
         }
 
@@ -292,9 +291,8 @@ class Filesystem
         $this->ensureDirectoryExists($target);
 
         $result = true;
-        /** @var RecursiveDirectoryIterator $ri */
         foreach ($ri as $file) {
-            $targetPath = $target . DIRECTORY_SEPARATOR . $ri->getSubPathname();
+            $targetPath = $target . DIRECTORY_SEPARATOR . $ri->getSubPathName();
             if ($file->isDir()) {
                 $this->ensureDirectoryExists($targetPath);
             } else {
@@ -311,16 +309,16 @@ class Filesystem
             return;
         }
 
-        if (!\function_exists('proc_open')) {
+        if (!function_exists('proc_open')) {
             $this->copyThenRemove($source, $target);
-
+            
             return;
         }
 
         if (Platform::isWindows()) {
             // Try to copy & delete - this is a workaround for random "Access denied" errors.
             $command = sprintf('xcopy %s %s /E /I /Q /Y', ProcessExecutor::escape($source), ProcessExecutor::escape($target));
-            $result = $this->getProcess()->execute($command, $output);
+            $result = $this->processExecutor->execute($command, $output);
 
             // clear stat cache because external processes aren't tracked by the php stat cache
             clearstatcache();
@@ -334,7 +332,7 @@ class Filesystem
             // We do not use PHP's "rename" function here since it does not support
             // the case where $source, and $target are located on different partitions.
             $command = sprintf('mv %s %s', ProcessExecutor::escape($source), ProcessExecutor::escape($target));
-            $result = $this->getProcess()->execute($command, $output);
+            $result = $this->processExecutor->execute($command, $output);
 
             // clear stat cache because external processes aren't tracked by the php stat cache
             clearstatcache();
@@ -369,13 +367,13 @@ class Filesystem
             $from = rtrim($from, '/') . '/dummy_file';
         }
 
-        if (\dirname($from) === \dirname($to)) {
+        if (dirname($from) === dirname($to)) {
             return './'.basename($to);
         }
 
         $commonPath = $to;
         while (strpos($from.'/', $commonPath.'/') !== 0 && '/' !== $commonPath && !preg_match('{^[a-z]:/?$}i', $commonPath)) {
-            $commonPath = strtr(\dirname($commonPath), '\\', '/');
+            $commonPath = strtr(dirname($commonPath), '\\', '/');
         }
 
         if (0 !== strpos($from, $commonPath) || '/' === $commonPath) {
@@ -383,10 +381,10 @@ class Filesystem
         }
 
         $commonPath = rtrim($commonPath, '/') . '/';
-        $sourcePathDepth = substr_count(substr($from, \strlen($commonPath)), '/');
+        $sourcePathDepth = substr_count(substr($from, strlen($commonPath)), '/');
         $commonPathCode = str_repeat('../', $sourcePathDepth);
 
-        return ($commonPathCode . substr($to, \strlen($commonPath))) ?: './';
+        return ($commonPathCode . substr($to, strlen($commonPath))) ?: './';
     }
 
     /**
@@ -414,7 +412,7 @@ class Filesystem
 
         $commonPath = $to;
         while (strpos($from.'/', $commonPath.'/') !== 0 && '/' !== $commonPath && !preg_match('{^[a-z]:/?$}i', $commonPath) && '.' !== $commonPath) {
-            $commonPath = strtr(\dirname($commonPath), '\\', '/');
+            $commonPath = strtr(dirname($commonPath), '\\', '/');
         }
 
         if (0 !== strpos($from, $commonPath) || '/' === $commonPath || '.' === $commonPath) {
@@ -423,17 +421,17 @@ class Filesystem
 
         $commonPath = rtrim($commonPath, '/') . '/';
         if (strpos($to, $from.'/') === 0) {
-            return '__DIR__ . '.var_export(substr($to, \strlen($from)), true);
+            return '__DIR__ . '.var_export(substr($to, strlen($from)), true);
         }
-        $sourcePathDepth = substr_count(substr($from, \strlen($commonPath)), '/') + $directories;
+        $sourcePathDepth = substr_count(substr($from, strlen($commonPath)), '/') + $directories;
         if ($staticCode) {
             $commonPathCode = "__DIR__ . '".str_repeat('/..', $sourcePathDepth)."'";
         } else {
             $commonPathCode = str_repeat('dirname(', $sourcePathDepth).'__DIR__'.str_repeat(')', $sourcePathDepth);
         }
-        $relTarget = substr($to, \strlen($commonPath));
+        $relTarget = substr($to, strlen($commonPath));
 
-        return $commonPathCode . (\strlen($relTarget) ? '.' . var_export('/' . $relTarget, true) : '');
+        return $commonPathCode . (strlen($relTarget) ? '.' . var_export('/' . $relTarget, true) : '');
     }
 
     /**
@@ -444,7 +442,7 @@ class Filesystem
      */
     public function isAbsolutePath($path)
     {
-        return strpos($path, '/') === 0 || substr($path, 1, 1) === ':' || strpos($path, '\\\\') === 0;
+        return substr($path, 0, 1) === '/' || substr($path, 1, 1) === ':' || substr($path, 0, 2) === '\\\\';
     }
 
     /**
@@ -484,10 +482,10 @@ class Filesystem
         // extract a prefix being a protocol://, protocol:, protocol://drive: or simply drive:
         if (preg_match('{^( [0-9a-z]{2,}+: (?: // (?: [a-z]: )? )? | [a-z]: )}ix', $path, $match)) {
             $prefix = $match[1];
-            $path = substr($path, \strlen($prefix));
+            $path = substr($path, strlen($prefix));
         }
 
-        if (strpos($path, '/') === 0) {
+        if (substr($path, 0, 1) === '/') {
             $absolute = true;
             $path = substr($path, 1);
         }
@@ -541,15 +539,8 @@ class Filesystem
         return $size;
     }
 
-    /**
-     * @return ProcessExecutor
-     */
     protected function getProcess()
     {
-        if (!$this->processExecutor) {
-             $this->processExecutor = new ProcessExecutor();
-        }
-
         return $this->processExecutor;
     }
 
@@ -583,7 +574,7 @@ class Filesystem
         $cwd = getcwd();
 
         $relativePath = $this->findShortestPath($link, $target);
-        chdir(\dirname($link));
+        chdir(dirname($link));
         $result = @symlink($relativePath, $link);
 
         chdir($cwd);
@@ -636,7 +627,7 @@ class Filesystem
 
         $resolved = rtrim($pathname, '/');
 
-        if (!\strlen($resolved)) {
+        if (!strlen($resolved)) {
             return $pathname;
         }
 
@@ -724,62 +715,5 @@ class Filesystem
         }
 
         return $this->rmdir($junction);
-    }
-
-    public function filePutContentsIfModified($path, $content)
-    {
-        $currentContent = @file_get_contents($path);
-        if (!$currentContent || ($currentContent != $content)) {
-            return file_put_contents($path, $content);
-        }
-
-        return 0;
-    }
-
-    /**
-     * Copy file using stream_copy_to_stream to work around https://bugs.php.net/bug.php?id=6463
-     *
-     * @param string $source
-     * @param string $target
-     */
-    public function safeCopy($source, $target)
-    {
-        if (!file_exists($target) || !file_exists($source) || !$this->filesAreEqual($source, $target)) {
-            $source = fopen($source, 'r');
-            $target = fopen($target, 'w+');
-
-            stream_copy_to_stream($source, $target);
-            fclose($source);
-            fclose($target);
-        }
-    }
-
-    /**
-     * compare 2 files
-     * https://stackoverflow.com/questions/3060125/can-i-use-file-get-contents-to-compare-two-files
-     */
-    private function filesAreEqual($a, $b)
-    {
-        // Check if filesize is different
-        if (filesize($a) !== filesize($b)) {
-            return false;
-        }
-
-        // Check if content is different
-        $ah = fopen($a, 'rb');
-        $bh = fopen($b, 'rb');
-
-        $result = true;
-        while (!feof($ah)) {
-            if (fread($ah, 8192) != fread($bh, 8192)) {
-                $result = false;
-                break;
-            }
-        }
-
-        fclose($ah);
-        fclose($bh);
-
-        return $result;
     }
 }

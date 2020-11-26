@@ -21,8 +21,4 @@ namespace Composer\Repository;
  */
 interface InstalledRepositoryInterface extends WritableRepositoryInterface
 {
-    /**
-     * @return bool true if packages were never installed in this repository
-     */
-    public function isFresh();
 }

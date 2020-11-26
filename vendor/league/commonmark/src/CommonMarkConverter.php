@@ -27,7 +27,11 @@ class CommonMarkConverter extends Converter
      * @deprecated in 1.5.0 and will be removed from 2.0.0.
      *   Use \Composer\InstalledVersions provided by composer-runtime-api instead.
      */
+<<<<<<< HEAD
     public const VERSION = '1.5.6';
+=======
+    public const VERSION = '1.5.5';
+>>>>>>> parent of 763fe62... coisas
 
     /** @var EnvironmentInterface */
     protected $environment;

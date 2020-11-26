@@ -58,8 +58,7 @@ class JsonFormatter
                 $buffer .= $char;
                 $noescape = '\\' === $char ? !$noescape : true;
                 continue;
-            }
-            if ('' !== $buffer) {
+            } elseif ('' !== $buffer) {
                 if ($unescapeSlashes) {
                     $buffer = str_replace('\\/', '/', $buffer);
                 }

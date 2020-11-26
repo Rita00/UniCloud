@@ -73,7 +73,7 @@ EOT
         // Dispatch pre-status-command
         $composer->getEventDispatcher()->dispatchScript(ScriptEvents::PRE_STATUS_CMD, true);
 
-        $exitCode = $this->doExecute($input);
+        $exitCode = $this->doExecute($input, $output);
 
         // Dispatch post-status-command
         $composer->getEventDispatcher()->dispatchScript(ScriptEvents::POST_STATUS_CMD, true);
@@ -83,9 +83,10 @@ EOT
 
     /**
      * @param  InputInterface  $input
+     * @param  OutputInterface $output
      * @return int
      */
-    private function doExecute(InputInterface $input)
+    private function doExecute(InputInterface $input, OutputInterface $output)
     {
         // init repos
         $composer = $this->getComposer();
@@ -106,7 +107,7 @@ EOT
 
         // list packages
         foreach ($installedRepo->getCanonicalPackages() as $package) {
-            $downloader = $dm->getDownloaderForPackage($package);
+            $downloader = $dm->getDownloaderForInstalledPackage($package);
             $targetDir = $im->getInstallPath($package);
 
             if ($downloader instanceof ChangeReportInterface) {
@@ -120,7 +121,7 @@ EOT
             }
 
             if ($downloader instanceof VcsCapableDownloaderInterface) {
-                if ($downloader->getVcsReference($package, $targetDir)) {
+                if ($currentRef = $downloader->getVcsReference($package, $targetDir)) {
                     switch ($package->getInstallationSource()) {
                         case 'source':
                             $previousRef = $package->getSourceReference();

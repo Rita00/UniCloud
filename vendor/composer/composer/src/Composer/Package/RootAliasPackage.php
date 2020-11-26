@@ -75,7 +75,7 @@ class RootAliasPackage extends AliasPackage implements RootPackageInterface
      */
     public function setRequires(array $require)
     {
-        $this->requires = $this->replaceSelfVersionDependencies($require, Link::TYPE_REQUIRE);
+        $this->requires = $this->replaceSelfVersionDependencies($require, 'requires');
 
         $this->aliasOf->setRequires($require);
     }
@@ -85,7 +85,7 @@ class RootAliasPackage extends AliasPackage implements RootPackageInterface
      */
     public function setDevRequires(array $devRequire)
     {
-        $this->devRequires = $this->replaceSelfVersionDependencies($devRequire, Link::TYPE_DEV_REQUIRE);
+        $this->devRequires = $this->replaceSelfVersionDependencies($devRequire, 'devRequires');
 
         $this->aliasOf->setDevRequires($devRequire);
     }
@@ -95,7 +95,7 @@ class RootAliasPackage extends AliasPackage implements RootPackageInterface
      */
     public function setConflicts(array $conflicts)
     {
-        $this->conflicts = $this->replaceSelfVersionDependencies($conflicts, Link::TYPE_CONFLICT);
+        $this->conflicts = $this->replaceSelfVersionDependencies($conflicts, 'conflicts');
         $this->aliasOf->setConflicts($conflicts);
     }
 
@@ -104,7 +104,7 @@ class RootAliasPackage extends AliasPackage implements RootPackageInterface
      */
     public function setProvides(array $provides)
     {
-        $this->provides = $this->replaceSelfVersionDependencies($provides, Link::TYPE_PROVIDE);
+        $this->provides = $this->replaceSelfVersionDependencies($provides, 'provides');
         $this->aliasOf->setProvides($provides);
     }
 
@@ -113,7 +113,7 @@ class RootAliasPackage extends AliasPackage implements RootPackageInterface
      */
     public function setReplaces(array $replaces)
     {
-        $this->replaces = $this->replaceSelfVersionDependencies($replaces, Link::TYPE_REPLACE);
+        $this->replaces = $this->replaceSelfVersionDependencies($replaces, 'replaces');
         $this->aliasOf->setReplaces($replaces);
     }
 

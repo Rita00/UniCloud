@@ -57,9 +57,9 @@ class JsonConfigSource implements ConfigSourceInterface
     /**
      * {@inheritdoc}
      */
-    public function addRepository($name, $config, $append = true)
+    public function addRepository($name, $config)
     {
-        $this->manipulateJson('addRepository', $name, $config, $append, function (&$config, $repo, $repoConfig) use ($append) {
+        $this->manipulateJson('addRepository', $name, $config, function (&$config, $repo, $repoConfig) {
             // if converting from an array format to hashmap format, and there is a {"packagist.org":false} repo, we have
             // to convert it to "packagist.org": false key on the hashmap otherwise it fails schema validation
             if (isset($config['repositories'])) {
@@ -75,11 +75,7 @@ class JsonConfigSource implements ConfigSourceInterface
                 }
             }
 
-            if ($append) {
-                $config['repositories'][$repo] = $repoConfig;
-            } else {
-                $config['repositories'] = array($repo => $repoConfig) + $config['repositories'];
-            }
+            $config['repositories'][$repo] = $repoConfig;
         });
     }
 
@@ -139,7 +135,7 @@ class JsonConfigSource implements ConfigSourceInterface
     public function addProperty($name, $value)
     {
         $this->manipulateJson('addProperty', $name, $value, function (&$config, $key, $val) {
-            if (strpos($key, 'extra.') === 0 || strpos($key, 'scripts.') === 0) {
+            if (substr($key, 0, 6) === 'extra.' || substr($key, 0, 8) === 'scripts.') {
                 $bits = explode('.', $key);
                 $last = array_pop($bits);
                 $arr = &$config[reset($bits)];
@@ -161,8 +157,9 @@ class JsonConfigSource implements ConfigSourceInterface
      */
     public function removeProperty($name)
     {
+        $authConfig = $this->authConfig;
         $this->manipulateJson('removeProperty', $name, function (&$config, $key) {
-            if (strpos($key, 'extra.') === 0 || strpos($key, 'scripts.') === 0) {
+            if (substr($key, 0, 6) === 'extra.' || substr($key, 0, 8) === 'scripts.') {
                 $bits = explode('.', $key);
                 $last = array_pop($bits);
                 $arr = &$config[reset($bits)];
@@ -268,7 +265,7 @@ class JsonConfigSource implements ConfigSourceInterface
      *
      * @param  array $array
      * @param  mixed $value
-     * @return int
+     * @return array
      */
     private function arrayUnshiftRef(&$array, &$value)
     {

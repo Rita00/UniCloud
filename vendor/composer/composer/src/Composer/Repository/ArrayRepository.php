@@ -16,7 +16,6 @@ use Composer\Package\AliasPackage;
 use Composer\Package\PackageInterface;
 use Composer\Package\CompletePackageInterface;
 use Composer\Package\Version\VersionParser;
-use Composer\Package\Version\StabilityFilter;
 use Composer\Semver\Constraint\ConstraintInterface;
 use Composer\Semver\Constraint\Constraint;
 
@@ -25,12 +24,12 @@ use Composer\Semver\Constraint\Constraint;
  *
  * @author Nils Adermann <naderman@naderman.de>
  */
-class ArrayRepository implements RepositoryInterface
+class ArrayRepository extends BaseRepository
 {
     /** @var PackageInterface[] */
     protected $packages;
-
-    /**
+    
+    /** 
       * @var PackageInterface[] indexed by package unique name and used to cache hasPackage calls
       */
     protected $packageMap;
@@ -40,51 +39,6 @@ class ArrayRepository implements RepositoryInterface
         foreach ($packages as $package) {
             $this->addPackage($package);
         }
-    }
-
-    public function getRepoName()
-    {
-        return 'array repo (defining '.$this->count().' package'.($this->count() > 1 ? 's' : '').')';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function loadPackages(array $packageMap, array $acceptableStabilities, array $stabilityFlags, array $alreadyLoaded = array())
-    {
-        $packages = $this->getPackages();
-
-        $result = array();
-        $namesFound = array();
-        foreach ($packages as $package) {
-            if (array_key_exists($package->getName(), $packageMap)) {
-                if (
-                    (!$packageMap[$package->getName()] || $packageMap[$package->getName()]->matches(new Constraint('==', $package->getVersion())))
-                    && StabilityFilter::isPackageAcceptable($acceptableStabilities, $stabilityFlags, $package->getNames(), $package->getStability())
-                    && !isset($alreadyLoaded[$package->getName()][$package->getVersion()])
-                ) {
-                    // add selected packages which match stability requirements
-                    $result[spl_object_hash($package)] = $package;
-                    // add the aliased package for packages where the alias matches
-                    if ($package instanceof AliasPackage && !isset($result[spl_object_hash($package->getAliasOf())])) {
-                        $result[spl_object_hash($package->getAliasOf())] = $package->getAliasOf();
-                    }
-                }
-
-                $namesFound[$package->getName()] = true;
-            }
-        }
-
-        // add aliases of packages that were selected, even if the aliases did not match
-        foreach ($packages as $package) {
-            if ($package instanceof AliasPackage) {
-                if (isset($result[spl_object_hash($package->getAliasOf())])) {
-                    $result[spl_object_hash($package)] = $package;
-                }
-            }
-        }
-
-        return array('namesFound' => array_keys($namesFound), 'packages' => $result);
     }
 
     /**
@@ -127,7 +81,8 @@ class ArrayRepository implements RepositoryInterface
 
         foreach ($this->getPackages() as $package) {
             if ($name === $package->getName()) {
-                if (null === $constraint || $constraint->matches(new Constraint('==', $package->getVersion()))) {
+                $pkgConstraint = new Constraint('==', $package->getVersion());
+                if (null === $constraint || $constraint->matches($pkgConstraint)) {
                     $packages[] = $package;
                 }
             }
@@ -205,32 +160,6 @@ class ArrayRepository implements RepositoryInterface
         $this->packageMap = null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getProviders($packageName)
-    {
-        $result = array();
-
-        foreach ($this->getPackages() as $candidate) {
-            if (isset($result[$candidate->getName()])) {
-                continue;
-            }
-            foreach ($candidate->getProvides() as $link) {
-                if ($packageName === $link->getTarget()) {
-                    $result[$candidate->getName()] = array(
-                        'name' => $candidate->getName(),
-                        'description' => $candidate->getDescription(),
-                        'type' => $candidate->getType(),
-                    );
-                    continue 2;
-                }
-            }
-        }
-
-        return $result;
-    }
-
     protected function createAliasPackage(PackageInterface $package, $alias, $prettyAlias)
     {
         return new AliasPackage($package instanceof AliasPackage ? $package->getAliasOf() : $package, $alias, $prettyAlias);
@@ -276,10 +205,6 @@ class ArrayRepository implements RepositoryInterface
      */
     public function count()
     {
-        if (null === $this->packages) {
-            $this->initialize();
-        }
-
         return count($this->packages);
     }
 

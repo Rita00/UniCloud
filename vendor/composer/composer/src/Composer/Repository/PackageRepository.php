@@ -58,9 +58,4 @@ class PackageRepository extends ArrayRepository
             $this->addPackage($package);
         }
     }
-
-    public function getRepoName()
-    {
-        return preg_replace('{^array }', 'package ', parent::getRepoName());
-    }
 }

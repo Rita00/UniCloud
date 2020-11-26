@@ -23,13 +23,14 @@ class GenericRule extends Rule
     protected $literals;
 
     /**
-     * @param array                          $literals
-     * @param int|null                       $reason     A RULE_* constant describing the reason for generating this rule
-     * @param Link|PackageInterface|int|null $reasonData
+     * @param array                 $literals
+     * @param int                   $reason     A RULE_* constant describing the reason for generating this rule
+     * @param Link|PackageInterface $reasonData
+     * @param array                 $job        The job this rule was created from
      */
-    public function __construct(array $literals, $reason, $reasonData)
+    public function __construct(array $literals, $reason, $reasonData, $job = null)
     {
-        parent::__construct($reason, $reasonData);
+        parent::__construct($reason, $reasonData, $job);
 
         // sort all packages ascending by id
         sort($literals);
@@ -64,7 +65,7 @@ class GenericRule extends Rule
 
     public function isAssertion()
     {
-        return 1 === \count($this->literals);
+        return 1 === count($this->literals);
     }
 
     /**

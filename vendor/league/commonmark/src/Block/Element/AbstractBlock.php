@@ -45,12 +45,12 @@ abstract class AbstractBlock extends Node
     /**
      * @var int
      */
-    protected $startLine = 0;
+    protected $startLine;
 
     /**
      * @var int
      */
-    protected $endLine = 0;
+    protected $endLine;
 
     protected function setParent(Node $node = null)
     {

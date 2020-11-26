@@ -75,8 +75,8 @@ class HgBitbucketDriver extends BitbucketDriver
             array('url' => $url),
             $this->io,
             $this->config,
-            $this->httpDownloader,
-            $this->process
+            $this->process,
+            $this->remoteFilesystem
         );
         $this->fallbackDriver->initialize();
     }

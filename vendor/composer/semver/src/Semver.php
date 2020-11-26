@@ -101,9 +101,7 @@ class Semver
         // Normalize outside of usort() scope for minor performance increase.
         // Creates an array of arrays: [[normalized, key], ...]
         foreach ($versions as $key => $version) {
-            $normalizedVersion = $versionParser->normalize($version);
-            $normalizedVersion = $versionParser->normalizeDefaultBranch($normalizedVersion);
-            $normalized[] = array($normalizedVersion, $key);
+            $normalized[] = array($versionParser->normalize($version), $key);
         }
 
         usort($normalized, function (array $left, array $right) use ($direction) {

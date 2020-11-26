@@ -29,11 +29,11 @@ class ProjectInstaller implements InstallerInterface
     private $downloadManager;
     private $filesystem;
 
-    public function __construct($installPath, DownloadManager $dm, Filesystem $fs)
+    public function __construct($installPath, DownloadManager $dm)
     {
         $this->installPath = rtrim(strtr($installPath, '\\', '/'), '/').'/';
         $this->downloadManager = $dm;
-        $this->filesystem = $fs;
+        $this->filesystem = new Filesystem;
     }
 
     /**
@@ -58,7 +58,7 @@ class ProjectInstaller implements InstallerInterface
     /**
      * {@inheritDoc}
      */
-    public function download(PackageInterface $package, PackageInterface $prevPackage = null)
+    public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         $installPath = $this->installPath;
         if (file_exists($installPath) && !$this->filesystem->isDirEmpty($installPath)) {
@@ -67,32 +67,7 @@ class ProjectInstaller implements InstallerInterface
         if (!is_dir($installPath)) {
             mkdir($installPath, 0777, true);
         }
-
-        return $this->downloadManager->download($package, $installPath, $prevPackage);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function prepare($type, PackageInterface $package, PackageInterface $prevPackage = null)
-    {
-        return $this->downloadManager->prepare($type, $package, $this->installPath, $prevPackage);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function cleanup($type, PackageInterface $package, PackageInterface $prevPackage = null)
-    {
-        return $this->downloadManager->cleanup($type, $package, $this->installPath, $prevPackage);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
-    {
-        return $this->downloadManager->install($package, $this->installPath);
+        $this->downloadManager->download($package, $installPath);
     }
 
     /**

@@ -14,7 +14,6 @@ namespace Composer;
 
 use Composer\Package\RootPackageInterface;
 use Composer\Package\Locker;
-use Composer\Util\Loop;
 use Composer\Repository\RepositoryManager;
 use Composer\Installer\InstallationManager;
 use Composer\Plugin\PluginManager;
@@ -51,9 +50,9 @@ class Composer
      * const RELEASE_DATE = '@release_date@';
      * const SOURCE_VERSION = '1.8-dev+source';
      */
-    const VERSION = '2.0.4';
+    const VERSION = '1.10.15';
     const BRANCH_ALIAS_VERSION = '';
-    const RELEASE_DATE = '2020-10-30 22:39:11';
+    const RELEASE_DATE = '2020-10-13 15:59:09';
     const SOURCE_VERSION = '';
 
     /**
@@ -65,7 +64,7 @@ class Composer
      *
      * @var string
      */
-    const RUNTIME_API_VERSION = '2.0.0';
+    const RUNTIME_API_VERSION = '1.0.0';
 
     public static function getVersion()
     {
@@ -83,7 +82,7 @@ class Composer
     }
 
     /**
-     * @var RootPackageInterface
+     * @var Package\RootPackageInterface
      */
     private $package;
 
@@ -91,11 +90,6 @@ class Composer
      * @var Locker
      */
     private $locker;
-
-    /**
-     * @var Loop
-     */
-    private $loop;
 
     /**
      * @var Repository\RepositoryManager
@@ -138,7 +132,7 @@ class Composer
     private $archiveManager;
 
     /**
-     * @param  RootPackageInterface $package
+     * @param  Package\RootPackageInterface $package
      * @return void
      */
     public function setPackage(RootPackageInterface $package)
@@ -147,7 +141,7 @@ class Composer
     }
 
     /**
-     * @return RootPackageInterface
+     * @return Package\RootPackageInterface
      */
     public function getPackage()
     {
@@ -171,7 +165,7 @@ class Composer
     }
 
     /**
-     * @param Locker $locker
+     * @param Package\Locker $locker
      */
     public function setLocker(Locker $locker)
     {
@@ -179,7 +173,7 @@ class Composer
     }
 
     /**
-     * @return Locker
+     * @return Package\Locker
      */
     public function getLocker()
     {
@@ -187,23 +181,7 @@ class Composer
     }
 
     /**
-     * @param Loop $loop
-     */
-    public function setLoop(Loop $loop)
-    {
-        $this->loop = $loop;
-    }
-
-    /**
-     * @return Loop
-     */
-    public function getLoop()
-    {
-        return $this->loop;
-    }
-
-    /**
-     * @param RepositoryManager $manager
+     * @param Repository\RepositoryManager $manager
      */
     public function setRepositoryManager(RepositoryManager $manager)
     {
@@ -211,7 +189,7 @@ class Composer
     }
 
     /**
-     * @return RepositoryManager
+     * @return Repository\RepositoryManager
      */
     public function getRepositoryManager()
     {
@@ -219,7 +197,7 @@ class Composer
     }
 
     /**
-     * @param DownloadManager $manager
+     * @param Downloader\DownloadManager $manager
      */
     public function setDownloadManager(DownloadManager $manager)
     {
@@ -227,7 +205,7 @@ class Composer
     }
 
     /**
-     * @return DownloadManager
+     * @return Downloader\DownloadManager
      */
     public function getDownloadManager()
     {
@@ -251,7 +229,7 @@ class Composer
     }
 
     /**
-     * @param InstallationManager $manager
+     * @param Installer\InstallationManager $manager
      */
     public function setInstallationManager(InstallationManager $manager)
     {
@@ -259,7 +237,7 @@ class Composer
     }
 
     /**
-     * @return InstallationManager
+     * @return Installer\InstallationManager
      */
     public function getInstallationManager()
     {
@@ -267,7 +245,7 @@ class Composer
     }
 
     /**
-     * @param PluginManager $manager
+     * @param Plugin\PluginManager $manager
      */
     public function setPluginManager(PluginManager $manager)
     {
@@ -275,7 +253,7 @@ class Composer
     }
 
     /**
-     * @return PluginManager
+     * @return Plugin\PluginManager
      */
     public function getPluginManager()
     {
@@ -299,7 +277,7 @@ class Composer
     }
 
     /**
-     * @param AutoloadGenerator $autoloadGenerator
+     * @param Autoload\AutoloadGenerator $autoloadGenerator
      */
     public function setAutoloadGenerator(AutoloadGenerator $autoloadGenerator)
     {
@@ -307,7 +285,7 @@ class Composer
     }
 
     /**
-     * @return AutoloadGenerator
+     * @return Autoload\AutoloadGenerator
      */
     public function getAutoloadGenerator()
     {

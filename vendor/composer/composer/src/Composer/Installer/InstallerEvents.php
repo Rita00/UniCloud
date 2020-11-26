@@ -12,15 +12,32 @@
 
 namespace Composer\Installer;
 
+/**
+ * The Installer Events.
+ *
+ * @author François Pluchino <francois.pluchino@gmail.com>
+ */
 class InstallerEvents
 {
     /**
-     * The PRE_OPERATIONS_EXEC event occurs before the lock file gets
-     * installed and operations are executed.
+     * The PRE_DEPENDENCIES_SOLVING event occurs as a installer begins
+     * resolve operations.
      *
-     * The event listener method receives an Composer\Installer\InstallerEvent instance.
+     * The event listener method receives a
+     * Composer\Installer\InstallerEvent instance.
      *
      * @var string
      */
-    const PRE_OPERATIONS_EXEC = 'pre-operations-exec';
+    const PRE_DEPENDENCIES_SOLVING = 'pre-dependencies-solving';
+
+    /**
+     * The POST_DEPENDENCIES_SOLVING event occurs as a installer after
+     * resolve operations.
+     *
+     * The event listener method receives a
+     * Composer\Installer\InstallerEvent instance.
+     *
+     * @var string
+     */
+    const POST_DEPENDENCIES_SOLVING = 'post-dependencies-solving';
 }

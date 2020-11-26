@@ -24,15 +24,7 @@ class HgDownloader extends VcsDownloader
     /**
      * {@inheritDoc}
      */
-    protected function doDownload(PackageInterface $package, $path, $url, PackageInterface $prevPackage = null)
-    {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function doInstall(PackageInterface $package, $path, $url)
+    public function doDownload(PackageInterface $package, $path, $url)
     {
         $hgUtils = new HgUtils($this->io, $this->config, $this->process);
 
@@ -52,7 +44,7 @@ class HgDownloader extends VcsDownloader
     /**
      * {@inheritDoc}
      */
-    protected function doUpdate(PackageInterface $initial, PackageInterface $target, $path, $url)
+    public function doUpdate(PackageInterface $initial, PackageInterface $target, $path, $url)
     {
         $hgUtils = new HgUtils($this->io, $this->config, $this->process);
 

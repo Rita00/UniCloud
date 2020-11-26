@@ -14,7 +14,6 @@ namespace Composer\IO;
 
 use Composer\Question\StrictConfirmationQuestion;
 use Symfony\Component\Console\Helper\HelperSet;
-use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -252,15 +251,6 @@ class ConsoleIO extends BaseIO
         } else {
             $this->lastMessage = $messages;
         }
-    }
-
-    /**
-     * @param int $max
-     * @return ProgressBar
-     */
-    public function getProgressBar($max = 0)
-    {
-        return new ProgressBar($this->getErrorOutput(), $max);
     }
 
     /**

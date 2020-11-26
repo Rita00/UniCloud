@@ -22,14 +22,10 @@ use Composer\Downloader\TransportException;
  */
 class GitHub
 {
-    /** @var IOInterface */
     protected $io;
-    /** @var Config */
     protected $config;
-    /** @var ProcessExecutor */
     protected $process;
-    /** @var HttpDownloader */
-    protected $httpDownloader;
+    protected $remoteFilesystem;
 
     /**
      * Constructor.
@@ -37,14 +33,14 @@ class GitHub
      * @param IOInterface      $io               The IO instance
      * @param Config           $config           The composer configuration
      * @param ProcessExecutor  $process          Process instance, injectable for mocking
-     * @param HttpDownloader $httpDownloader Remote Filesystem, injectable for mocking
+     * @param RemoteFilesystem $remoteFilesystem Remote Filesystem, injectable for mocking
      */
-    public function __construct(IOInterface $io, Config $config, ProcessExecutor $process = null, HttpDownloader $httpDownloader = null)
+    public function __construct(IOInterface $io, Config $config, ProcessExecutor $process = null, RemoteFilesystem $remoteFilesystem = null)
     {
         $this->io = $io;
         $this->config = $config;
         $this->process = $process ?: new ProcessExecutor($io);
-        $this->httpDownloader = $httpDownloader ?: Factory::createHttpDownloader($this->io, $config);
+        $this->remoteFilesystem = $remoteFilesystem ?: Factory::createRemoteFilesystem($this->io, $config);
     }
 
     /**
@@ -108,7 +104,7 @@ class GitHub
         try {
             $apiUrl = ('github.com' === $originUrl) ? 'api.github.com/' : $originUrl . '/api/v3/';
 
-            $this->httpDownloader->get('https://'. $apiUrl, array(
+            $this->remoteFilesystem->getContents($originUrl, 'https://'. $apiUrl, false, array(
                 'retry-auth-failure' => false,
             ));
         } catch (TransportException $e) {

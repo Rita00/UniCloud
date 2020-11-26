@@ -28,6 +28,7 @@ class FossilDriver extends VcsDriver
     protected $rootIdentifier;
     protected $repoFile;
     protected $checkoutDir;
+    protected $infoCache = array();
 
     /**
      * {@inheritDoc}
@@ -165,7 +166,7 @@ class FossilDriver extends VcsDriver
     public function getChangeDate($identifier)
     {
         $this->process->execute('fossil finfo -b -n 1 composer.json', $output, $this->checkoutDir);
-        list(,$date) = explode(' ', trim($output), 3);
+        list($ckout, $date, $message) = explode(' ', trim($output), 3);
 
         return new \DateTime($date, new \DateTimeZone('UTC'));
     }
@@ -196,6 +197,7 @@ class FossilDriver extends VcsDriver
     {
         if (null === $this->branches) {
             $branches = array();
+            $bookmarks = array();
 
             $this->process->execute('fossil branch list', $output, $this->checkoutDir);
             foreach ($this->process->splitLines($output) as $branch) {

@@ -18,13 +18,13 @@ use Composer\Json\JsonFile;
 use Composer\Cache;
 use Composer\IO\IOInterface;
 use Composer\Util\GitHub;
-use Composer\Util\Http\Response;
 
 /**
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
 class GitHubDriver extends VcsDriver
 {
+    protected $cache;
     protected $owner;
     protected $repository;
     protected $tags;
@@ -32,6 +32,7 @@ class GitHubDriver extends VcsDriver
     protected $rootIdentifier;
     protected $repoData;
     protected $hasIssues;
+    protected $infoCache = array();
     protected $isPrivate = false;
     private $isArchived = false;
     private $fundingInfo;
@@ -56,7 +57,6 @@ class GitHubDriver extends VcsDriver
             $this->originUrl = 'github.com';
         }
         $this->cache = new Cache($this->io, $this->config->get('cache-repo-dir').'/'.$this->originUrl.'/'.$this->owner.'/'.$this->repository);
-        $this->cache->setReadOnly($this->config->get('cache-read-only'));
 
         if ( $this->config->get('use-github-api') === false || (isset($this->repoConfig['no-api']) && $this->repoConfig['no-api'] ) ){
             $this->setupGitDriver($this->url);
@@ -195,9 +195,10 @@ class GitHubDriver extends VcsDriver
         foreach (array($this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/contents/.github/FUNDING.yml', $this->getApiUrl() . '/repos/'.$this->owner.'/.github/contents/FUNDING.yml') as $file) {
 
             try {
-                $response = $this->httpDownloader->get($file, array(
+                $result = $this->remoteFilesystem->getContents($this->originUrl, $file, false, array(
                     'retry-auth-failure' => false,
-                ))->decodeJson();
+                ));
+                $response = json_decode($result, true);
             } catch (TransportException $e) {
                 continue;
             }
@@ -275,7 +276,7 @@ class GitHubDriver extends VcsDriver
         }
 
         $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/contents/' . $file . '?ref='.urlencode($identifier);
-        $resource = $this->getContents($resource)->decodeJson();
+        $resource = JsonFile::parseJson($this->getContents($resource));
         if (empty($resource['content']) || $resource['encoding'] !== 'base64' || !($content = base64_decode($resource['content']))) {
             throw new \RuntimeException('Could not retrieve ' . $file . ' for '.$identifier);
         }
@@ -293,7 +294,7 @@ class GitHubDriver extends VcsDriver
         }
 
         $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/commits/'.urlencode($identifier);
-        $commit = $this->getContents($resource)->decodeJson();
+        $commit = JsonFile::parseJson($this->getContents($resource), $resource);
 
         return new \DateTime($commit['commit']['committer']['date']);
     }
@@ -311,13 +312,12 @@ class GitHubDriver extends VcsDriver
             $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/tags?per_page=100';
 
             do {
-                $response = $this->getContents($resource);
-                $tagsData = $response->decodeJson();
+                $tagsData = JsonFile::parseJson($this->getContents($resource), $resource);
                 foreach ($tagsData as $tag) {
                     $this->tags[$tag['name']] = $tag['commit']['sha'];
                 }
 
-                $resource = $this->getNextPage($response);
+                $resource = $this->getNextPage();
             } while ($resource);
         }
 
@@ -337,8 +337,7 @@ class GitHubDriver extends VcsDriver
             $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/git/refs/heads?per_page=100';
 
             do {
-                $response = $this->getContents($resource);
-                $branchData = $response->decodeJson();
+                $branchData = JsonFile::parseJson($this->getContents($resource), $resource);
                 foreach ($branchData as $branch) {
                     $name = substr($branch['ref'], 11);
                     if ($name !== 'gh-pages') {
@@ -346,7 +345,7 @@ class GitHubDriver extends VcsDriver
                     }
                 }
 
-                $resource = $this->getNextPage($response);
+                $resource = $this->getNextPage();
             } while ($resource);
         }
 
@@ -410,7 +409,7 @@ class GitHubDriver extends VcsDriver
         try {
             return parent::getContents($url);
         } catch (TransportException $e) {
-            $gitHubUtil = new GitHub($this->io, $this->config, $this->process, $this->httpDownloader);
+            $gitHubUtil = new GitHub($this->io, $this->config, $this->process, $this->remoteFilesystem);
 
             switch ($e->getCode()) {
                 case 401:
@@ -425,18 +424,16 @@ class GitHubDriver extends VcsDriver
                     }
 
                     if (!$this->io->isInteractive()) {
-                        if ($this->attemptCloneFallback()) {
-                            return new Response(array('url' => 'dummy'), 200, array(), 'null');
-                        }
+                        return $this->attemptCloneFallback();
                     }
 
                     $scopesIssued = array();
                     $scopesNeeded = array();
                     if ($headers = $e->getHeaders()) {
-                        if ($scopes = Response::findHeaderValue($headers, 'X-OAuth-Scopes')) {
+                        if ($scopes = $this->remoteFilesystem->findHeaderValue($headers, 'X-OAuth-Scopes')) {
                             $scopesIssued = explode(' ', $scopes);
                         }
-                        if ($scopes = Response::findHeaderValue($headers, 'X-Accepted-OAuth-Scopes')) {
+                        if ($scopes = $this->remoteFilesystem->findHeaderValue($headers, 'X-Accepted-OAuth-Scopes')) {
                             $scopesNeeded = explode(' ', $scopes);
                         }
                     }
@@ -455,9 +452,7 @@ class GitHubDriver extends VcsDriver
                     }
 
                     if (!$this->io->isInteractive() && $fetchingRepoData) {
-                        if ($this->attemptCloneFallback()) {
-                            return new Response(array('url' => 'dummy'), 200, array(), 'null');
-                        }
+                        return $this->attemptCloneFallback();
                     }
 
                     $rateLimited = $gitHubUtil->isRateLimited($e->getHeaders());
@@ -503,15 +498,7 @@ class GitHubDriver extends VcsDriver
 
         $repoDataUrl = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository;
 
-        try {
-            $this->repoData = $this->getContents($repoDataUrl, true)->decodeJson();
-        } catch (TransportException $e) {
-            if ($e->getCode() === 499) {
-                $this->attemptCloneFallback();
-            } else {
-                throw $e;
-            }
-        }
+        $this->repoData = JsonFile::parseJson($this->getContents($repoDataUrl, true), $repoDataUrl);
         if (null === $this->repoData && null !== $this->gitDriver) {
             return;
         }
@@ -542,7 +529,7 @@ class GitHubDriver extends VcsDriver
             // are not interactive) then we fallback to GitDriver.
             $this->setupGitDriver($this->generateSshUrl());
 
-            return true;
+            return;
         } catch (\RuntimeException $e) {
             $this->gitDriver = null;
 
@@ -557,20 +544,23 @@ class GitHubDriver extends VcsDriver
             array('url' => $url),
             $this->io,
             $this->config,
-            $this->httpDownloader,
-            $this->process
+            $this->process,
+            $this->remoteFilesystem
         );
         $this->gitDriver->initialize();
     }
 
-    protected function getNextPage(Response $response)
+    protected function getNextPage()
     {
-        $header = $response->getHeader('link');
-
-        $links = explode(',', $header);
-        foreach ($links as $link) {
-            if (preg_match('{<(.+?)>; *rel="next"}', $link, $match)) {
-                return $match[1];
+        $headers = $this->remoteFilesystem->getLastHeaders();
+        foreach ($headers as $header) {
+            if (preg_match('{^link:\s*(.+?)\s*$}i', $header, $match)) {
+                $links = explode(',', $match[1]);
+                foreach ($links as $link) {
+                    if (preg_match('{<(.+?)>; *rel="next"}', $link, $match)) {
+                        return $match[1];
+                    }
+                }
             }
         }
     }

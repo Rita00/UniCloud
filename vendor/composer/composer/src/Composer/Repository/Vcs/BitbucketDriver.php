@@ -16,16 +16,18 @@ use Composer\Cache;
 use Composer\Downloader\TransportException;
 use Composer\Json\JsonFile;
 use Composer\Util\Bitbucket;
-use Composer\Util\Http\Response;
 
 abstract class BitbucketDriver extends VcsDriver
 {
+    /** @var Cache */
+    protected $cache;
     protected $owner;
     protected $repository;
     protected $hasIssues;
     protected $rootIdentifier;
     protected $tags;
     protected $branches;
+    protected $infoCache = array();
     protected $branchesUrl = '';
     protected $tagsUrl = '';
     protected $homeUrl = '';
@@ -44,7 +46,7 @@ abstract class BitbucketDriver extends VcsDriver
      */
     public function initialize()
     {
-        preg_match('#^(?:https?://bitbucket\.org/|git@bitbucket\.org:)([^/]+)/([^/]+?)(\.git|/?)$#i', $this->url, $match);
+        preg_match('#^https?://bitbucket\.org/([^/]+)/([^/]+?)(\.git|/?)$#i', $this->url, $match);
         $this->owner = $match[1];
         $this->repository = $match[2];
         $this->originUrl = 'bitbucket.org';
@@ -57,7 +59,6 @@ abstract class BitbucketDriver extends VcsDriver
                 $this->repository,
             ))
         );
-        $this->cache->setReadOnly($this->config->get('cache-read-only'));
     }
 
     /**
@@ -91,7 +92,7 @@ abstract class BitbucketDriver extends VcsDriver
             )
         );
 
-        $repoData = $this->fetchWithOAuthCredentials($resource, true)->decodeJson();
+        $repoData = JsonFile::parseJson($this->getContentsWithOAuthCredentials($resource, true), $resource);
         if ($this->fallbackDriver) {
             return false;
         }
@@ -205,7 +206,7 @@ abstract class BitbucketDriver extends VcsDriver
             $file
         );
 
-        return $this->fetchWithOAuthCredentials($resource)->getBody();
+        return $this->getContentsWithOAuthCredentials($resource);
     }
 
     /**
@@ -230,7 +231,7 @@ abstract class BitbucketDriver extends VcsDriver
             $this->repository,
             $identifier
         );
-        $commit = $this->fetchWithOAuthCredentials($resource)->decodeJson();
+        $commit = JsonFile::parseJson($this->getContentsWithOAuthCredentials($resource), $resource);
 
         return new \DateTime($commit['date']);
     }
@@ -292,7 +293,7 @@ abstract class BitbucketDriver extends VcsDriver
             );
             $hasNext = true;
             while ($hasNext) {
-                $tagsData = $this->fetchWithOAuthCredentials($resource)->decodeJson();
+                $tagsData = JsonFile::parseJson($this->getContentsWithOAuthCredentials($resource), $resource);
                 foreach ($tagsData['values'] as $data) {
                     $this->tags[$data['name']] = $data['target']['hash'];
                 }
@@ -336,7 +337,7 @@ abstract class BitbucketDriver extends VcsDriver
             );
             $hasNext = true;
             while ($hasNext) {
-                $branchData = $this->fetchWithOAuthCredentials($resource)->decodeJson();
+                $branchData = JsonFile::parseJson($this->getContentsWithOAuthCredentials($resource), $resource);
                 foreach ($branchData['values'] as $data) {
                     // skip headless branches which seem to be deleted branches that bitbucket nevertheless returns in the API
                     if ($this->vcsType === 'hg' && empty($data['heads'])) {
@@ -362,14 +363,14 @@ abstract class BitbucketDriver extends VcsDriver
      * @param string $url              The URL of content
      * @param bool   $fetchingRepoData
      *
-     * @return Response The result
+     * @return mixed The result
      */
-    protected function fetchWithOAuthCredentials($url, $fetchingRepoData = false)
+    protected function getContentsWithOAuthCredentials($url, $fetchingRepoData = false)
     {
         try {
             return parent::getContents($url);
         } catch (TransportException $e) {
-            $bitbucketUtil = new Bitbucket($this->io, $this->config, $this->process, $this->httpDownloader);
+            $bitbucketUtil = new Bitbucket($this->io, $this->config, $this->process, $this->remoteFilesystem);
 
             if (403 === $e->getCode() || (401 === $e->getCode() && strpos($e->getMessage(), 'Could not authenticate against') === 0)) {
                 if (!$this->io->hasAuthentication($this->originUrl)
@@ -379,9 +380,7 @@ abstract class BitbucketDriver extends VcsDriver
                 }
 
                 if (!$this->io->isInteractive() && $fetchingRepoData) {
-                    if ($this->attemptCloneFallback()) {
-                        return new Response(array('url' => 'dummy'), 200, array(), 'null');
-                    }
+                    return $this->attemptCloneFallback();
                 }
             }
 
@@ -400,8 +399,6 @@ abstract class BitbucketDriver extends VcsDriver
     {
         try {
             $this->setupFallbackDriver($this->generateSshUrl());
-
-            return true;
         } catch (\RuntimeException $e) {
             $this->fallbackDriver = null;
 
@@ -445,7 +442,7 @@ abstract class BitbucketDriver extends VcsDriver
             $this->repository
         );
 
-        $data = $this->fetchWithOAuthCredentials($resource)->decodeJson();
+        $data = JsonFile::parseJson($this->getContentsWithOAuthCredentials($resource), $resource);
         if (isset($data['mainbranch'])) {
             return $data['mainbranch'];
         }

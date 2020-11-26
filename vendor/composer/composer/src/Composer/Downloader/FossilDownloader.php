@@ -23,15 +23,7 @@ class FossilDownloader extends VcsDownloader
     /**
      * {@inheritDoc}
      */
-    protected function doDownload(PackageInterface $package, $path, $url, PackageInterface $prevPackage = null)
-    {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function doInstall(PackageInterface $package, $path, $url)
+    public function doDownload(PackageInterface $package, $path, $url)
     {
         // Ensure we are allowed to use this URL by config
         $this->config->prohibitUrlByConfig($url, $this->io);
@@ -57,11 +49,12 @@ class FossilDownloader extends VcsDownloader
     /**
      * {@inheritDoc}
      */
-    protected function doUpdate(PackageInterface $initial, PackageInterface $target, $path, $url)
+    public function doUpdate(PackageInterface $initial, PackageInterface $target, $path, $url)
     {
         // Ensure we are allowed to use this URL by config
         $this->config->prohibitUrlByConfig($url, $this->io);
 
+        $url = ProcessExecutor::escape($url);
         $ref = ProcessExecutor::escape($target->getSourceReference());
         $this->io->writeError(" Updating to ".$target->getSourceReference());
 

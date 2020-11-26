@@ -273,7 +273,7 @@ class Perforce
         if ($useClient) {
             $p4Command .= '-c ' . $this->getClient() . ' ';
         }
-        $p4Command .= '-p ' . $this->getPort() . ' ' . $command;
+        $p4Command = $p4Command . '-p ' . $this->getPort() . ' ' . $command;
 
         return $p4Command;
     }
@@ -389,6 +389,7 @@ class Perforce
             } else {
                 $command = 'echo ' . ProcessExecutor::escape($password)  . ' | ' . $this->generateP4Command(' login -a', false);
                 $exitCode = $this->executeCommand($command);
+                $result = trim($this->commandResult);
                 if ($exitCode) {
                     throw new \Exception("Error logging in:" . $this->process->getErrorOutput());
                 }
@@ -426,7 +427,9 @@ class Perforce
     {
         $index = strpos($identifier, '@');
         if ($index === false) {
-            return $identifier. '/' . $file;
+            $path = $identifier. '/' . $file;
+
+            return $path;
         }
 
         $path = substr($identifier, 0, $index) . '/' . $file . substr($identifier, $index);
@@ -473,7 +476,9 @@ class Perforce
         $lastCommitArr = explode(' ', $lastCommit);
         $lastCommitNum = $lastCommitArr[1];
 
-        return array('master' => $possibleBranches[$this->p4Branch] . '@'. $lastCommitNum);
+        $branches = array('master' => $possibleBranches[$this->p4Branch] . '@'. $lastCommitNum);
+
+        return $branches;
     }
 
     public function getTags()

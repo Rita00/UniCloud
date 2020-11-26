@@ -19,17 +19,20 @@ use Composer\Package\PackageInterface;
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
-class InstallOperation extends SolverOperation implements OperationInterface
+class InstallOperation extends SolverOperation
 {
-    const TYPE = 'install';
-
-    /**
-     * @var PackageInterface
-     */
     protected $package;
 
-    public function __construct(PackageInterface $package)
+    /**
+     * Initializes operation.
+     *
+     * @param PackageInterface $package package instance
+     * @param string           $reason  operation reason
+     */
+    public function __construct(PackageInterface $package, $reason = null)
     {
+        parent::__construct($reason);
+
         $this->package = $package;
     }
 
@@ -44,15 +47,20 @@ class InstallOperation extends SolverOperation implements OperationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns job type.
+     *
+     * @return string
      */
-    public function show($lock)
+    public function getJobType()
     {
-        return self::format($this->package, $lock);
+        return 'install';
     }
 
-    public static function format(PackageInterface $package, $lock = false)
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
     {
-        return ($lock ? 'Locking ' : 'Installing ').'<info>'.$package->getPrettyName().'</info> (<comment>'.$package->getFullPrettyVersion().'</comment>)';
+        return 'Installing '.$this->package->getPrettyName().' ('.$this->formatVersion($this->package).')';
     }
 }

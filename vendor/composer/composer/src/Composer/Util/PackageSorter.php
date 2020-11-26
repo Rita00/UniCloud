@@ -55,9 +55,9 @@ class PackageSorter
 
         $weightList = array();
 
-        foreach ($packages as $index => $package) {
-            $weight = $computeImportance($package->getName());
-            $weightList[$index] = $weight;
+        foreach ($packages as $name => $package) {
+            $weight = $computeImportance($name);
+            $weightList[$name] = $weight;
         }
 
         $stable_sort = function (&$array) {
@@ -84,8 +84,8 @@ class PackageSorter
 
         $sortedPackages = array();
 
-        foreach (array_keys($weightList) as $index) {
-            $sortedPackages[] = $packages[$index];
+        foreach (array_keys($weightList) as $name) {
+            $sortedPackages[] = $packages[$name];
         }
         return $sortedPackages;
     }

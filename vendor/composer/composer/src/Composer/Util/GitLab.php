@@ -23,14 +23,10 @@ use Composer\Json\JsonFile;
  */
 class GitLab
 {
-    /** @var IOInterface */
     protected $io;
-    /** @var Config */
     protected $config;
-    /** @var ProcessExecutor */
     protected $process;
-    /** @var HttpDownloader */
-    protected $httpDownloader;
+    protected $remoteFilesystem;
 
     /**
      * Constructor.
@@ -38,14 +34,14 @@ class GitLab
      * @param IOInterface      $io               The IO instance
      * @param Config           $config           The composer configuration
      * @param ProcessExecutor  $process          Process instance, injectable for mocking
-     * @param HttpDownloader $httpDownloader Remote Filesystem, injectable for mocking
+     * @param RemoteFilesystem $remoteFilesystem Remote Filesystem, injectable for mocking
      */
-    public function __construct(IOInterface $io, Config $config, ProcessExecutor $process = null, HttpDownloader $httpDownloader = null)
+    public function __construct(IOInterface $io, Config $config, ProcessExecutor $process = null, RemoteFilesystem $remoteFilesystem = null)
     {
         $this->io = $io;
         $this->config = $config;
         $this->process = $process ?: new ProcessExecutor($io);
-        $this->httpDownloader = $httpDownloader ?: Factory::createHttpDownloader($this->io, $config);
+        $this->remoteFilesystem = $remoteFilesystem ?: Factory::createRemoteFilesystem($this->io, $config);
     }
 
     /**
@@ -71,28 +67,17 @@ class GitLab
             return true;
         }
 
-        // if available use deploy token from git config
-        if (0 === $this->process->execute('git config gitlab.deploytoken.user', $tokenUser) && 0 === $this->process->execute('git config gitlab.deploytoken.token', $tokenPassword)) {
-            $this->io->setAuthentication($originUrl, trim($tokenUser), trim($tokenPassword));
-
-            return true;
-        }
-
         // if available use token from composer config
         $authTokens = $this->config->get('gitlab-token');
 
         if (isset($authTokens[$originUrl])) {
-            $token = $authTokens[$originUrl];
+            $this->io->setAuthentication($originUrl, $authTokens[$originUrl], 'private-token');
+
+            return true;
         }
 
         if (isset($authTokens[$bcOriginUrl])) {
-            $token = $authTokens[$bcOriginUrl];
-        }
-        
-        if(isset($token)){
-            $username = is_array($token) && array_key_exists("username", $token) ? $token["username"] : $token;
-            $password = is_array($token) && array_key_exists("token", $token) ? $token["token"] : 'private-token';
-            $this->io->setAuthentication($originUrl, $username, $password);
+            $this->io->setAuthentication($originUrl, $authTokens[$bcOriginUrl], 'private-token');
 
             return true;
         }
@@ -183,10 +168,10 @@ class GitLab
             ),
         );
 
-        $token = $this->httpDownloader->get($scheme.'://'.$apiUrl.'/oauth/token', $options)->decodeJson();
+        $json = $this->remoteFilesystem->getContents($originUrl, $scheme.'://'.$apiUrl.'/oauth/token', false, $options);
 
         $this->io->writeError('Token successfully created');
 
-        return $token;
+        return JsonFile::parseJson($json);
     }
 }

@@ -14,13 +14,18 @@ namespace Composer\Installer;
 
 use Composer\Composer;
 use Composer\DependencyResolver\PolicyInterface;
-use Composer\DependencyResolver\Request;
+use Composer\DependencyResolver\Operation\OperationInterface;
 use Composer\DependencyResolver\Pool;
-use Composer\DependencyResolver\Transaction;
+use Composer\DependencyResolver\Request;
 use Composer\EventDispatcher\Event;
 use Composer\IO\IOInterface;
-use Composer\Repository\RepositorySet;
+use Composer\Repository\CompositeRepository;
 
+/**
+ * An event for all installer.
+ *
+ * @author François Pluchino <francois.pluchino@gmail.com>
+ */
 class InstallerEvent extends Event
 {
     /**
@@ -39,14 +44,29 @@ class InstallerEvent extends Event
     private $devMode;
 
     /**
-     * @var bool
+     * @var PolicyInterface
      */
-    private $executeOperations;
+    private $policy;
 
     /**
-     * @var Transaction
+     * @var Pool
      */
-    private $transaction;
+    private $pool;
+
+    /**
+     * @var CompositeRepository
+     */
+    private $installedRepo;
+
+    /**
+     * @var Request
+     */
+    private $request;
+
+    /**
+     * @var OperationInterface[]
+     */
+    private $operations;
 
     /**
      * Constructor.
@@ -55,18 +75,24 @@ class InstallerEvent extends Event
      * @param Composer             $composer
      * @param IOInterface          $io
      * @param bool                 $devMode
-     * @param bool                 $executeOperations
-     * @param Transaction          $transaction
+     * @param PolicyInterface      $policy
+     * @param Pool                 $pool
+     * @param CompositeRepository  $installedRepo
+     * @param Request              $request
+     * @param OperationInterface[] $operations
      */
-    public function __construct($eventName, Composer $composer, IOInterface $io, $devMode, $executeOperations, Transaction $transaction)
+    public function __construct($eventName, Composer $composer, IOInterface $io, $devMode, PolicyInterface $policy, Pool $pool, CompositeRepository $installedRepo, Request $request, array $operations = array())
     {
         parent::__construct($eventName);
 
         $this->composer = $composer;
         $this->io = $io;
         $this->devMode = $devMode;
-        $this->executeOperations = $executeOperations;
-        $this->transaction = $transaction;
+        $this->policy = $policy;
+        $this->pool = $pool;
+        $this->installedRepo = $installedRepo;
+        $this->request = $request;
+        $this->operations = $operations;
     }
 
     /**
@@ -94,18 +120,42 @@ class InstallerEvent extends Event
     }
 
     /**
-     * @return bool
+     * @return PolicyInterface
      */
-    public function isExecutingOperations()
+    public function getPolicy()
     {
-        return $this->executeOperations;
+        return $this->policy;
     }
 
     /**
-     * @return Transaction|null
+     * @return Pool
      */
-    public function getTransaction()
+    public function getPool()
     {
-        return $this->transaction;
+        return $this->pool;
+    }
+
+    /**
+     * @return CompositeRepository
+     */
+    public function getInstalledRepo()
+    {
+        return $this->installedRepo;
+    }
+
+    /**
+     * @return Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @return OperationInterface[]
+     */
+    public function getOperations()
+    {
+        return $this->operations;
     }
 }

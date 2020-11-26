@@ -13,7 +13,7 @@
 namespace Composer\Plugin;
 
 use Composer\EventDispatcher\Event;
-use Composer\Util\HttpDownloader;
+use Composer\Util\RemoteFilesystem;
 
 /**
  * The pre file download event.
@@ -23,9 +23,9 @@ use Composer\Util\HttpDownloader;
 class PreFileDownloadEvent extends Event
 {
     /**
-     * @var HttpDownloader
+     * @var RemoteFilesystem
      */
-    private $httpDownloader;
+    private $rfs;
 
     /**
      * @var string
@@ -33,105 +33,46 @@ class PreFileDownloadEvent extends Event
     private $processedUrl;
 
     /**
-     * @var string|null
-     */
-    private $customCacheKey;
-
-    /**
-     * @var string
-     */
-    private $type;
-
-    /**
-     * @var mixed
-     */
-    private $context;
-
-    /**
      * Constructor.
      *
-     * @param string          $name            The event name
-     * @param HttpDownloader  $httpDownloader
-     * @param string          $processedUrl
-     * @param string          $type
-     * @param mixed           $context
+     * @param string           $name         The event name
+     * @param RemoteFilesystem $rfs
+     * @param string           $processedUrl
      */
-    public function __construct($name, HttpDownloader $httpDownloader, $processedUrl, $type, $context = null)
+    public function __construct($name, RemoteFilesystem $rfs, $processedUrl)
     {
         parent::__construct($name);
-        $this->httpDownloader = $httpDownloader;
+        $this->rfs = $rfs;
         $this->processedUrl = $processedUrl;
-        $this->type = $type;
-        $this->context = $context;
     }
 
     /**
-     * @return HttpDownloader
+     * Returns the remote filesystem
+     *
+     * @return RemoteFilesystem
      */
-    public function getHttpDownloader()
+    public function getRemoteFilesystem()
     {
-        return $this->httpDownloader;
+        return $this->rfs;
     }
 
     /**
-     * Retrieves the processed URL that will be downloaded.
+     * Sets the remote filesystem
+     *
+     * @param RemoteFilesystem $rfs
+     */
+    public function setRemoteFilesystem(RemoteFilesystem $rfs)
+    {
+        $this->rfs = $rfs;
+    }
+
+    /**
+     * Retrieves the processed URL this remote filesystem will be used for
      *
      * @return string
      */
     public function getProcessedUrl()
     {
         return $this->processedUrl;
-    }
-
-    /**
-     * Sets the processed URL that will be downloaded.
-     *
-     * @param string $processedUrl New processed URL
-     */
-    public function setProcessedUrl($processedUrl)
-    {
-        $this->processedUrl = $processedUrl;
-    }
-
-    /**
-     * Retrieves a custom package cache key for this download.
-     *
-     * @return string|null
-     */
-    public function getCustomCacheKey()
-    {
-        return $this->customCacheKey;
-    }
-
-    /**
-     * Sets a custom package cache key for this download.
-     *
-     * @param string|null $customCacheKey New cache key
-     */
-    public function setCustomCacheKey($customCacheKey)
-    {
-        $this->customCacheKey = $customCacheKey;
-    }
-
-    /**
-     * Returns the type of this download (package, metadata).
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Returns the context of this download, if any.
-     *
-     * If this download is of type package, the package object is returned.
-     *
-     * @return mixed
-     */
-    public function getContext()
-    {
-        return $this->context;
     }
 }

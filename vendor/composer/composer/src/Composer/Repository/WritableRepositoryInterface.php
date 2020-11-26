@@ -13,7 +13,6 @@
 namespace Composer\Repository;
 
 use Composer\Package\PackageInterface;
-use Composer\Installer\InstallationManager;
 
 /**
  * Writable repository interface.
@@ -24,10 +23,8 @@ interface WritableRepositoryInterface extends RepositoryInterface
 {
     /**
      * Writes repository (f.e. to the disc).
-     *
-     * @param bool $devMode Whether dev requirements were included or not in this installation
      */
-    public function write($devMode, InstallationManager $installationManager);
+    public function write();
 
     /**
      * Adds package to the repository.

@@ -28,10 +28,11 @@ class Rule2Literals extends Rule
      * @param int                   $literal2
      * @param int                   $reason     A RULE_* constant describing the reason for generating this rule
      * @param Link|PackageInterface $reasonData
+     * @param array                 $job        The job this rule was created from
      */
-    public function __construct($literal1, $literal2, $reason, $reasonData)
+    public function __construct($literal1, $literal2, $reason, $reasonData, $job = null)
     {
-        parent::__construct($reason, $reasonData);
+        parent::__construct($reason, $reasonData, $job);
 
         if ($literal1 < $literal2) {
             $this->literal1 = $literal1;
@@ -76,7 +77,7 @@ class Rule2Literals extends Rule
         }
 
         $literals = $rule->getLiterals();
-        if (2 != \count($literals)) {
+        if (2 != count($literals)) {
             return false;
         }
 

@@ -20,24 +20,27 @@ use Composer\Package\PackageInterface;
  *
  * @author Nils Adermann <naderman@naderman.de>
  */
-class MarkAliasInstalledOperation extends SolverOperation implements OperationInterface
+class MarkAliasInstalledOperation extends SolverOperation
 {
-    const TYPE = 'markAliasInstalled';
-
-    /**
-     * @var AliasPackage
-     */
     protected $package;
 
-    public function __construct(AliasPackage $package)
+    /**
+     * Initializes operation.
+     *
+     * @param AliasPackage $package package instance
+     * @param string       $reason  operation reason
+     */
+    public function __construct(AliasPackage $package, $reason = null)
     {
+        parent::__construct($reason);
+
         $this->package = $package;
     }
 
     /**
      * Returns package instance.
      *
-     * @return AliasPackage
+     * @return PackageInterface
      */
     public function getPackage()
     {
@@ -45,10 +48,20 @@ class MarkAliasInstalledOperation extends SolverOperation implements OperationIn
     }
 
     /**
+     * Returns job type.
+     *
+     * @return string
+     */
+    public function getJobType()
+    {
+        return 'markAliasInstalled';
+    }
+
+    /**
      * {@inheritDoc}
      */
-    public function show($lock)
+    public function __toString()
     {
-        return 'Marking <info>'.$this->package->getPrettyName().'</info> (<comment>'.$this->package->getFullPrettyVersion().'</comment>) as installed, alias of <info>'.$this->package->getAliasOf()->getPrettyName().'</info> (<comment>'.$this->package->getAliasOf()->getFullPrettyVersion().'</comment>)';
+        return 'Marking '.$this->package->getPrettyName().' ('.$this->formatVersion($this->package).') as installed, alias of '.$this->package->getAliasOf()->getPrettyName().' ('.$this->formatVersion($this->package->getAliasOf()).')';
     }
 }

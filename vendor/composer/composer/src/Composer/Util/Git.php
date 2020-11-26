@@ -79,8 +79,7 @@ class Git
                     return;
                 }
                 $messages[] = '- ' . $protoUrl . "\n" . preg_replace('#^#m', '  ', $this->process->getErrorOutput());
-
-                if ($initialClone && isset($origCwd)) {
+                if ($initialClone) {
                     $this->filesystem->removeDirectory($origCwd);
                 }
             }
@@ -239,7 +238,7 @@ class Git
                 }
             }
 
-            if ($initialClone && isset($origCwd)) {
+            if ($initialClone) {
                 $this->filesystem->removeDirectory($origCwd);
             }
 
@@ -249,12 +248,6 @@ class Git
 
     public function syncMirror($url, $dir)
     {
-        if (getenv('COMPOSER_DISABLE_NETWORK') && getenv('COMPOSER_DISABLE_NETWORK') !== 'prime') {
-            $this->io->writeError('<warning>Aborting git mirror sync of '.$url.' as network is disabled</warning>');
-
-            return false;
-        }
-
         // update the repo if it is a valid git repository
         if (is_dir($dir) && 0 === $this->process->execute('git rev-parse --git-dir', $output, $dir) && trim($output) === '.') {
             try {
@@ -287,12 +280,12 @@ class Git
 
     public function fetchRefOrSyncMirror($url, $dir, $ref)
     {
-        if ($this->checkRefIsInMirror($dir, $ref)) {
+        if ($this->checkRefIsInMirror($url, $dir, $ref)) {
             return true;
         }
 
         if ($this->syncMirror($url, $dir)) {
-            return $this->checkRefIsInMirror($dir, $ref);
+            return $this->checkRefIsInMirror($url, $dir, $ref);
         }
 
         return false;
@@ -308,7 +301,7 @@ class Git
         return '';
     }
 
-    private function checkRefIsInMirror($dir, $ref)
+    private function checkRefIsInMirror($url, $dir, $ref)
     {
         if (is_dir($dir) && 0 === $this->process->execute('git rev-parse --git-dir', $output, $dir) && trim($output) === '.') {
             $escapedRef = ProcessExecutor::escape($ref.'^{commit}');
@@ -387,16 +380,27 @@ class Git
         return '(' . implode('|', array_map('preg_quote', $config->get('gitlab-domains'))) . ')';
     }
 
+    public static function sanitizeUrl($message)
+    {
+        return preg_replace_callback('{://(?P<user>[^@]+?):(?P<password>.+?)@}', function ($m) {
+            if (preg_match('{^[a-f0-9]{12,}$}', $m[1])) {
+                return '://***:***@';
+            }
+
+            return '://' . $m[1] . ':***@';
+        }, $message);
+    }
+
     private function throwException($message, $url)
     {
         // git might delete a directory when it fails and php will not know
         clearstatcache();
 
         if (0 !== $this->process->execute('git --version', $ignoredOutput)) {
-            throw new \RuntimeException(Url::sanitize('Failed to clone ' . $url . ', git was not found, check that it is installed and in your PATH env.' . "\n\n" . $this->process->getErrorOutput()));
+            throw new \RuntimeException(self::sanitizeUrl('Failed to clone ' . $url . ', git was not found, check that it is installed and in your PATH env.' . "\n\n" . $this->process->getErrorOutput()));
         }
 
-        throw new \RuntimeException(Url::sanitize($message));
+        throw new \RuntimeException(self::sanitizeUrl($message));
     }
 
     /**
@@ -404,7 +408,7 @@ class Git
      *
      * @return string|null The git version number.
      */
-    public static function getVersion(ProcessExecutor $process)
+    public static function getVersion(ProcessExecutor $process = null)
     {
         if (false === self::$version) {
             self::$version = null;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 2.9.0
 
 * JsonResponseHandler includes the exception code
@@ -15,6 +16,8 @@
 * PrettyPageHandler now accepts custom js files
 * PrettyPageHandler templateHelper is now accessible through inheritance
 
+=======
+>>>>>>> parent of 763fe62... coisas
 # 2.7.1
 
 * Fix a PHP warning in some cases with anonymous classes.

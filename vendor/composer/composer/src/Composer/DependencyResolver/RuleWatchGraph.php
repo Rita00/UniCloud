@@ -44,24 +44,13 @@ class RuleWatchGraph
             return;
         }
 
-        if (!$node->getRule() instanceof MultiConflictRule) {
-            foreach (array($node->watch1, $node->watch2) as $literal) {
-                if (!isset($this->watchChains[$literal])) {
-                    $this->watchChains[$literal] = new RuleWatchChain;
-                }
-
-                $this->watchChains[$literal]->unshift($node);
+        foreach (array($node->watch1, $node->watch2) as $literal) {
+            if (!isset($this->watchChains[$literal])) {
+                $this->watchChains[$literal] = new RuleWatchChain;
             }
-        } else {
-            foreach ($node->getRule()->getLiterals() as $literal) {
-                if (!isset($this->watchChains[$literal])) {
-                    $this->watchChains[$literal] = new RuleWatchChain;
-                }
 
-                $this->watchChains[$literal]->unshift($node);
-            }
+            $this->watchChains[$literal]->unshift($node);
         }
-
     }
 
     /**
@@ -103,40 +92,28 @@ class RuleWatchGraph
         $chain->rewind();
         while ($chain->valid()) {
             $node = $chain->current();
-            if (!$node->getRule() instanceof MultiConflictRule) {
-                $otherWatch = $node->getOtherWatch($literal);
+            $otherWatch = $node->getOtherWatch($literal);
 
-                if (!$node->getRule()->isDisabled() && !$decisions->satisfy($otherWatch)) {
-                    $ruleLiterals = $node->getRule()->getLiterals();
+            if (!$node->getRule()->isDisabled() && !$decisions->satisfy($otherWatch)) {
+                $ruleLiterals = $node->getRule()->getLiterals();
 
-                    $alternativeLiterals = array_filter($ruleLiterals, function ($ruleLiteral) use ($literal, $otherWatch, $decisions) {
-                        return $literal !== $ruleLiteral &&
-                            $otherWatch !== $ruleLiteral &&
-                            !$decisions->conflict($ruleLiteral);
-                    });
+                $alternativeLiterals = array_filter($ruleLiterals, function ($ruleLiteral) use ($literal, $otherWatch, $decisions) {
+                    return $literal !== $ruleLiteral &&
+                        $otherWatch !== $ruleLiteral &&
+                        !$decisions->conflict($ruleLiteral);
+                });
 
-                    if ($alternativeLiterals) {
-                        reset($alternativeLiterals);
-                        $this->moveWatch($literal, current($alternativeLiterals), $node);
-                        continue;
-                    }
-
-                    if ($decisions->conflict($otherWatch)) {
-                        return $node->getRule();
-                    }
-
-                    $decisions->decide($otherWatch, $level, $node->getRule());
+                if ($alternativeLiterals) {
+                    reset($alternativeLiterals);
+                    $this->moveWatch($literal, current($alternativeLiterals), $node);
+                    continue;
                 }
-            } else {
-                foreach ($node->getRule()->getLiterals() as $otherLiteral) {
-                    if ($literal !== $otherLiteral && !$decisions->satisfy($otherLiteral)) {
-                        if ($decisions->conflict($otherLiteral)) {
-                            return $node->getRule();
-                        }
 
-                        $decisions->decide($otherLiteral, $level, $node->getRule());
-                    }
+                if ($decisions->conflict($otherWatch)) {
+                    return $node->getRule();
                 }
+
+                $decisions->decide($otherWatch, $level, $node->getRule());
             }
 
             $chain->next();

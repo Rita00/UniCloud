@@ -19,9 +19,8 @@ use Composer\Factory;
 use Composer\IO\IOInterface;
 use Composer\Json\JsonFile;
 use Composer\Util\ProcessExecutor;
-use Composer\Util\HttpDownloader;
+use Composer\Util\RemoteFilesystem;
 use Composer\Util\Filesystem;
-use Composer\Util\Http\Response;
 
 /**
  * A driver implementation for driver with authentication interaction.
@@ -42,8 +41,8 @@ abstract class VcsDriver implements VcsDriverInterface
     protected $config;
     /** @var ProcessExecutor */
     protected $process;
-    /** @var HttpDownloader */
-    protected $httpDownloader;
+    /** @var RemoteFilesystem */
+    protected $remoteFilesystem;
     /** @var array */
     protected $infoCache = array();
     /** @var Cache */
@@ -55,10 +54,10 @@ abstract class VcsDriver implements VcsDriverInterface
      * @param array            $repoConfig       The repository configuration
      * @param IOInterface      $io               The IO instance
      * @param Config           $config           The composer configuration
-     * @param HttpDownloader   $httpDownloader   Remote Filesystem, injectable for mocking
      * @param ProcessExecutor  $process          Process instance, injectable for mocking
+     * @param RemoteFilesystem $remoteFilesystem Remote Filesystem, injectable for mocking
      */
-    final public function __construct(array $repoConfig, IOInterface $io, Config $config, HttpDownloader $httpDownloader, ProcessExecutor $process)
+    final public function __construct(array $repoConfig, IOInterface $io, Config $config, ProcessExecutor $process = null, RemoteFilesystem $remoteFilesystem = null)
     {
         if (Filesystem::isLocalPath($repoConfig['url'])) {
             $repoConfig['url'] = Filesystem::getPlatformPath($repoConfig['url']);
@@ -69,8 +68,8 @@ abstract class VcsDriver implements VcsDriverInterface
         $this->repoConfig = $repoConfig;
         $this->io = $io;
         $this->config = $config;
-        $this->httpDownloader = $httpDownloader;
-        $this->process = $process;
+        $this->process = $process ?: new ProcessExecutor($io);
+        $this->remoteFilesystem = $remoteFilesystem ?: Factory::createRemoteFilesystem($this->io, $config);
     }
 
     /**
@@ -81,7 +80,7 @@ abstract class VcsDriver implements VcsDriverInterface
      */
     protected function shouldCache($identifier)
     {
-        return $this->cache && preg_match('{^[a-f0-9]{40}$}iD', $identifier);
+        return $this->cache && preg_match('{[a-f0-9]{40}}i', $identifier);
     }
 
     /**
@@ -157,13 +156,13 @@ abstract class VcsDriver implements VcsDriverInterface
      *
      * @param string $url The URL of content
      *
-     * @return Response
+     * @return mixed The result
      */
     protected function getContents($url)
     {
         $options = isset($this->repoConfig['options']) ? $this->repoConfig['options'] : array();
 
-        return $this->httpDownloader->get($url, $options);
+        return $this->remoteFilesystem->getContents($this->originUrl, $url, false, $options);
     }
 
     /**

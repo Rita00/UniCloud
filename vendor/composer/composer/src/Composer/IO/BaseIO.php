@@ -14,9 +14,10 @@ namespace Composer\IO;
 
 use Composer\Config;
 use Composer\Util\ProcessExecutor;
+use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
-abstract class BaseIO implements IOInterface
+abstract class BaseIO implements IOInterface, LoggerInterface
 {
     protected $authentications = array();
 
@@ -135,9 +136,7 @@ abstract class BaseIO implements IOInterface
         }
 
         foreach ($gitlabToken as $domain => $token) {
-            $username = is_array($token) && array_key_exists("username", $token) ? $token["username"] : $token;
-            $password = is_array($token) && array_key_exists("token", $token) ? $token["token"] : 'private-token';
-            $this->checkAndSetAuthentication($domain, $username, $password);
+            $this->checkAndSetAuthentication($domain, $token, 'private-token');
         }
 
         // reload http basic credentials from config if available
@@ -271,9 +270,9 @@ abstract class BaseIO implements IOInterface
     public function log($level, $message, array $context = array())
     {
         if (in_array($level, array(LogLevel::EMERGENCY, LogLevel::ALERT, LogLevel::CRITICAL, LogLevel::ERROR))) {
-            $this->writeError('<error>'.$message.'</error>');
+            $this->writeError('<error>'.$message.'</error>', true, self::NORMAL);
         } elseif ($level === LogLevel::WARNING) {
-            $this->writeError('<warning>'.$message.'</warning>');
+            $this->writeError('<warning>'.$message.'</warning>', true, self::NORMAL);
         } elseif ($level === LogLevel::NOTICE) {
             $this->writeError('<info>'.$message.'</info>', true, self::VERBOSE);
         } elseif ($level === LogLevel::INFO) {

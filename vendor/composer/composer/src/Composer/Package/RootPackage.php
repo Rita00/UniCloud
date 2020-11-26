@@ -19,8 +19,6 @@ namespace Composer\Package;
  */
 class RootPackage extends CompletePackage implements RootPackageInterface
 {
-    const DEFAULT_PRETTY_VERSION = '1.0.0+no-version-set';
-
     protected $minimumStability = 'stable';
     protected $preferStable = false;
     protected $stabilityFlags = array();

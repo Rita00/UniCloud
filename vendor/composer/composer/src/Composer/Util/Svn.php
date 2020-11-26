@@ -139,7 +139,7 @@ class Svn
             if ($type !== 'out') {
                 return;
             }
-            if (strpos($buffer, 'Redirecting to URL ') === 0) {
+            if ('Redirecting to URL ' === substr($buffer, 0, 19)) {
                 return;
             }
             $output .= $buffer;
@@ -207,7 +207,7 @@ class Svn
         $this->credentials['username'] = $this->io->ask("Username: ");
         $this->credentials['password'] = $this->io->askAndHideAnswer("Password: ");
 
-        $this->cacheCredentials = $this->io->askConfirmation("Should Subversion cache these credentials? (yes/no) ");
+        $this->cacheCredentials = $this->io->askConfirmation("Should Subversion cache these credentials? (yes/no) ", true);
 
         return $this;
     }
@@ -304,7 +304,7 @@ class Svn
             $this->createAuthFromUrl();
         }
 
-        return (bool) $this->hasAuth;
+        return $this->hasAuth;
     }
 
     /**
