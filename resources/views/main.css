@@ -1,8 +1,4 @@
-* {
-  overflow-x: hidden;
-  padding: 0px !important;
-  margin: 0px !important;
-}
+
 
 body{
   width: 100%;
@@ -63,7 +59,7 @@ body{
   position: relative;
   left: 2%;
   top: 1%;
-  
+
 }
 
 /*
@@ -107,7 +103,7 @@ body{
 .option{
   left: 50%;
   position:relative;
-  
+
 }
 
 .op1 {
@@ -137,7 +133,7 @@ body{
   left: 0px;
   border: 2px solid rgba(0,0,0,1);
 }
-  
+
 .main{
   width: 100%;
   height: 75%;
@@ -145,12 +141,12 @@ body{
 }
 
 .barraT1 {
-  border-top: 3px solid black;  
+  border-top: 3px solid black;
   width: 80%;
   position: relative;
-  left: 10%; 
+  left: 10%;
 }
-  
+
 .imgLand {
   width: 593px;
   height: 430px;
@@ -164,7 +160,7 @@ body{
   left: 417px;
   overflow: hidden;
 }
-  
+
 .bolaLand {
   width: 133px;
   height: 133px;
@@ -174,9 +170,9 @@ body{
   left: 21%;
   top: 18%;
   border-radius: 50%;
-  
+
 }
-      
+
 .tLogIn {
   overflow: hidden;
   top: 25%;
@@ -214,7 +210,7 @@ body{
   op: 230px;
   left: 10%;
   top: 4%;
-  
+
 }
 
 .tSignIn {
@@ -276,7 +272,7 @@ body{
   top: 12%;
   left: 14.5%;
   border: 2px solid rgba(0,0,0,1);
-  
+
 }
 
 .bPass {
@@ -289,7 +285,7 @@ body{
   left: 16%;
   top: 14%;
   border: 2px solid rgba(0,0,0,1);
-  
+
 }
 
 .tEmail {
@@ -358,12 +354,12 @@ body{
 
 
 .barraD {
-  border-top: 3px solid black;  
+  border-top: 3px solid black;
   width: 80%;
   position: relative;
   left: 10%;
   top: 1%;
-  
+
 }
 .footer{
   width: 100%;
