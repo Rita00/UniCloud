@@ -14,50 +14,51 @@
        @include('partials.header')
 
     <!--------------------------------------Main-->
-        <div class="main">
-            <div class="imgLand"></div>
-	        <div class="bolaLand"></div>
-            <div class="tBemVindo">Bem vindo à UniCloud!</div>
+        <div class="welcome">
+            <div class="bolaLand">Bem Vindo</div>
+            <table>
+                <tr>
+                    <td>
+                        <form class="buttons" method="post" enctype="multipart/form-data" id="mainForm">
+                            <input class="btn_SignIn" type="submit" id="signin" value="SignIn"><br>
+                            <input class="btn_LogIn" type="submit" id="login" value="LogIn"><br>
+                            <input class="btn_course" type="submit" id="course" value="Cursos">
+                        </form>
+                        <!---
+                        <div class="textos">
+                        <span class="tQue">+ O que é a UniCloud</span><br>
+                        <span class="tPorque">+ Porquê a UniCloud</span><br>
+                        <span class="tGuia">+ Guia UniCloud</span><br>
+                        </div>
+                        --->
+                    </td>
+                    <td class="bar">
+                        <div class="verticalBar"></div>
+                    </td>
+                    <td class="news">
 
-            <div class="bSignIn">
-            <div class="tSignIn">Sign In</div>
+                        <div>Novidades:</div>
+                        <div>-Pagina de Upload</div>
+                        <div>-Pagina de Login/SignIn</div>
+                        <div>-Pagina Principal</div>
+
+                    </td>
+                </tr>
+
+            </table>
+
+
+
+
+
         </div>
-
-
-      <div class="bLogIn">
-        <div class="tLogIn">Log In</div>
-      </div>
-
-      <div class="bEmail"></div>
-      <div class="bPass"></div>
-      <div class="tEmail">Email</div>
-      <div class="tPass">Password</div>
-
-      <div class="bCursos">
-        <div class="tCursos">Cursos</div>
-      </div>
-      <div class="textos">
-          <span class="tQue">+ O que é a UniCloud</span><br>
-          <span class="tPorque">+ Porquê a UniCloud</span><br>
-          <span class="tGuia">+ Guia UniCloud</span><br>
-
-      </div>
-
-
-		  <div class="barraVert"></div>
-      <div class="tNovidades">Novidades:</div>
-
-		  </div>
 
       <!--------------------------------------Footer-->
       <div class="footer">
         <div class="barraD"></div>
       </div>
-
     </div>
-
 </body>
-
 </html>
 
 
