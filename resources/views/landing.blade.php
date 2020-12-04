@@ -1,32 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-	<link href="./main.css" rel="stylesheet" />
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>UniCloud</title>
   	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-
+    @include('partials.mainCSS')
 </head>
 
 <body>
-
 	<div class="fundo">
-
     <!--------------------------------------Navigation-->
-        <div class="navbar">
-            <div class="logo"></div>
-            <div class="Home">Home</div>
-            <div class="searchBar"></div>
-            <div class="procurarT">Procurar</div>
-            <div class="lupa"></div>
-            <div class="lupa2"></div>
-        </div>
+       @include('partials.header')
 
     <!--------------------------------------Main-->
         <div class="main">
-            <div class="barraT1"></div>
             <div class="imgLand"></div>
 	        <div class="bolaLand"></div>
             <div class="tBemVindo">Bem vindo à UniCloud!</div>

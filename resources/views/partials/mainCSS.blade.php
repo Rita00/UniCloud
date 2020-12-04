@@ -17,88 +17,6 @@
         overflow: hidden;
     }
 
-    .navbar{
-        width: 100%;
-        height: 15%;
-        overflow: hidden;
-    }
-
-    .logo {
-        width: 20%;
-        height: 50%;
-        background: url("https://scontent-lis1-1.xx.fbcdn.net/v/t1.15752-9/126030799_2477808079010387_3065445384996410535_n.jpg?_nc_cat=111&ccb=2&_nc_sid=ae9488&_nc_ohc=rsMewyTft84AX8tpd49&_nc_ht=scontent-lis1-1.xx&oh=69b10677cb7da2d9d322550fe0da9a5d&oe=5FE00BC5");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        opacity: 1;
-        position: relative;
-        left: 10%;
-        top: 40%;
-    }
-
-    .Home {
-        width: 10%;
-        color: rgba(0,0,0,1);
-        position: relative;
-        font-family: Poppins;
-        font-weight: Regular;
-        font-size: 20px;
-        opacity: 1;
-        text-align: center;
-        left: 40%;
-        top: 1%;
-    }
-
-
-    /*desapareceu*/
-    .lupa {
-        width: 5%;
-        height: 50%;
-        background: rgba(255,255,255,1);
-        opacity: 1;
-        position: relative;
-        left: 2%;
-        top: 1%;
-
-    }
-
-    /*
-    .lupa2 {
-      width: 17px;
-      height: 17px;
-      background: rgba(0,0,0,1);
-      opacity: 1;
-      position: absolute;
-      top: 5px;
-      left: 3px;
-    }
-    */
-
-    .procurarT {
-        width:10%;
-        color: rgba(0,0,0,1);
-        position: absolute;
-        font-family: Poppins;
-        font-weight: Regular;
-        font-size: 20px;
-        opacity: 1;
-        text-align: center;
-        left: 48%;
-        top: 7.75%;
-    }
-
-    .searchBar {
-        width: 15%;
-        height: 30%;
-        background: rgba(255,255,255,1);
-        opacity: 1;
-        position: relative;
-        border: 2px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-        text-align: center;
-        left: 58%;
-        top: -30%;
-    }
 
     .option{
         left: 50%;
@@ -138,13 +56,6 @@
         width: 100%;
         height: 75%;
         overflow: hidden;
-    }
-
-    .barraT1 {
-        border-top: 3px solid black;
-        width: 80%;
-        position: relative;
-        left: 10%;
     }
 
     .imgLand {

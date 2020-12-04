@@ -34,16 +34,8 @@
 </head>
 <body onload="changeType()">
 <div class="fundo">
-    <div class="navbar">
-        <div class="logo"></div>
-        <div class="Home">Home</div>
-        <div class="searchBar"></div>
-        <div class="procurarT">Procurar</div>
-        <div class="lupa"></div>
-        <div class="lupa2"></div>
-    </div>
+    @include('partials.header')
     <div class="main">
-        <div class="barraT1"></div>
         <div class="bolaLand"></div>
         <label class="label_title">Upload</label>
         <form class="form" method="post" enctype="multipart/form-data" id="uploadForm">
