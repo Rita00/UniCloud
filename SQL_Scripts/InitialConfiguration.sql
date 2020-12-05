@@ -10,6 +10,20 @@ create table users
     primary key (email)
 );
 
+CREATE TABLE cursos (
+    nome	 VARCHAR(256),
+    faculdade VARCHAR(256),
+    PRIMARY KEY(nome,faculdade)
+);
+
+create table activity
+(
+    ip varchar (256) not null,
+    value       varchar(256) not null,
+    user_id          varchar(256),
+    date datetime not null
+);
+
 create table files
 (
     id           int auto_increment,

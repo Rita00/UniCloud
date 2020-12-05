@@ -19,8 +19,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function register(Request $request)
-    {
+    public function register(Request $request) {
+        $this->collectActivity($request);
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required|email',
@@ -44,8 +44,8 @@ class Controller extends BaseController
         return redirect("/");
     }
 
-    public function login(Request $request)
-    {
+    public function login(Request $request) {
+        $this->collectActivity($request);
         $credentials = [
             'email' => $request['email'],
             'password' => $request['password'],
@@ -65,8 +65,9 @@ class Controller extends BaseController
         return redirect()->to('/');
     }
 
-    public function welcome()
+    public function welcome(Request $request)
     {
+        $this->collectActivity($request);
         return view("welcome");
     }
 
@@ -74,7 +75,7 @@ class Controller extends BaseController
     {
         $ref = bcrypt($request['email']);
         DB::update("update users set verify_token = ? where email = ?", array($ref, $request['email']));
-        $ref = env('APP_URL'. 'unicloud.devo') . "/check?ref=" . $ref;
+        $ref = env('APP_URL' . 'unicloud.devo') . "/check?ref=" . $ref;
         Mail::send('mail.verify', array('link' => $ref), function ($message) use ($request) {
             $message->to($request['email'], $request['name'])->subject("Welcome to UniCloud");
         });
@@ -89,7 +90,7 @@ class Controller extends BaseController
     public function verifyMail(Request $request)
     {
         $users = User::all();
-        foreach ($users as $user){
+        foreach ($users as $user) {
             echo json_encode($user->hasVerifiedEmail());
         }
 //        $results = DB::select("select * from users where verify_token = ?", array($request['ref']));
@@ -97,5 +98,39 @@ class Controller extends BaseController
 //            DB::update("update users set email_verified_at = NOW(), verify_token = null where verify_token = ?", array($request['ref']));
 //        }
 //        return redirect("/"); // todo with message?
+    }
+
+    public function collectActivity(Request $request) {
+        $value = url()->current();
+        $value = strstr($value, 'unicloud.devo', false);
+        $value = strstr($value, '/', false);
+        if ($value == false)
+            $value = "Landing";
+        else $value = substr($value, 1);
+        if (auth()->check()){
+            $logged_user = auth()->user();
+            $mail = $logged_user['email'];
+            DB::insert('insert into activity(ip, value, date, user_id) value (?, ?, ?, ?)', [$request->ip(), $value, NOW(), $mail]);
+
+        }else{
+            DB::insert('insert into activity(ip, value, date) value (?, ?, ?)', [$request->ip(), $value, NOW()]);
+        }
+    }
+
+    public function uploadView(Request $request) {
+        $this->collectActivity($request);
+        return view('upload');
+    }
+
+    public function loginView(Request $request){
+        $this->collectActivity($request);
+        if (auth()->check()) return redirect('/');
+        return view("login");
+    }
+
+    public function registerView(Request $request){
+        $this->collectActivity($request);
+        if (auth()->check()) return redirect('/');
+        return view("register");
     }
 }

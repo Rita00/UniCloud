@@ -18,17 +18,11 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', 'Controller@welcome');
 
-Route::get('register', function (){
-    if (auth()->check()) return redirect('/');
-    return view("register");
-});
+Route::get('register', 'Controller@registerView');
 
 Route::post('register', 'Controller@register');
 
-Route::get('login', function (){
-    if (auth()->check()) return redirect('/');
-    return view("login");
-})->name('login');
+Route::get('login', 'Controller@loginView')->name('login');
 
 Route::post('login', 'Controller@login');
 
@@ -51,4 +45,4 @@ Route::view('home','home');
 
 //Routes para upload
 Route::post('upload', 'UploadController@store');
-Route::view('upload','upload');
+Route::get('upload', "Controller@uploadView");
