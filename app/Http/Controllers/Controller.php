@@ -110,10 +110,10 @@ class Controller extends BaseController
         if (auth()->check()){
             $logged_user = auth()->user();
             $mail = $logged_user['email'];
-            DB::insert('insert into activity(ip, value, date, user_id) value (?, ?, ?, ?)', [$request->ip(), $value, NOW(), $mail]);
+            DB::insert('insert into activity(ip, value, date, user_id) values (?, ?, ?, ?)', [$request->ip(), $value, NOW(), $mail]);
 
         }else{
-            DB::insert('insert into activity(ip, value, date) value (?, ?, ?)', [$request->ip(), $value, NOW()]);
+            DB::insert('insert into activity(ip, value, date) values (?, ?, ?)', [$request->ip(), $value, NOW()]);
         }
     }
 
@@ -132,5 +132,28 @@ class Controller extends BaseController
         $this->collectActivity($request);
         if (auth()->check()) return redirect('/');
         return view("register");
+    }
+
+    public function coursesView(Request $request) {
+        $this->collectActivity($request);
+        //ir buscar à base de dados
+        $coursesStr = '';
+        $courses = DB::select('select nome from cursos');
+
+        $coursesSigla = [];
+        foreach ($courses as $course) {
+            $coursesStr = '';
+            for ($j = 0; $j < strlen($course->nome); $j++) {
+                if (ctype_upper($course->nome[$j])) {
+                    $coursesStr .= $course->nome[$j];
+                }
+            }
+            array_push($coursesSigla, $coursesStr);
+        }
+        //echo json_encode($coursesSigla);
+        $args_view = array(
+            "triosSiglas" => array_chunk($coursesSigla, 3)
+        );
+        return view('pgi_cursos', $args_view);
     }
 }

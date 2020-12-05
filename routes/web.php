@@ -46,3 +46,5 @@ Route::view('home','home');
 //Routes para upload
 Route::post('upload', 'UploadController@store');
 Route::get('upload', "Controller@uploadView");
+
+Route::get('courses', 'Controller@coursesView');
