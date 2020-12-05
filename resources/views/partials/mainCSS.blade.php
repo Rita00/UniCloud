@@ -35,6 +35,19 @@
     }
     table,tr,td{
         height: 100%;
+        width: 100%;
+    }
+    .tableButtons{
+        overflow: hidden;
+        color: rgba(0,0,0,1);
+        position: relative;
+        top: 25%;
+        font-family: Poppins, serif;
+        font-weight: Normal;
+        font-size: 20px;
+        opacity: 1;
+        text-align: center;
+        width:60%;
     }
     input{
         overflow: hidden;
@@ -51,17 +64,6 @@
         background: rgba(255,255,255,1);
         border: 2px solid rgba(0,0,0,1);
 
-    }
-    form{
-        overflow: hidden;
-        color: rgba(0,0,0,1);
-        position: relative;
-        top: 25%;
-        font-family: Poppins, serif;
-        font-weight: Normal;
-        font-size: 20px;
-        opacity: 1;
-        text-align: center;
     }
     .buttons{
         position: relative;
@@ -142,7 +144,7 @@
 
     }
     .bar{
-        width:30%;
+        width:15%;
     }
     .verticalBar {
         border-left: 3px solid black;
@@ -152,7 +154,7 @@
     }
 
     .news {
-        width:40%;
+        width:100%;
         left:3%;
         color: rgba(0,0,0,1);
         position: relative;

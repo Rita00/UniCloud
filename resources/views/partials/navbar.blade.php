@@ -28,7 +28,7 @@
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/">News</a></li>
-    <li><a href="/landing">Landing</a></li>
+    <li><a href="/home">Landing</a></li>
     <li><a href="/upload">Upload</a></li>
     @if (auth()->check())
         <li><a href="/profile">{{\Illuminate\Support\Facades\Auth::user()['name']}}</a></li>

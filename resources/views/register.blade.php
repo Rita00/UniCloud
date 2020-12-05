@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UniCloud</title>
-    </head>
-    <body>
-        <form method="post">
-            <label>name
-                <input type="text" name="name">
-            </label> <br>
-            <label>email
-                <input type="text" name="email">
-            </label> <br>
-            <label>password
-                <input type="password" name="password">
-            </label> <br>
-            <label>password confirmation
-                <input type="password" name="password_confirmation">
-            </label> <br>
-            <input type="submit" value="Sign Up">
+<head>
+    <title>UniCloud | Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    @include('partials.loginCSS')
+</head>
+<body>
+<div class="fundo">
+    @include('partials.header')
+    <div class="main">
+        <div class="bolaLand"></div>
+        <label class="label_title">SignIn</label>
+        <form class="form" method="post">
+            <table class="table">
+                <tr class="tableRow">
+                    <td class="tableCol">
+                    </td>
+                    <td class="tableCol">
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol">
+                        <label class="label_email">Nome</label>
+                    </td>
+                    <td class="tableCol">
+                        <input class="input_email" type="text" name="name">
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol">
+                        <label class="label_email">Email</label>
+                    </td>
+                    <td class="tableCol">
+                        <input class="input_email" type="text" name="email">
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol">
+                        <label class="label_password">Password</label>
+                    </td>
+                    <td class="tableCol">
+                        <input class="input_password" type="password" name="password">
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol">
+                        <label class="label_password">Confirmação da password</label>
+                    </td>
+                    <td class="tableCol">
+                        <input class="input_password" type="password" name="password_confirmation">
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol"></td>
+                    <td class="tableCol"></td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol"></td>
+                    <td class="tableCol"></td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol">
+                        <a href="/login">Already signed up?</a>
+                    </td>
+                    <td class="tableCol">
+
+                    </td>
+                </tr>
+            </table>
+            <input class="btn_login" type="submit" value="Sign In">
         </form>
-        <a href="/login">Already signed up?</a>
         @include('partials.formerrors')
-    </body>
+    </div>
+</div>
+</body>
 </html>

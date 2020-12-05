@@ -13,16 +13,21 @@
         opacity: 1;
         text-align: center;
     }
-    table,tr{
+    .headerTable{
         height: 90%;
         width:100%;
     }
-    td{
-        width:50%
+    .headerTableRow{
+        height: 100%;
+        width:100%;
+    }
+    .headerTableCol{
+        width: 85%;
+        height: 100%;
     }
 
     .logo {
-        width: 50%;
+        width: 30%;
         height: 100%;
         background: url("https://scontent-lis1-1.xx.fbcdn.net/v/t1.15752-9/126030799_2477808079010387_3065445384996410535_n.jpg?_nc_cat=111&ccb=2&_nc_sid=ae9488&_nc_ohc=rsMewyTft84AX8tpd49&_nc_ht=scontent-lis1-1.xx&oh=69b10677cb7da2d9d322550fe0da9a5d&oe=5FE00BC5");
         background-repeat: no-repeat;
@@ -31,28 +36,34 @@
         top: 20%;
     }
 
-    .Home {
+    .home {
+        vertical-align: center;
+        display: block;
+        color:black;
         text-align: right;
+        text-decoration: none;
     }
-
-    .barraT1 {
+    .home:hover {
+        color: gold;
+    }
+    .horizontalBar {
         position: relative;
         border-top: 3px solid black;
 
     }
 </style>
 <div class="navbar">
-    <table>
-        <tr>
-            <td>
+    <table class="headerTable">
+        <tr class="headerTableRow">
+            <td class="headerTableCol">
                 <div class="logo"></div>
             </td>
-            <td>
-                <div class="Home">Menu Principal</div>
+            <td class="headerTableCol">
+                <a class="home" href="/home">Menu Principal</a>
             </td>
         </tr>
     </table>
-    <div class="barraT1"></div>
+    <div class="horizontalBar"></div>
 </div>
 
 

@@ -47,8 +47,7 @@ Route::get('profile', function (){
 })->middleware("auth");
 
 //Routes para upload
-Route::post('landing', 'UploadController@store');
-Route::view('landing','landing');
+Route::view('home','home');
 
 //Routes para upload
 Route::post('upload', 'UploadController@store');

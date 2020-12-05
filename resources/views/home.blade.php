@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>UniCloud</title>
+  	<title>UniCloud | Home</title>
   	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     @include('partials.mainCSS')
 </head>
@@ -18,11 +18,11 @@
             <div class="bolaLand">Bem Vindo</div>
             <table>
                 <tr>
-                    <td>
-                        <form class="buttons" method="post" enctype="multipart/form-data" id="mainForm">
-                            <input class="btn_SignIn" type="submit" id="signin" value="SignIn"><br>
-                            <input class="btn_LogIn" type="submit" id="login" value="LogIn"><br>
-                            <input class="btn_course" type="submit" id="course" value="Cursos">
+                    <td class="tableButtons">
+                        <form class="buttons" method="get" enctype="multipart/form-data" id="mainForm">
+                            <input class="btn_SignIn" type="submit" id="signin" value="SignIn" formaction="/register"><br>
+                            <input class="btn_LogIn" type="submit" id="login" value="LogIn" formaction="/login"><br>
+                            <input class="btn_course" type="submit" id="course" value="Cursos" formaction="/courses">
                         </form>
                         <!---
                         <div class="textos">
