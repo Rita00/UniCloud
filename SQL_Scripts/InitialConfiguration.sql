@@ -43,3 +43,11 @@ create table files
 
 alter table files
     add primary key (id);
+
+
+insert into cursos(nome, faculdade) values('Licenciatura em Engenharia Informatica', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade) values('Licenciatura em Biologia', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade) values('Licenciatura em Design e Multimedia', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade) values('Licenciatura em Engenharia e Ciencia de Dados', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade) values('Licenciatura em Quimica', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade) values('Licenciatura em Bioguimica', 'Ciencias e tecnologias');
