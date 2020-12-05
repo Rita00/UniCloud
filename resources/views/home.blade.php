@@ -15,7 +15,7 @@
 
     <!--------------------------------------Main-->
         <div class="welcome">
-            <div class="bolaLand">Bem Vindo</div>
+            <div class="yellowCircle">Bem Vindo</div>
             <table>
                 <tr>
                     <td class="tableButtons">

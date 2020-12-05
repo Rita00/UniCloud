@@ -105,7 +105,7 @@ class Controller extends BaseController
         $value = strstr($value, 'unicloud.devo', false);
         $value = strstr($value, '/', false);
         if ($value == false)
-            $value = "Landing";
+            $value = "Home";
         else $value = substr($value, 1);
         if (auth()->check()){
             $logged_user = auth()->user();
@@ -154,6 +154,6 @@ class Controller extends BaseController
         $args_view = array(
             "triosSiglas" => array_chunk($coursesSigla, 3)
         );
-        return view('pgi_cursos', $args_view);
+        return view('courses', $args_view);
     }
 }

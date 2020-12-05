@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UniCloud | Courses</title>
+    <meta charset="UTF-8">
+    @include('partials.coursesCSS')
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<div class="background">
+    @include('partials.header')
+    <div class="main">
+        <div class="yellowCircle"></div>
+        <label class="label_title">Cursos</label>
+        <div class="row"></div>
+        @foreach($triosSiglas as $siglas)
+            <div class="row">
+                @foreach($siglas as $sigla)
+                    <form class="form" action="/disciplinas?course={{$sigla}}" method="get">
+                        <button class="button" type="Submit"><span>{{$sigla}}</span></button>
+                    </form>
+                @endforeach
+            </div>
+        @endforeach
+    </div>
+
+</div>
+
+
+</body>
+</html>
