@@ -22,7 +22,7 @@
                         <form class="buttons" method="get" enctype="multipart/form-data" id="mainForm">
                             <input class="btn_SignIn" type="submit" id="signin" value="SignIn" formaction="/register"><br>
                             <input class="btn_LogIn" type="submit" id="login" value="LogIn" formaction="/login"><br>
-                            <input class="btn_course" type="submit" id="course" value="Cursos" formaction="/courses">
+                            <input class="btn_course" type="submit" id="course" value="Cursos" formaction="/degrees">
                         </form>
                         <!---
                         <div class="textos">

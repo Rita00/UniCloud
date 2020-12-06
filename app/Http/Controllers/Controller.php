@@ -134,26 +134,26 @@ class Controller extends BaseController
         return view("register");
     }
 
-    public function coursesView(Request $request) {
+    public function degreesView(Request $request) {
         $this->collectActivity($request);
         //ir buscar à base de dados
-        $coursesStr = '';
-        $courses = DB::select('select nome from cursos');
+        $degreesStr = '';
+        $degrees = DB::select('select nome from cursos');
 
-        $coursesSigla = [];
-        foreach ($courses as $course) {
-            $coursesStr = '';
-            for ($j = 0; $j < strlen($course->nome); $j++) {
-                if (ctype_upper($course->nome[$j])) {
-                    $coursesStr .= $course->nome[$j];
+        $degreesSigla = [];
+        foreach ($degrees as $degree) {
+            $degreesStr = '';
+            for ($j = 0; $j < strlen($degree->nome); $j++) {
+                if (ctype_upper($degree->nome[$j])) {
+                    $degreesStr .= $degree->nome[$j];
                 }
             }
-            array_push($coursesSigla, $coursesStr);
+            array_push($degreesSigla, $degreesStr);
         }
-        //echo json_encode($coursesSigla);
+        //echo json_encode($degreesSigla);
         $args_view = array(
-            "triosSiglas" => array_chunk($coursesSigla, 3)
+            "triosSiglas" => array_chunk($degreesSigla, 3)
         );
-        return view('courses', $args_view);
+        return view('degrees', $args_view);
     }
 }

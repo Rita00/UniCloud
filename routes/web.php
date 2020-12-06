@@ -40,11 +40,11 @@ Route::get('profile', function (){
     return view('profile');
 })->middleware("auth");
 
-//Routes para upload
+//Routes para homepage
 Route::view('home','home');
 
 //Routes para upload
 Route::post('upload', 'UploadController@store');
 Route::get('upload', "Controller@uploadView");
-
-Route::get('courses', 'Controller@coursesView');
+//Route para cadeiras
+Route::get('degrees', 'Controller@degreesView');
