@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UniCloud | Courses</title>
+    <title>UniCloud | Degrees</title>
     <meta charset="UTF-8">
     @include('partials.degreesCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
@@ -12,7 +12,7 @@
     @include('partials.header')
     <div class="main">
         <div class="yellowCircle"></div>
-        <label class="label_title">Cadeiras</label>
+        <label class="label_title">Cursos</label>
         <div class="row"></div>
         @foreach($triosSiglas as $siglas)
             <div class="row">
