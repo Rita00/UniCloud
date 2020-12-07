@@ -15,14 +15,14 @@
 
     <!--------------------------------------Main-->
         <div class="welcome">
-            <div class="yellowCircle">Bem Vindo</div>
+            <div class="yellowCircle">Bem Vindo à Unicloud!</div>
             <table>
                 <tr>
                     <td class="tableButtons">
                         <form class="buttons" method="get" enctype="multipart/form-data" id="mainForm">
-                            <input class="btn_SignIn" type="submit" id="signin" value="SignIn" formaction="/register"><br>
-                            <input class="btn_LogIn" type="submit" id="login" value="LogIn" formaction="/login"><br>
-                            <input class="btn_course" type="submit" id="course" value="Cursos" formaction="/degrees">
+                            <input class="btn_input" type="submit" id="signin" value="SignIn" formaction="/register"><br>
+                            <input class="btn_input" type="submit" id="login" value="LogIn" formaction="/login"><br><br><br>
+                            <input class="btn_input" type="submit" id="course" value="Cursos" formaction="/degrees">
                         </form>
                         <!---
                         <div class="textos">
