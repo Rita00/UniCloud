@@ -27,7 +27,7 @@
 
 <ul>
     <li><a href="/home">Home</a></li>
-    <li><a href="/">News</a></li>
+    <li><a href="/materialsList">list</a></li>
     <li><a href="/categories">Categoria</a></li>
     <li><a href="/upload">Upload</a></li>
     @if (auth()->check())
