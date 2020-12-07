@@ -74,6 +74,8 @@
         </form>
         @include('partials.formerrors')
     </div>
+    <!--------------------------------------Footer-->
+    @include('partials.footer')
 </div>
 </body>
 </html>

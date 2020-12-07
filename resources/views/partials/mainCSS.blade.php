@@ -12,7 +12,6 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .welcome{
@@ -33,7 +32,7 @@
         background-position: center center;
         background-size: contain;
     }
-    table,tr,td{
+    .table{
         height: 100%;
         width: 100%;
     }
@@ -41,7 +40,6 @@
         overflow: hidden;
         color: rgba(0,0,0,1);
         position: relative;
-        top: 25%;
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 20px;
@@ -51,9 +49,9 @@
     }
     .buttons{
         position: relative;
-        height: inherit;
         text-align: left;
         width:40%;
+        height:50%;
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 20px;
@@ -64,7 +62,7 @@
         overflow: hidden;
         position: relative;
         width: 70%;
-        height: 11%;
+        height: 20%;
         margin-top: 10%;
         color: rgba(0,0,0,1);
         font-family: Poppins, serif;

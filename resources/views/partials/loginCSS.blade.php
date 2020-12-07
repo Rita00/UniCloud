@@ -23,7 +23,8 @@
         font-size: 60px;
     }
     .main{
-        height: 60%;
+        height: 75%;
+        width: 90%;
     }
     .form{
         position: relative;
