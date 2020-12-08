@@ -23,7 +23,7 @@
         font-size: 60px;
     }
     .main{
-        height: 75%;
+        height: 80%;
     }
     .yellowCircle {
         width: 133px;

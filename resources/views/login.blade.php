@@ -7,19 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 </head>
 <body>
-<div class="fundo">
+<div class="background">
     @include('partials.header')
     <div class="main">
         <div class="bolaLand"></div>
-        <label class="label_title">LogIn</label>
+        <div class="label_title">LogIn</div>
         <form class="form" method="post">
             <table class="table">
-                <tr class="tableRow">
-                    <td class="tableCol">
-                    </td>
-                    <td class="tableCol">
-                    </td>
-                </tr>
                 <tr class="tableRow">
                     <td class="tableCol">
                         <label class="label_email">email</label>

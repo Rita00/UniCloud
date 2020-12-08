@@ -16,7 +16,7 @@
     }
     .welcome{
         width: 80%;
-        height: 75%;
+        height: 80%;
         padding-left: 10%;
         padding-right: 10%;
         overflow: hidden;
