@@ -20,8 +20,13 @@
             <tr>
                 <td class="tableButtons">
                     <form class="buttons" method="get" enctype="multipart/form-data" id="mainForm">
-                        <input class="btn_input" type="submit" id="signin" value="SignIn" formaction="/register"><br>
-                        <input class="btn_input" type="submit" id="login" value="LogIn" formaction="/login"><br><br><br>
+                        @if (auth()->check())
+                            <input class="btn_input_disabled" type="submit" id="signin" value="SignIn" formaction="/register" disabled><br>
+                            <input class="btn_input_disabled" type="submit" id="login" value="LogIn" formaction="/login" disabled><br><br><br>
+                        @else
+                            <input class="btn_input" type="submit" id="signin" value="Sign In" formaction="/register"><br>
+                            <input class="btn_input" type="submit" id="login" value="Login" formaction="/login"><br><br><br>
+                        @endif
                         <input class="btn_input" type="submit" id="course" value="Cursos" formaction="/degrees">
                     </form>
                     <!---
