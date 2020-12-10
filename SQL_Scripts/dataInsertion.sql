@@ -3,25 +3,25 @@
   3 Anual
   4 Semestral (aka ambos os semestres)
 */
-insert into cursos(nome, faculdade) values('Licenciatura em Geologia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Fisica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Antropologia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Engenharia e Gestão Industrial', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Matemática', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Arquitetura', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Civil', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia do Ambiente', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Electrotécnica e de Computadores', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Mecânica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Química', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Física', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Mestrado Integrado em Engenharia Biomédica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Engenharia Informatica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Biologia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Design e Multimedia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Engenharia e Ciencia de Dados', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Química', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Bioquímica', 'Ciencias e tecnologias');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Geologia', 'Ciencias e tecnologias', 'LGEOL');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Física', 'Ciencias e tecnologias', 'LF');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Antropologia', 'Ciencias e tecnologias', 'LA');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Gestão Industrial', 'Ciencias e tecnologias', 'LEGI');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Matemática', 'Ciencias e tecnologias', 'LM');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Arquitetura', 'Ciencias e tecnologias', 'MIA');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Civil', 'Ciencias e tecnologias', 'MIEC');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia do Ambiente', 'Ciencias e tecnologias', 'MIEA');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Electrotécnica e de Computadores', 'Ciencias e tecnologias', 'MIEEC');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Mecânica', 'Ciencias e tecnologias', 'MIEM');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Química', 'Ciencias e tecnologias', 'MIEQ');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Física', 'Ciencias e tecnologias', 'MIEF');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Biomédica', 'Ciencias e tecnologias', 'MIEBIOM');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia Informática', 'Ciencias e tecnologias', 'LEI');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Biologia', 'Ciencias e tecnologias', 'LBIOL');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Design e Multimedia', 'Ciencias e tecnologias', 'LDM');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Ciencia de Dados', 'Ciencias e tecnologias', 'LECD');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química', 'Ciencias e tecnologias', 'LQ');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Bioquímica', 'Ciencias e tecnologias', 'LBIOQ');
 /*Geologia*/
 insert into cadeiras(nome, cursoID, ano, semestre) values('Geologia Geral', 1, 1, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Matemáticas Gerais I', 1, 1, 1);

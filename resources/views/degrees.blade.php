@@ -14,7 +14,7 @@
         <div class="yellowCircle"></div>
         <label class="label_title">Cursos</label>
         <div class="row"></div>
-        @foreach($triosSiglas as $siglas)
+        @foreach($quartSiglas as $siglas)
             <div class="row">
                 @foreach($siglas as $sigla)
                     <form class="form" action="/disciplinas?course={{$sigla}}" method="get">

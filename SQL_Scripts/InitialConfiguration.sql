@@ -16,6 +16,7 @@ create table users
 CREATE TABLE cursos (
                         nome	 VARCHAR(256),
                         faculdade VARCHAR(256),
+                        sigla   varchar(256),
                         PRIMARY KEY(nome,faculdade)
 );
 
@@ -63,6 +64,7 @@ create table cadeiras
     ano     int not null,
     semestre int not null,
     cursoID int not null references cursos(id),
+    sigla varchar(255),
     primary key (id)
 );
 

@@ -143,6 +143,33 @@ class Controller extends BaseController
         $degreesSigla = [];
         foreach ($degrees as $degree) {
             $degreesStr = '';
+            if (strncmp($degree->nome, "Licenciatura", strlen("Licenciatura")) == 0) {
+                $degreesStr .= "Lic. ";
+                $degreesStr .= substr($degree->nome, strlen("Licenciatura em"));
+            } else if (strncmp($degree->nome, "Mestrado", strlen("Mestrado")) == 0){
+                $degreesStr .= "Mes. ";
+                $degreesStr .= substr($degree->nome, strlen("Mestrado"));
+            }
+            array_push($degreesSigla, $degreesStr);
+            echo json_encode($degreesSigla);
+        }
+        //echo json_encode($degreesSigla);*/
+        sort($degreesSigla);
+        $args_view = array(
+            "quartSiglas" => array_chunk($degreesSigla, 4)
+        );
+        return view('degrees', $args_view);
+    }
+
+    /*public function coursesView(Request $request) {
+        $this->collectActivity($request);
+        //ir buscar à base de dados
+        $degreesStr = '';
+        $courses = DB::select('select nome from cadeiras');
+
+        $degreesSigla = [];
+        foreach ($degrees as $degree) {
+            $degreesStr = '';
             for ($j = 0; $j < strlen($degree->nome); $j++) {
                 if (ctype_upper($degree->nome[$j])) {
                     $degreesStr .= $degree->nome[$j];
@@ -151,9 +178,10 @@ class Controller extends BaseController
             array_push($degreesSigla, $degreesStr);
         }
         //echo json_encode($degreesSigla);
+        sort($degreesSigla);
         $args_view = array(
-            "triosSiglas" => array_chunk($degreesSigla, 3)
+            "quartSiglas" => array_chunk($degreesSigla, 4)
         );
         return view('degrees', $args_view);
-    }
+    }*/
 }
