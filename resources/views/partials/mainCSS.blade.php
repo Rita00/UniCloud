@@ -12,19 +12,18 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .welcome{
         width: 80%;
-        height: 75%;
+        height: 80%;
         padding-left: 10%;
         padding-right: 10%;
         overflow: hidden;
         color: rgba(0,0,0,1);
         position: relative;
         font-family: Poppins, serif;
-        font-weight: Regular;
+        font-weight: Normal;
         font-size: 20px;
         opacity: 1;
         text-align: center;
@@ -33,7 +32,7 @@
         background-position: center center;
         background-size: contain;
     }
-    table,tr,td{
+    .table{
         height: 100%;
         width: 100%;
     }
@@ -41,7 +40,6 @@
         overflow: hidden;
         color: rgba(0,0,0,1);
         position: relative;
-        top: 25%;
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 20px;
@@ -49,11 +47,22 @@
         text-align: center;
         width:60%;
     }
-    input{
+    .buttons{
+        position: relative;
+        text-align: left;
+        width:40%;
+        height:50%;
+        font-family: Poppins, serif;
+        font-weight: Normal;
+        font-size: 20px;
+        opacity: 1;
+        color: rgba(0,0,0,1);
+    }
+    .btn_input{
         overflow: hidden;
         position: relative;
         width: 70%;
-        height: 11%;
+        height: 20%;
         margin-top: 10%;
         color: rgba(0,0,0,1);
         font-family: Poppins, serif;
@@ -62,24 +71,28 @@
         opacity: 1;
         text-align: center;
         background: rgba(255,255,255,1);
-        border: 2px solid rgba(0,0,0,1);
-
+        border: 3px solid rgba(0,0,0,1);
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
-    .buttons{
+    .btn_input:hover{
+        background: black;
+        color: white;
+    }
+    .btn_input_disabled{
+        overflow: hidden;
         position: relative;
-        height: inherit;
-        text-align: left;
-        width:40%;
+        width: 70%;
+        height: 20%;
+        margin-top: 10%;
+        color: rgba(0,0,0,1);
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 20px;
         opacity: 1;
-        color: rgba(0,0,0,1);
-    }
-    .btn_course {
-        background: rgba(1,1,1,1);
-        color: rgba(255,255,255,1);
-        margin-top: 30%;
+        text-align: center;
+        background: lightgray;
+        border: 3px solid rgba(0,0,0,1);
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
     .yellowCircle {
@@ -100,12 +113,12 @@
         position: relative;
         top: 110px;
         left: 50%;
-        font-family: Poppins;
-        font-weight: Regular;
+        font-family: Poppins, serif;
+        font-weight: Normal;
         font-size: 24px;
         opacity: 1;
         text-align: center;
-        width: 20%;
+        width: 50%;
     }
     .barraVert {
         border-left: 3px solid black;
@@ -122,8 +135,8 @@
         left: 75%;
         color: rgba(0,0,0,1);
         position: relative;
-        font-family: Poppins;
-        font-weight: Regular;
+        font-family: Poppins, serif;
+        font-weight: Normal;
         font-size: 14px;
         opacity: 1;
         text-align: left;
@@ -136,7 +149,7 @@
         left: 10%;
         color: rgba(0,0,0,1);
         position: relative;
-        font-family: Poppins;
+        font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 15px;
         opacity: 1;
@@ -158,23 +171,14 @@
         left:3%;
         color: rgba(0,0,0,1);
         position: relative;
-        font-family: Poppins;
-        font-weight: Regular;
+        font-family: Poppins, serif;
+        font-weight: Normal;
         font-size: 14px;
         opacity: 1;
         text-align: left;
         vertical-align: text-top;
     }
 
-
-    .barraD {
-        border-top: 3px solid black;
-        width: 80%;
-        position: relative;
-        left: 10%;
-        top: 1%;
-
-    }
     .footer{
         width: 100%;
         height: 15%;

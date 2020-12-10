@@ -24,9 +24,8 @@
             </div>
         @endforeach
     </div>
-
+    <!--------------------------------------Footer-->
+    @include('partials.footer')
 </div>
-
-
 </body>
 </html>

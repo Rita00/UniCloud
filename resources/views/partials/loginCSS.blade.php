@@ -1,35 +1,37 @@
 <style>
-    .fundo {
+    .background {
         width: 100%;
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        top: 0;
+        left: 0;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
         position: relative;
         width: inherit;
-        height: inherit;
+        height: 20%;
         text-align: left;
-        margin-top: 5%;
-        top: 15%;
-        left: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 8%;
+        margin-left: 13%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
     }
     .main{
-        height: 60%;
+        height: 66.5%;
+        width: 90%;
     }
     .form{
         position: relative;
         text-align: left;
         width:60%;
-        height: 100%;
+        height: 50%;
         padding-right: 20%;
         padding-left: 20%;
         font-family: Poppins, serif;

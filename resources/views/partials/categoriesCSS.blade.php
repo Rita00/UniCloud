@@ -5,9 +5,9 @@
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0;
-        left: 0;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        top: 0px;
+        left: 0px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
@@ -41,7 +41,7 @@
         padding-left: 20%;
         padding-right: 20%;
         width: 60%;
-        height:15%;
+        height:20%;
         display: inline-flex;
         justify-content: center;
         align-items: center;
