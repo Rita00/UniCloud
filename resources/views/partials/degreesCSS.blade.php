@@ -61,7 +61,19 @@
         font-weight: Normal;
         font-size: 24px;
         border: 3px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .button_course{
+        width: 70%;
+        height: 100%;
+        background: rgba(255,255,255,1);
+        opacity: 1;
+        position: relative;
+        font-family: Poppins, serif;
+        font-weight: Normal;
+        font-size: 14px;
+        border: 3px solid rgba(0,0,0,1);
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
     button:hover{
         color:white;

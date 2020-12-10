@@ -18,7 +18,7 @@
             <div class="row">
                 @foreach($quart as $cadeira)
                     <form class="form" action="/" method="get">
-                        <button class="button" type="Submit"><span>{{$cadeira}}</span></button>
+                        <button class="button_course" type="Submit"><span>{{$cadeira}}</span></button>
                     </form>
                 @endforeach
             </div>
