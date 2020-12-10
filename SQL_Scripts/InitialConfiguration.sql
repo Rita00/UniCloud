@@ -1,3 +1,6 @@
+drop table cadeiras;
+drop table cursos;
+
 create table users
 (
     name varchar (256) not null,
@@ -11,9 +14,9 @@ create table users
 );
 
 CREATE TABLE cursos (
-    nome	 VARCHAR(256),
-    faculdade VARCHAR(256),
-    PRIMARY KEY(nome,faculdade)
+                        nome	 VARCHAR(256),
+                        faculdade VARCHAR(256),
+                        PRIMARY KEY(nome,faculdade)
 );
 
 create table activity
@@ -44,10 +47,24 @@ create table files
 alter table files
     add primary key (id);
 
+alter table cursos
+    add column id int unique auto_increment not null;
 
-insert into cursos(nome, faculdade) values('Licenciatura em Engenharia Informatica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Biologia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Design e Multimedia', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Engenharia e Ciencia de Dados', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Quimica', 'Ciencias e tecnologias');
-insert into cursos(nome, faculdade) values('Licenciatura em Bioguimica', 'Ciencias e tecnologias');
+alter table cursos
+    drop primary key;
+
+alter table cursos
+    add primary key (id);
+
+create table cadeiras
+(
+    id           int auto_increment unique not null,
+    nome   varchar(255),
+    ano     int not null,
+    semestre int not null,
+    cursoID int not null references cursos(id),
+    primary key (id)
+);
+
+alter table cadeiras
+    add constraint cadeiras unique (nome, cursoID);
