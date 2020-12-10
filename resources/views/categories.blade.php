@@ -14,7 +14,7 @@
         <label class="label_title">Categoria</label>
         <div class="row"></div>
             <div class="row">
-                <form class="form" action="/" method="get">
+                <form class="form" action="/materialsList" method="get">
                     <button class="button" type="Submit"><span>Materiais Teóricos</span></button>
                 </form>
                 <form class="form" action="/" method="get">

@@ -12,7 +12,7 @@
     @include('partials.header')
     <div class="main">
         <div class="bolaLand"></div>
-        <div class="label_title">SignIn</div>
+        <div class="label_title">SignUp</div>
         <form class="form" method="post">
             <table class="table">
                 <tr class="tableRow">
@@ -64,7 +64,7 @@
                     </td>
                 </tr>
             </table>
-            <input class="btn_login" type="submit" value="Sign In">
+            <input class="btn_login" type="submit" value="Sign Up">
         </form>
         @include('partials.formerrors')
     </div>
