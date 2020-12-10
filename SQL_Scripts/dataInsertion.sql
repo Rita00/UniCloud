@@ -39,7 +39,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Evolução', 1, 1, 2)
 insert into cadeiras(nome, cursoID, ano, semestre) values('Matemáticas Gerais II', 1, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Microbiologia', 1, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Química Geral II', 1, 1, 2);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Fisica Geral I', 1, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Física Geral I', 1, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Geomatemática', 1, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Geomorfologia', 1, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Petrologia Metamórfica', 1, 2, 1);
@@ -61,7 +61,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Geologia Ambiental e 
 insert into cadeiras(nome, cursoID, ano, semestre) values('Geologia de Portugal', 1, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Hidrogeologia', 1, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Estágio/Relatório', 1, 3, 2);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Prospecção Geológica', 1, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Prospecção Geofísica', 1, 3, 2);
 /*Física*/
 insert into cadeiras(nome, cursoID, ano, semestre) values('Análise Matemática I', 2, 1, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Física Geral I', 2, 1, 1);
