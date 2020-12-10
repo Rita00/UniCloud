@@ -54,3 +54,4 @@ Route::get('degrees', 'Controller@degreesView');
 
 //Route para cadeiras
 Route::get('disciplinas', 'Controller@coursesView');
+

@@ -69,7 +69,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Química Geral I', 2,
 insert into cadeiras(nome, cursoID, ano, semestre) values('Técnicas Laboratoriais de Física', 2, 1, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Álgebra Linear e Geometria Analítica', 2, 1, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Análise Matemática II', 2, 1, 2);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Fundamentos da Fisica Moderna', 2, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Fundamentos da Física Moderna', 2, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Física Geral II', 2, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Física Laboratorial I', 2, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Química Geral II', 2, 1, 2);
@@ -113,7 +113,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Paleoantropologia', 3
 insert into cadeiras(nome, cursoID, ano, semestre) values('Teoria e História da Antropologia II', 3, 1, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Antropologia Visual', 3, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Antropologia do Corpo', 3, 2, 1);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Biologia do do Comportamento', 3, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Biologia do Comportamento', 3, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Cultura Material e Museologia', 3, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Introdução à Antropologia Médica', 3, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Leituras Avançadas em Antropologia', 3, 2, 1);
@@ -184,7 +184,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Bases de Dados', 5, 3
 insert into cadeiras(nome, cursoID, ano, semestre) values('Lógica', 5, 3, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Topologia E Análise Linear', 5, 3, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Análise Complexa', 5, 3, 2);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Estatistica Computacional', 5, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Estatística Computacional', 5, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Matemática Numérica II', 5, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Seminário Matemático', 5, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Mecânica Celeste', 5, 3, 2);

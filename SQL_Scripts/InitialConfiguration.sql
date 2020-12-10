@@ -43,9 +43,9 @@ create table files
     tag3  varchar(256) null,
     uploaded_by  varchar(256)  not null,
     uploaded_at  datetime      not null,
+    cursoID int not null references cadeiras(id),
     primary key (id),
-    constraint files_id_uindex
-        unique (id)
+    constraint files_id_uindex unique (id)
 );
 
 

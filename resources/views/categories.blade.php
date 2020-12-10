@@ -15,10 +15,10 @@
         <div class="row"></div>
             <div class="row">
                 <form class="form" action="/" method="get">
-                    <button class="button" type="Submit"><span>Materiais Teoricos</span></button>
+                    <button class="button" type="Submit"><span>Materiais Teóricos</span></button>
                 </form>
                 <form class="form" action="/" method="get">
-                    <button class="button" type="Submit"><span>Materiais Praticos</span></button>
+                    <button class="button" type="Submit"><span>Materiais Práticos</span></button>
                 </form>
                 <form class="form" action="/" method="get">
                     <button class="button" type="Submit"><span>Exames</span></button>
