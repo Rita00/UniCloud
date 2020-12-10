@@ -14,11 +14,11 @@
         <div class="yellowCircle"></div>
         <label class="label_title">Cadeiras</label>
         <div class="row"></div>
-        @foreach($quartSiglas as $siglas)
+        @foreach($quarts as $quart)
             <div class="row">
-                @foreach($siglas as $sigla)
-                    <form class="form" action="/disciplinas?course={{$sigla}}" method="get">
-                        <button class="button" type="Submit"><span>{{$sigla}}</span></button>
+                @foreach($quart as $cadeira)
+                    <form class="form" action="/" method="get">
+                        <button class="button" type="Submit"><span>{{$cadeira}}</span></button>
                     </form>
                 @endforeach
             </div>

@@ -53,4 +53,4 @@ Route::get('upload', "Controller@uploadView");
 Route::get('degrees', 'Controller@degreesView');
 
 //Route para cadeiras
-Route::get('courses', 'Controller@coursesView');
+Route::get('disciplinas', 'Controller@coursesView');

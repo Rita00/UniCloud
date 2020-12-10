@@ -9,7 +9,7 @@ insert into cursos(nome, faculdade, sigla) values('Licenciatura em Antropologia'
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Gestão Industrial', 'Ciencias e tecnologias', 'LEGI');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Matemática', 'Ciencias e tecnologias', 'LM');
 insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Arquitetura', 'Ciencias e tecnologias', 'MIA');
-insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Civil', 'Ciencias e tecnologias', 'MIEC');
+insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Civíl', 'Ciencias e tecnologias', 'MIEC');
 insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia do Ambiente', 'Ciencias e tecnologias', 'MIEA');
 insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Electrotécnica e de Computadores', 'Ciencias e tecnologias', 'MIEEC');
 insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenharia Mecânica', 'Ciencias e tecnologias', 'MIEM');
@@ -19,7 +19,7 @@ insert into cursos(nome, faculdade, sigla) values('Mestrado Integrado em Engenha
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia Informática', 'Ciencias e tecnologias', 'LEI');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Biologia', 'Ciencias e tecnologias', 'LBIOL');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Design e Multimedia', 'Ciencias e tecnologias', 'LDM');
-insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Ciencia de Dados', 'Ciencias e tecnologias', 'LECD');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Ciência de Dados', 'Ciencias e tecnologias', 'LECD');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química', 'Ciencias e tecnologias', 'LQ');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Bioquímica', 'Ciencias e tecnologias', 'LBIOQ');
 /*Geologia*/

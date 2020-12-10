@@ -1,5 +1,6 @@
 drop table cadeiras;
 drop table cursos;
+drop table files;
 
 create table users
 (
@@ -17,7 +18,8 @@ CREATE TABLE cursos (
                         nome	 VARCHAR(256),
                         faculdade VARCHAR(256),
                         sigla   varchar(256),
-                        PRIMARY KEY(nome,faculdade)
+                        id int unique auto_increment not null,
+                        PRIMARY KEY(id)
 );
 
 create table activity
@@ -41,21 +43,11 @@ create table files
     tag3  varchar(256) null,
     uploaded_by  varchar(256)  not null,
     uploaded_at  datetime      not null,
+    primary key (id),
     constraint files_id_uindex
         unique (id)
 );
 
-alter table files
-    add primary key (id);
-
-alter table cursos
-    add column id int unique auto_increment not null;
-
-alter table cursos
-    drop primary key;
-
-alter table cursos
-    add primary key (id);
 
 create table cadeiras
 (
@@ -64,7 +56,6 @@ create table cadeiras
     ano     int not null,
     semestre int not null,
     cursoID int not null references cursos(id),
-    sigla varchar(255),
     primary key (id)
 );
 
