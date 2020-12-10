@@ -24,6 +24,7 @@
     }
     .main{
         height: 80%;
+        overflow-y: scroll;
     }
     .yellowCircle {
         width: 133px;
