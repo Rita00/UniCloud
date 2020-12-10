@@ -156,13 +156,14 @@ class Controller extends BaseController
 
         $coursesSigla = [];
         foreach ($courses as $course) {
-            $coursesStr = '';
+            array_push($coursesSigla, $course->nome);
+            /*$coursesStr = '';
             for ($j = 0; $j < strlen($course->nome); $j++) {
                 if (ctype_upper($course->nome[$j])) {
                     $coursesStr .= $course->nome[$j];
                 }
             }
-            array_push($coursesSigla, $coursesStr);
+            array_push($coursesSigla, $coursesStr);*/
         }
         //echo json_encode($coursesSigla);
         sort($coursesSigla);
