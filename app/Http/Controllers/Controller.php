@@ -119,7 +119,11 @@ class Controller extends BaseController
 
     public function uploadView(Request $request) {
         $this->collectActivity($request);
-        return view('upload');
+        $args_view = array(
+            "degrees" => DB::select('select id, nome from cursos order by nome'),
+            "courses" => DB::select('select id, nome, cursoID from cadeiras order by nome')
+        );
+        return view('upload', $args_view);
     }
 
     public function loginView(Request $request){

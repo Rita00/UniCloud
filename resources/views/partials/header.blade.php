@@ -22,7 +22,7 @@
         width:100%;
     }
     .headerTableCol{
-        width: 69%;
+        width: 59%;
         height: 100%;
     }
     .headerTableCol2{
@@ -56,6 +56,13 @@
     .home:hover {
         color: gold;
     }
+    .home_disabled {
+        vertical-align: center;
+        display: block;
+        color:gray;
+        text-align: center;
+        text-decoration: none;
+    }
     .horizontalBar {
         position: relative;
         margin-top:0.25%;
@@ -73,6 +80,9 @@
                 <td class="headerTableCol2">
                     <a class="home" href="/home">Home</a>
                 </td>
+                <td class="headerTableCol2">
+                    <a class="home" href="/upload">Upload</a>
+                </td>
                 <td class="headerTableCol3">|</td>
                 <td class="headerTableCol2">
                     <a class="home" href="/profile">{{\Illuminate\Support\Facades\Auth::user()['name']}}</a>
@@ -84,6 +94,9 @@
                 <td class="headerTableCol2"></td>
                 <td class="headerTableCol2">
                     <a class="home" href="/home">Home</a>
+                </td>
+                <td class="headerTableCol2">
+                    <a class="home_disabled">Upload</a>
                 </td>
                 <td class="headerTableCol3">|</td>
                 <td class="headerTableCol2">

@@ -41,6 +41,33 @@
             <table class="table">
                 <tr class="tableRow">
                     <td class="tableColLabel">
+                        <label>Curso</label>
+                    </td>
+                    <td class="tableCol">
+                        <select class="input" name="degree" id="degree" onchange="updateCourses()">
+                            @foreach($degrees as $degree)
+                                <option value="{{$degree->id}}">{{$degree->nome}}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableColLabel">
+                        <label>Cadeira</label>
+                    </td>
+                    <td class="tableCol">
+                        <select class="input" name="degree" id="degree>
+                            @foreach($courses as $course)
+                                @if($course->cursoID)
+
+                                    <option value="{{$course->id}}">{{$course->nome}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableColLabel">
                         <label for="uploadedfile">Carregar ficheiro</label>
                     </td>
                     <td class="tableCol">
@@ -69,9 +96,9 @@
                     </td>
                     <td class="tableCol">
                         <select class="input" name="category" id="category" onchange="changeType()">
-                            <option class="input_category" value="teoric" >Material Teorico</option>
-                            <option class="input_category" value="pratic" >Material Prático</option>
-                            <option class="input_category" value="exams" >Exames</option>
+                            <option value="teoric">Material Teorico</option>
+                            <option value="pratic">Material Prático</option>
+                            <option value="exams">Exames</option>
                         </select>
                     </td>
                 </tr>
@@ -87,13 +114,13 @@
                             <option value="syllabus">Sebentas</option>
                             <option value="others">Outros</option>
                         </select>
-                        <select class="input" name="subcategory" id="pratic">
+                        <select class="input" name="subcategory" id="pratic" hidden>
                             <option value="enunciations">Enunciados</option>
                             <option value="exercises">Exercicios Resolvidos</option>
                             <option value="projects">Projetos</option>
                             <option value="others">Outros</option>
                         </select>
-                        <select class="input" name="subcategory" id="exams">
+                        <select class="input" name="subcategory" id="exams" hidden>
                             <option value="midterms">Frequencias</option>
                             <option value="tests">Testes</option>
                             <option value="exams">Exames</option>
