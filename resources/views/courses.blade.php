@@ -21,6 +21,13 @@
                         <button class="button_course" type="Submit"><span>{{$cadeira}}</span></button>
                     </form>
                 @endforeach
+                @if(sizeof($quart)<4)
+                    @for ($i = 1; $i <= 4-sizeof($quart); $i++)
+                        <div class="form">
+                            <div class="button" hidden></div>
+                        </div>
+                    @endfor
+                @endif
             </div>
         @endforeach
     </div>
