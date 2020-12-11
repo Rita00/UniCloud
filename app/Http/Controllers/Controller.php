@@ -118,12 +118,18 @@ class Controller extends BaseController
     }
 
     public function uploadView(Request $request) {
-        $this->collectActivity($request);
-        $args_view = array(
-            "degrees" => DB::select('select id, nome from cursos order by nome'),
-            "courses" => DB::select('select id, nome, cursoID from cadeiras order by nome')
-        );
-        return view('upload', $args_view);
+        if ($request->get("course")){
+            $resposta = array("courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($request->get("course"))));
+            return json_encode($resposta);
+        }else{
+            $this->collectActivity($request);
+            $degrees = DB::select('select id, nome from cursos order by nome');
+            $args_view = array(
+                "degrees" => $degrees,
+                "courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($degrees[0]->id))
+            );
+            return view('upload', $args_view);
+        }
     }
 
     public function loginView(Request $request){

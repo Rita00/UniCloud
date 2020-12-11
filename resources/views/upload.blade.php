@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     @include('partials.uploadCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function changeType(){
             let teoric = document.getElementById('teoric');
@@ -29,6 +30,29 @@
                     break;
             }
         }
+        function changeCourse(){
+            let id = document.getElementById("degree").value;
+            $.ajax({
+                type: "get",
+                url: "upload",
+                data: {course: id},
+                dataType: "json",
+                success: function (resposta){
+                    console.log(resposta);
+                    let options = document.getElementById("course").options;
+                    let len = options.length;
+                    for(let i = 0; i < len; i++){
+                        options.remove(0);
+                    }
+                    for (let course of resposta["courses"]){
+                        let option = document.createElement("option");
+                        option.value = course["id"];
+                        option.text = course["nome"];
+                        options.add(option);
+                    }
+                }
+                });
+        }
     </script>
 </head>
 <body onload="changeType()">
@@ -44,7 +68,7 @@
                         <label>Curso</label>
                     </td>
                     <td class="tableCol">
-                        <select class="input" name="degree" id="degree" onchange="updateCourses()">
+                        <select class="input" name="degree" id="degree" onchange="changeCourse()">
                             @foreach($degrees as $degree)
                                 <option value="{{$degree->id}}">{{$degree->nome}}</option>
                             @endforeach
@@ -56,7 +80,7 @@
                         <label>Cadeira</label>
                     </td>
                     <td class="tableCol">
-                        <select class="input" name="degree" id="degree>
+                        <select class="input" name="course" id="course">
                             @foreach($courses as $course)
                                 @if($course->cursoID)
 
