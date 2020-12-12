@@ -19,8 +19,8 @@ def gen_fake_files(n_entries=1000):
     )
     cur = mydb.cursor()
 
-    cur.execute('select email from users')
-    mailsBD = [x[0] for x in cur.fetchall()]
+    cur.execute('select user_id from activity')
+    mailsBD = [x[0] for x in cur.fetchall() if x[0] is not None]
     cur.execute('select id from cadeiras')
     idsCsdeirasBD = [x[0] for x in cur.fetchall()]
 
