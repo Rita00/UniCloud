@@ -64,7 +64,7 @@
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
     .button_course{
-        width: 70%;
+        width: 80%;
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
