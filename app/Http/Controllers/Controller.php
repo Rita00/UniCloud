@@ -19,7 +19,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $this->collectActivity($request);
         $this->validate(request(), [
             'name' => 'required',
@@ -44,7 +45,8 @@ class Controller extends BaseController
         return redirect("/");
     }
 
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
         $this->collectActivity($request);
         $credentials = [
             'email' => $request['email'],
@@ -100,28 +102,30 @@ class Controller extends BaseController
 //        return redirect("/"); // todo with message?
     }
 
-    public function collectActivity(Request $request) {
+    public function collectActivity(Request $request)
+    {
         $value = url()->current();
         $value = strstr($value, 'unicloud.devo', false);
         $value = strstr($value, '/', false);
         if ($value == false)
             $value = "Home";
         else $value = substr($value, 1);
-        if (auth()->check()){
+        if (auth()->check()) {
             $logged_user = auth()->user();
             $mail = $logged_user['email'];
             DB::insert('insert into activity(ip, value, date, user_id) values (?, ?, ?, ?)', [$request->ip(), $value, NOW(), $mail]);
 
-        }else{
+        } else {
             DB::insert('insert into activity(ip, value, date) values (?, ?, ?)', [$request->ip(), $value, NOW()]);
         }
     }
 
-    public function uploadView(Request $request) {
-        if ($request->get("course")){
+    public function uploadView(Request $request)
+    {
+        if ($request->get("course")) {
             $resposta = array("courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($request->get("course"))));
             return json_encode($resposta);
-        }else{
+        } else {
             $this->collectActivity($request);
             $degrees = DB::select('select id, nome from cursos order by nome');
             $args_view = array(
@@ -132,19 +136,22 @@ class Controller extends BaseController
         }
     }
 
-    public function loginView(Request $request){
+    public function loginView(Request $request)
+    {
         $this->collectActivity($request);
         if (auth()->check()) return redirect('/');
         return view("login");
     }
 
-    public function registerView(Request $request){
+    public function registerView(Request $request)
+    {
         $this->collectActivity($request);
         if (auth()->check()) return redirect('/');
         return view("register");
     }
 
-    public function degreesView(Request $request) {
+    public function degreesView(Request $request)
+    {
         $this->collectActivity($request);
 
         $degrees = DB::select('select id, sigla from cursos order by sigla');
@@ -160,26 +167,31 @@ class Controller extends BaseController
         return view('degrees', $args_view);
     }
 
-    public function coursesView(Request $request) {
+    public function coursesView(Request $request)
+    {
         $this->collectActivity($request);
-        $courses = DB::select('select nome from cadeiras where cadeiras.cursoID = ?', array($request->get("course")));
+        $courses = DB::select('select id, nome from cadeiras where cadeiras.cursoID = ? order by nome', array($request->get("course")));
 
-        $coursesSigla = [];
-        foreach ($courses as $course) {
-            array_push($coursesSigla, $course->nome);
-            /*$coursesStr = '';
-            for ($j = 0; $j < strlen($course->nome); $j++) {
-                if (ctype_upper($course->nome[$j])) {
-                    $coursesStr .= $course->nome[$j];
-                }
-            }
-            array_push($coursesSigla, $coursesStr);*/
-        }
-        //echo json_encode($coursesSigla);
-        sort($coursesSigla);
         $args_view = array(
-            "quarts" => array_chunk($coursesSigla, 4)
+            "quarts" => array_chunk($courses, 4)
         );
         return view('courses', $args_view);
+    }
+
+    public function materialsListView(Request $request)
+    {
+        $this->collectActivity($request);
+        $files = DB::select('select name, sub_category, uploaded_by from files where files.cadeiraID = ? and files.category = ?', array($request->get("course"), $request->get("category")));
+
+        return view('materialsList', array("files" => $files));
+    }
+
+    public function categoriesView(Request $request)
+    {
+        $this->collectActivity($request);
+        $args_view = array(
+            "course" => $request->get("degree"),
+        );
+        return view('categories', $args_view);
     }
 }

@@ -42,8 +42,8 @@ Route::get('profile', function (){
 
 //Routes para homepage
 Route::view('home','home');
-Route::view('categories','categories');
-Route::view('materialsList','materialsList');
+Route::get('categories','Controller@categoriesView');
+Route::get('materialsList','Controller@materialsListView');
 
 //Routes para upload
 Route::post('upload', 'UploadController@handler');

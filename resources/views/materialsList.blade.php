@@ -4,7 +4,7 @@
     <title>UniCloud | Upload</title>
     <meta charset="UTF-8">
     @include('partials.materialsListCSS')
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <div class="background">
@@ -23,14 +23,18 @@
                 <th>Rating</th>
                 <th></th>
             </tr>
-            <tr class="tableRow">
-                <td>a</td>
-                <td>b</td>
-                <td>c</td>
-                <td>⭐︎⭐︎⭐︎⭐︎⭐︎ (3.6)</td>
-                <td><button>download</button></td>
+                @foreach($files as $file)
+                <tr class="tableRow">
+                    <form>
+                        <td>{{$file->name}}</td>
+                        <td>{{$file->sub_category}}</td>
+                        <td>{{$file->uploaded_by}}</td>
+                        <td>⭐︎⭐︎⭐︎⭐︎⭐︎ (3.6)</td>
+                        <td><button>download</button></td>
+                    </form>
+                </tr>
+                @endforeach
 
-            </tr>
         </table>
 
         @include('partials.formerrors')
