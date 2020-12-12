@@ -78,7 +78,7 @@
             </td>
             @if (auth()->check())
                 <td class="headerTableCol2">
-                    <a class="home" href="/home">Home</a>
+                    <a class="home" href="/">Home</a>
                 </td>
                 <td class="headerTableCol2">
                     <a class="home" href="/upload">Upload</a>
@@ -93,7 +93,7 @@
             @else
                 <td class="headerTableCol2"></td>
                 <td class="headerTableCol2">
-                    <a class="home" href="/home">Home</a>
+                    <a class="home" href="/">Home</a>
                 </td>
                 <td class="headerTableCol2">
                     <a class="home_disabled">Upload</a>

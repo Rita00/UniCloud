@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'Controller@welcome');
+Route::get('/', 'Controller@home');
 
 Route::get('register', 'Controller@registerView');
 
@@ -41,7 +41,6 @@ Route::get('profile', function (){
 })->middleware("auth");
 
 //Routes para homepage
-Route::view('home','home');
 Route::get('categories','Controller@categoriesView');
 Route::get('materialsList','Controller@materialsListView');
 

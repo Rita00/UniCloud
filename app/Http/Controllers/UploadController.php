@@ -12,7 +12,7 @@ class UploadController extends Controller{
         if($_POST["button"]=="Upload"){
             return $this->store($request);
         }else if(isset($_POST["button"])){
-            return redirect('/home');
+            return redirect('/');
         }
     }
     public function store(Request $request){
@@ -38,7 +38,7 @@ class UploadController extends Controller{
         }else{
             $data = $this->addToDB($request);
             $path = $request->file('uploadedfile')->storeAs('/files',$this->getFileID($data));
-            return redirect('/home');
+            return redirect('/');
         }
     }
     private function addToDB(Request $request){

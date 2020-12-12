@@ -67,10 +67,10 @@ class Controller extends BaseController
         return redirect()->to('/');
     }
 
-    public function welcome(Request $request)
+    public function home(Request $request)
     {
         $this->collectActivity($request);
-        return view("welcome");
+        return view("home");
     }
 
     public function sendConfirmationMail($request)
