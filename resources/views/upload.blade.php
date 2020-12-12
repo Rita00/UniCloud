@@ -120,7 +120,7 @@
                     </td>
                     <td class="tableCol">
                         <select class="input" name="category" id="category" onchange="changeType()">
-                            <option value="teoric">Material Teorico</option>
+                            <option value="teoric">Material Teórico</option>
                             <option value="pratic">Material Prático</option>
                             <option value="exams">Exames</option>
                         </select>
