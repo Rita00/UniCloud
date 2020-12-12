@@ -3,10 +3,9 @@
 <head>
     <title>UniCloud | Degrees</title>
     <meta charset="UTF-8">
-    @include('partials.degreesCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    @include('partials.degreesCSS')
 </head>
-
 <body>
 <div class="background">
     @include('partials.header')

@@ -44,7 +44,7 @@
         width:100%;
         height:50%
     }
-    .bolaLand {
+    .yellowCircle {
         width: 133px;
         height: 133px;
         background: rgba(255,239,96,1);

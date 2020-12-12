@@ -11,7 +11,7 @@
 <div class="background">
     @include('partials.header')
     <div class="main">
-        <div class="bolaLand"></div>
+        <div class="yellowCircle"></div>
         <div class="label_title">SignUp</div>
         <form class="form" method="post">
             <table class="table">

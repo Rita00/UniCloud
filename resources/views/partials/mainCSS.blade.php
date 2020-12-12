@@ -84,15 +84,12 @@
         width: 70%;
         height: 20%;
         margin-top: 10%;
-        color: rgba(0,0,0,1);
+        color: white;
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 20px;
         opacity: 1;
         text-align: center;
-        background: lightgray;
-        border: 3px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
     .yellowCircle {
