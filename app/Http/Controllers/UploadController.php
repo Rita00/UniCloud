@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UploadController extends Controller{
+    public function handler(Request $request){
+        if($_POST["button"]=="Upload"){
+            return $this->store($request);
+        }else if(isset($_POST["button"])){
+            return redirect('/home');
+        }
+    }
     public function store(Request $request){
         $validationRules = [
             'degree' => 'required|max:255',
@@ -25,14 +33,12 @@ class UploadController extends Controller{
             $message='Missing Input(s):';
             foreach ($validator->getMessageBag()->toArray() as $error){
                 $message .= " ".$error[0];
-
             }
-            $message .= json_encode($request->all());
             return "<script>alert('$message');window.location.href='/upload';</script>";
         }else{
             $data = $this->addToDB($request);
             $path = $request->file('uploadedfile')->storeAs('/files',$this->getFileID($data));
-            return $path;
+            return redirect('/home');
         }
     }
     private function addToDB(Request $request){
@@ -45,16 +51,17 @@ class UploadController extends Controller{
         $tag1 = is_null($req["tag1"])?"":$req["description"];
         $tag2 = is_null($req["tag2"])?"":$req["description"];
         $tag3 = is_null($req["tag3"])?"":$req["description"];
-        $uploader = "undefined";
-        $date = date("Y-m-d");
-        $cadeiraId = $req['course'];
-        $data = [$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraId];
-        DB::insert('insert into files (file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID) values (?,?,?,?,?,?,?,?,?,?,?)', $data);
+        $uploader = Auth::user()['name'];
+        $date = date("Y-m-d h:i:s");
+        $cadeiraID = $req['course'];
+        $id = bcrypt($name . $date);
+        $data = [$id,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraID];
+        DB::insert('insert into files (id,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID) values (?,?,?,?,?,?,?,?,?,?,?,?)', $data);
         return $data;
     }
     private function getFileID(Array $data){
         echo json_encode($data);
-        $query = DB::select('select distinct id from files  where degree=? and course=? and file_name=?  and name=? and category=?  and sub_category=? and description=? and tag1=? and tag2=? and tag3=? and uploaded_by=? and uploaded_at=?',$data)[0];
+        $query = DB::select('select distinct id from files',$data)[0];
         $json = json_encode($query);
         return json_decode($json,true)['id'];
     }

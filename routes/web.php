@@ -46,7 +46,7 @@ Route::view('categories','categories');
 Route::view('materialsList','materialsList');
 
 //Routes para upload
-Route::post('upload', 'UploadController@store');
+Route::post('upload', 'UploadController@handler');
 Route::get('upload', "Controller@uploadView");
 
 //Route para cursos
