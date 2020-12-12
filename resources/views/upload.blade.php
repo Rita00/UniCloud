@@ -164,8 +164,8 @@
                 </tr>
             </table>
             <div class="btn_form">
-                <input class="btn_return" type="submit" value="Voltar">
-                <input class="btn_upload" type="submit" value="Upload">
+                <input class="btn_return" type="submit" name="button" value="Voltar">
+                <input class="btn_upload" type="submit" name="button" value="Upload">
             </div>
         @if(session()->has('message'))
             <div class="alert alert-success">
