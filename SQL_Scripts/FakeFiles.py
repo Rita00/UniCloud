@@ -6,7 +6,7 @@ import numpy as np
 import mysql.connector
 
 
-def gen_fake_files(n_entries=1000):
+def gen_fake_files(n_entries=100000):
     DB_HOST = "127.0.0.1"
     DB_PORT = 3306
     DB_DATABASE = "unicloud"
