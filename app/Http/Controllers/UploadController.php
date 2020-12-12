@@ -37,8 +37,6 @@ class UploadController extends Controller{
     }
     private function addToDB(Request $request){
         $req = $request->all();
-        $degree = $req["degree"];
-        $course = $req["course"];
         $filename = $request->file('uploadedfile')->getClientOriginalName();
         $name = $req["name"];
         $cat = $req["category"];
@@ -49,8 +47,9 @@ class UploadController extends Controller{
         $tag3 = is_null($req["tag3"])?"":$req["description"];
         $uploader = "undefined";
         $date = date("Y-m-d");
-        $data = [$degree,$course,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date];
-        DB::insert('insert into files (degree,course,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at) values (?,?,?,?,?,?,?,?,?,?,?,?)', $data);
+        $cadeiraId = $req['course'];
+        $data = [$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraId];
+        DB::insert('insert into files (file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID) values (?,?,?,?,?,?,?,?,?,?,?)', $data);
         return $data;
     }
     private function getFileID(Array $data){

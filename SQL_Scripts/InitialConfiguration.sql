@@ -32,7 +32,7 @@ create table activity
 
 create table files
 (
-    id           int auto_increment,
+    id           varchar(256) not null,
     file_name    varchar(256)  not null,
     name         varchar(256)  not null,
     category     varchar(256)  not null,
