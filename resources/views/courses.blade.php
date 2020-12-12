@@ -18,7 +18,8 @@
             <div class="row">
                 @foreach($quart as $cadeira)
                     <form class="form" action="/categories" method="get">
-                        <button class="button_course" type="Submit"><span>{{$cadeira}}</span></button>
+                        <input type="hidden" name="degree" value={{$cadeira->id}}>
+                        <button class="button_course" type="Submit"><span>{{$cadeira->nome}}</span></button>
                     </form>
                 @endforeach
                 @if(sizeof($quart)<4)
