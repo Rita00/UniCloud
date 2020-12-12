@@ -5,8 +5,6 @@
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0;
-        left: 0;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }

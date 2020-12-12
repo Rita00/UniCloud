@@ -5,9 +5,7 @@
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
