@@ -8,26 +8,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function changeType(){
-            let teoric = document.getElementById('teoric');
-            let pratic = document.getElementById('pratic');
-            let exams = document.getElementById('exams');
-
-            switch(document.getElementsByTagName('select')[0].value){
+            let subCatSelect = document.getElementById('subcategory');
+            let namesArray = [
+                "Apontamentos Manuscritos","Apontamentos digitais","Slides","Sebentas","Outros",
+                "Enunciados", "Exercicios Resolvidos", "Projetos", "Outros",
+                "Frequencias", "Testes", "Exames", "Outros"
+            ];
+            let valuesArray = [
+                "handmade_notes","digital_notes","slides","syllabus","others",
+                "enunciations","exercises","projects","others",
+                "midterms","tests","exams","others"
+            ];
+            var begin=0;
+            var end=0;
+            switch(document.getElementById('category').value){
                 case "teoric":
-                    teoric.style.display = 'inline';
-                    pratic.style.display = 'none';
-                    exams.style.display = 'none';
+                    begin=0;
+                    end=5;
                     break;
                 case "pratic":
-                    teoric.style.display = 'none';
-                    pratic.style.display = 'inline';
-                    exams.style.display = 'none';
+                    begin=5;
+                    end=9;
                     break;
                 case "exams":
-                    teoric.style.display = 'none';
-                    pratic.style.display = 'none';
-                    exams.style.display = 'inline';
+                    begin=9;
+                    end=namesArray.length;
                     break;
+            }
+            var option;
+            while (subCatSelect.lastElementChild) {
+                subCatSelect.removeChild(subCatSelect.lastElementChild);
+            }
+            for(var i=begin;i<end;i++){
+                option = document.createElement("OPTION");
+                option.appendChild(document.createTextNode(namesArray[i]));
+                option.value=valuesArray[i];
+                subCatSelect.appendChild(option);
             }
         }
         function changeCourse(){
@@ -131,25 +147,7 @@
                         <label>Sub-Categoria</label>
                     </td>
                     <td class="tableCol">
-                        <select class="input" name="subcategory" id="teoric">
-                            <option value="handmade_notes">Apontamentos Manuscritos</option>
-                            <option value="digital_notes">Apontamentos digitais</option>
-                            <option value="slides" >Slides</option>
-                            <option value="syllabus">Sebentas</option>
-                            <option value="others">Outros</option>
-                        </select>
-                        <select class="input" name="subcategory" id="pratic" hidden>
-                            <option value="enunciations">Enunciados</option>
-                            <option value="exercises">Exercicios Resolvidos</option>
-                            <option value="projects">Projetos</option>
-                            <option value="others">Outros</option>
-                        </select>
-                        <select class="input" name="subcategory" id="exams" hidden>
-                            <option value="midterms">Frequencias</option>
-                            <option value="tests">Testes</option>
-                            <option value="exams">Exames</option>
-                            <option value="others">Outros</option>
-                        </select>
+                        <select class="input" name="subcategory" id="subcategory"></select>
                     </td>
                 </tr>
                 <tr class="tableRow">
