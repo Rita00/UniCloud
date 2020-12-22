@@ -149,6 +149,12 @@ class Controller extends BaseController
         if (auth()->check()) return redirect('/');
         return view("register");
     }
+    public function termsView(Request $request)
+    {
+        $this->collectActivity($request);
+        if (auth()->check()) return redirect('/');
+        return view("terms");
+    }
 
     public function degreesView(Request $request)
     {

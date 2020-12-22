@@ -74,6 +74,7 @@
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
     button:hover{
+        cursor:pointer;
         color:white;
         background: black;
     }

@@ -40,6 +40,8 @@ Route::get('profile', function (){
     return view('profile');
 })->middleware("auth");
 
+//Route para Termos e Condicoes
+Route::get('terms','Controller@termsView');
 //Routes para homepage
 Route::get('categories','Controller@categoriesView');
 Route::get('materialsList','Controller@materialsListView');

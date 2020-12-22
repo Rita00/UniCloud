@@ -24,7 +24,9 @@
         font-size: 60px;
     }
     .main{
-        height: 66.5%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 80%;
         width: 90%;
     }
     .form{
@@ -56,6 +58,7 @@
 
     }
     .tableRow{
+
         height:20%;
     }
     .tableCol{
@@ -100,18 +103,27 @@
         background: rgba(255,255,255,1);
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
-
+    .btnDiv{
+        height: 20%;
+        margin-top: 5%;
+        text-align: right;
+    }
     .btn_login{
-        height: 15%;
+        display:inline-block;
+        height: 100%;
         width: 25%;
-        margin-left: 70%;
-        margin-top: 10%;
         font-size: 26px;
         color: rgba(255,255,255,1);
         text-align: center;
-        background: rgba(0,0,0,1);
+        color: black;
+        background: white;
         border: 2px solid rgba(0,0,0,1);
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .btn_login:hover{
+        cursor:pointer;
+        background: black;
+        color: white;
     }
 
 

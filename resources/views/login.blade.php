@@ -32,10 +32,9 @@
                 </tr>
                 <tr class="tableRow">
                     <td class="tableCol">
-                        <label>Remember me?</label>
                     </td>
                     <td class="tableCol" style="text-align:left">
-                        <input type="checkbox" name="remember">
+                        <input type="checkbox" name="remember"><label>Remember me?</label>
                     </td>
                 </tr>
                 <tr class="tableRow">
@@ -45,16 +44,12 @@
                 <tr class="tableRow">
                     <td class="tableCol"></td>
                     <td class="tableCol"></td>
-                </tr>
-                <tr class="tableRow">
-                    <td class="tableCol">
-                        <a href="/register">Create new account</a>
-                    </td>
-                    <td class="tableCol">
-                    </td>
                 </tr>
             </table>
-            <input class="btn_login" type="submit" value="Log In">
+            <div class="btnDiv">
+                <a href="/register">Create new account</a>
+                <input class="btn_login" type="submit" value="Log In">
+            </div>
         </form>
         @include('partials.formerrors')
     </div>
