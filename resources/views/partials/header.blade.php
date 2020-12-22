@@ -38,12 +38,8 @@
 
     .logo {
         width: 25%;
-        height: 100%;
-        background: url("https://scontent-lis1-1.xx.fbcdn.net/v/t1.15752-9/126030799_2477808079010387_3065445384996410535_n.jpg?_nc_cat=111&ccb=2&_nc_sid=ae9488&_nc_ohc=rsMewyTft84AX8tpd49&_nc_ht=scontent-lis1-1.xx&oh=69b10677cb7da2d9d322550fe0da9a5d&oe=5FE00BC5");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        top: 20%;
+        height: 50%;
+        top:20%;
     }
 
     .home {
@@ -73,8 +69,8 @@
 <div class="navbar">
     <table class="headerTable">
         <tr class="headerTableRow">
-            <td class="headerTableCol">
-                <div class="logo"></div>
+            <td class="headerTableCol" style="text-align:left">
+                <a href="/"><img src="/images/logo.svg" class="logo"></img></a>
             </td>
             @if (auth()->check())
                 <td class="headerTableCol2">
