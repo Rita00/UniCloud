@@ -22,15 +22,15 @@
             var begin=0;
             var end=0;
             switch(document.getElementById('category').value){
-                case "teoric":
+                case "Materiais Teóricos":
                     begin=0;
                     end=5;
                     break;
-                case "pratic":
+                case "Materiais Práticos":
                     begin=5;
                     end=9;
                     break;
-                case "exams":
+                case "Exames":
                     begin=9;
                     end=namesArray.length;
                     break;
@@ -136,9 +136,9 @@
                     </td>
                     <td class="tableCol">
                         <select class="input" name="category" id="category" onchange="changeType()">
-                            <option value="teoric">Material Teórico</option>
-                            <option value="pratic">Material Prático</option>
-                            <option value="exams">Exames</option>
+                            <option value="Materiais Teóricos">Material Teórico</option>
+                            <option value="Materiais Práticos">Material Prático</option>
+                            <option value="Exames">Exames</option>
                         </select>
                     </td>
                 </tr>

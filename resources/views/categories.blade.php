@@ -16,12 +16,12 @@
             <div class="row">
                 <form class="form" action="/materialsList" method="get">
                     <input type="hidden" name="course" value={{$course}}>
-                    <input type="hidden" name="category" value="Material Teórico">
+                    <input type="hidden" name="category" value="Materiais Teóricos">
                     <button class="button" type="Submit"><span>Materiais Teóricos</span></button>
                 </form>
                 <form class="form" action="/materialsList" method="get">
                     <input type="hidden" name="course" value={{$course}}>
-                    <input type="hidden" name="category" value="Material Prático">
+                    <input type="hidden" name="category" value="Materiais Práticos">
                     <button class="button" type="Submit"><span>Materiais Práticos</span></button>
                 </form>
                 <form class="form" action="/materialsList" method="get">
