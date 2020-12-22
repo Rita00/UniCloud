@@ -1,17 +1,12 @@
 <style>
-
-    body{
-        width: 100%;
-        height: 100%;
-    }
-    .fundo {
+    .background {
         width: 100%;
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         overflow: hidden;
     }
     .welcome{

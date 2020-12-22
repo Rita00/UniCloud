@@ -55,10 +55,8 @@
         left: 21%;
         top: 18%;
         border-radius: 50%;
-
     }
     .tableRow{
-
         height:20%;
     }
     .tableCol{
