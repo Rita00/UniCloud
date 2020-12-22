@@ -59,7 +59,7 @@
                     <td class="tableCol">
                     </td>
                     <td class="tableCol">
-                        <input type="checkbox" name="remember" style="display:inline-block"><div style="display:inline-block">Aceito os <a href="/terms">Termos e Condições</a></div>
+                        <input type="checkbox" name="terms" style="display:inline-block"><div style="display:inline-block">Aceito os <a href="/terms">Termos e Condições</a></div>
                     </td>
                 </tr>
             </table>

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class Controller extends BaseController
 {
@@ -22,24 +23,45 @@ class Controller extends BaseController
     public function register(Request $request)
     {
         $this->collectActivity($request);
+        $validationRules = [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'terms' => 'required'
+        ];
+        $validator = Validator::make($request->all(),$validationRules);
+        if ($validator->fails()) {
+            $message='The name, email or password is missing or accept terms and conditions, please try again';
+            return "<script>alert('$message');window.location.href='/register';</script>";
+        }
+        /*
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed'
         ]);
+        */
         try {
             $user = User::create(request(['name', 'email', 'password']));
         } catch (QueryException $e) {
+            $message = 'The provided email is already registered';
+            return "<script>alert('$message');window.location.href='/register';</script>";
+            /*
             return back()->withErrors([
                 'message' => 'The provided email is already registered'
             ]);
+            */
         }
         try {
             $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
+            $message = 'Confirmation email sending failed';
+            return "<script>alert('$message');window.location.href='/register';</script>";
+            /*
             return back()->withErrors([
                 'message' => 'Confirmation email sending failed'
             ]);
+            */
         }
         auth()->login($user);
         return redirect("/");
@@ -54,9 +76,12 @@ class Controller extends BaseController
         ];
 //        echo json_encode($credentials);
         if (auth()->attempt($credentials, $request['remember']) == false) {
+            $message = 'The email or password is incorrect, please try again';
+            return "<script>alert('$message');window.location.href='/login';</script>";
+            /*
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again'
-            ]);
+            ]);*/
         }
         return redirect("/");
     }
