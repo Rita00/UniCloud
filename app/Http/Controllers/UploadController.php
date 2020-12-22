@@ -37,8 +37,9 @@ class UploadController extends Controller{
             return "<script>alert('$message');window.location.href='/upload';</script>";
         }else{
             $data = $this->addToDB($request);
-            $path = $request->file('uploadedfile')->storeAs('/files',$this->getFileID($data));
+            $path = $request->file('uploadedfile')->storeAs('/files',$data[0]);
             return redirect('/');
+            //return $path;
         }
     }
     private function addToDB(Request $request){
@@ -52,17 +53,12 @@ class UploadController extends Controller{
         $tag2 = is_null($req["tag2"])?"":$req["description"];
         $tag3 = is_null($req["tag3"])?"":$req["description"];
         $uploader = Auth::user()['name'];
-        $date = date("Y-m-d h:i:s");
+        $date = date("Y_m_d_h_i_s");
         $cadeiraID = $req['course'];
-        $id = bcrypt($name . $date);
-        $data = [$id,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraID];
-        DB::insert('insert into files (id,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID) values (?,?,?,?,?,?,?,?,?,?,?,?)', $data);
+        $rate = 0;
+        $id = $name ."_". $date;
+        $data = [$id,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraID,$rate];
+        DB::insert('insert into files (id,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID,rate) values (?,?,?,?,?,?,?,?,?,?,?,?,?)', $data);
         return $data;
-    }
-    private function getFileID(Array $data){
-        echo json_encode($data);
-        $query = DB::select('select distinct id from files',$data)[0];
-        $json = json_encode($query);
-        return json_decode($json,true)['id'];
     }
 }

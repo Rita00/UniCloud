@@ -44,6 +44,7 @@ create table files
     uploaded_by  varchar(256)  not null references users(email),
     uploaded_at  datetime      not null,
     cadeiraID int not null references cadeiras(id),
+    rate        int,
     primary key (id),
     constraint files_id_uindex unique (id)
 );
