@@ -17,7 +17,7 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "ext-json": "*",
-        "ext-http": "*"
+        "davejamesmiller/laravel-breadcrumbs": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
