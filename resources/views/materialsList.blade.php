@@ -9,6 +9,7 @@
 <body>
 <div class="background">
     @include('partials.header')
+    {{Breadcrumbs::render('materials', $courseBread, $curso, $cat)}}
     <div class="main">
         <div class="yellowCircle"></div>
         <label class="label_title">Materiais</label>

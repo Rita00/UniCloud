@@ -9,6 +9,8 @@
 <body>
 <div class="background">
     @include('partials.header')
+    {{Breadcrumbs::render('degrees')}}
+
     <div class="main">
         <div class="yellowCircle"></div>
         <label class="label_title">Cursos</label>

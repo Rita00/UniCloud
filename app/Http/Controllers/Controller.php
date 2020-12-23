@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use function MongoDB\BSON\toJSON;
 
 class Controller extends BaseController
 {
@@ -171,9 +172,11 @@ class Controller extends BaseController
     {
         $this->collectActivity($request);
         $courses = DB::select('select id, nome from cadeiras where cadeiras.cursoID = ? order by nome', array($request->get("course")));
-
+        $curso = DB::select('select id, nome from cursos where id = ?', array($request->get("course")));
+        //printf($curso[0].toJSON());
         $args_view = array(
-            "quarts" => array_chunk($courses, 4)
+            "quarts" => array_chunk($courses, 4),
+            "curso" => $curso[0],
         );
         return view('courses', $args_view);
     }
@@ -181,16 +184,27 @@ class Controller extends BaseController
     public function materialsListView(Request $request)
     {
         $this->collectActivity($request);
+        $courseBread = DB::select('select nome, id, cursoID from cadeiras where cadeiras.id = ?', array($request->get("course")));
+        $curso = DB::select('select id, nome from cursos where cursos.id = ?', array($courseBread[0]->cursoID));
         $files = DB::select('select name, sub_category, uploaded_by from files where files.cadeiraID = ? and files.category = ?', array($request->get("course"), $request->get("category")));
-
-        return view('materialsList', array("files" => $files));
+        $args_view = array(
+            "cat" => $request->get("category"),
+            "curso" => $curso[0],
+            "courseBread" => $courseBread[0],
+            "files" => $files
+        );
+        return view('materialsList', $args_view);
     }
 
     public function categoriesView(Request $request)
     {
         $this->collectActivity($request);
+        $courseBread = DB::select('select nome, id, cursoID from cadeiras where cadeiras.id = ?', array($request->get("degree")));
+        $curso = DB::select('select id, nome from cursos where cursos.id = ?', array($courseBread[0]->cursoID));
         $args_view = array(
             "course" => $request->get("degree"),
+            "curso" => $curso[0],
+            "courseBread" => $courseBread[0],
         );
         return view('categories', $args_view);
     }

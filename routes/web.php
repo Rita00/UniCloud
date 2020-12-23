@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'Controller@home');
+Route::get('/', 'Controller@home')->name('home');
 
 Route::get('register', 'Controller@registerView');
 
@@ -41,16 +41,15 @@ Route::get('profile', function (){
 })->middleware("auth");
 
 //Routes para homepage
-Route::get('categories','Controller@categoriesView');
-Route::get('materialsList','Controller@materialsListView');
-
+Route::get('categories','Controller@categoriesView')->name("categories");
+Route::get('materialsList','Controller@materialsListView')->name('materials');
 //Routes para upload
 Route::post('upload', 'UploadController@handler');
 Route::get('upload', "Controller@uploadView");
 
 //Route para cursos
-Route::get('degrees', 'Controller@degreesView');
+Route::get('degrees', 'Controller@degreesView')->name("degrees");
 
 //Route para cadeiras
-Route::get('disciplinas', 'Controller@coursesView');
+Route::get('disciplinas', 'Controller@coursesView')->name("disciplinas");
 
