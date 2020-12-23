@@ -45,6 +45,8 @@ class UploadController extends Controller{
     private function addToDB(Request $request){
         $req = $request->all();
         $filename = $request->file('uploadedfile')->getClientOriginalName();
+        $extension = $request->file('uploadedfile')->getClientOriginalExtension();
+        $filename .= $extension;
         $name = $req["name"];
         $cat = $req["category"];
         $subcat = $req["subcategory"];
@@ -53,10 +55,10 @@ class UploadController extends Controller{
         $tag2 = is_null($req["tag2"])?"":$req["description"];
         $tag3 = is_null($req["tag3"])?"":$req["description"];
         $uploader = Auth::user()['name'];
-        $date = date("Y_m_d_h_i_s");
+        $date = date("Ymdhis");
         $cadeiraID = $req['course'];
         $rate = 0;
-        $id = $name ."_". $date;
+        $id =  $date ."_". $name . ".". $extension;
         $data = [$id,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraID,$rate];
         DB::insert('insert into files (id,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID,rate) values (?,?,?,?,?,?,?,?,?,?,?,?,?)', $data);
         return $data;
