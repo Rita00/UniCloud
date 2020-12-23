@@ -43,7 +43,10 @@
                 <td class="news">
 
                     <div style="font-weight:bold;font-size:20px;">Novidades</div>
-                    <div>2020/12/24 - Abertura da UniCloud</div>
+
+                    @foreach($news as $n)
+                        <div>{{$n->date ." - " . $n->info}}</div>
+                    @endforeach
                 </td>
             </tr>
         </table>
