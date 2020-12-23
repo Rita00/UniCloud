@@ -146,22 +146,6 @@ class Controller extends BaseController
         }
     }
 
-    public function uploadView(Request $request)
-    {
-        if ($request->get("course")) {
-            $resposta = array("courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($request->get("course"))));
-            return json_encode($resposta);
-        } else {
-            $this->collectActivity($request);
-            $degrees = DB::select('select id, nome from cursos order by nome');
-            $args_view = array(
-                "degrees" => $degrees,
-                "courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($degrees[0]->id))
-            );
-            return view('upload', $args_view);
-        }
-    }
-
     public function loginView(Request $request)
     {
         $this->collectActivity($request);
@@ -217,7 +201,7 @@ class Controller extends BaseController
         $this->collectActivity($request);
         $courseBread = DB::select('select nome, id, cursoID from cadeiras where cadeiras.id = ?', array($request->get("course")));
         $curso = DB::select('select id, nome from cursos where cursos.id = ?', array($courseBread[0]->cursoID));
-        $files = DB::select('select name, sub_category, uploaded_by, rate from files where files.cadeiraID = ? and files.category = ?', array($request->get("course"), $request->get("category")));
+        $files = DB::select('select id, name, sub_category, uploaded_by, rate from files where files.cadeiraID = ? and files.category = ?', array($request->get("course"), $request->get("category")));
         $args_view = array(
             "cat" => $request->get("category"),
             "curso" => $curso[0],

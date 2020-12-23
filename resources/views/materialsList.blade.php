@@ -24,12 +24,12 @@
             </tr>
                 @foreach($files as $file)
                 <tr class="tableRow">
-                    <form>
+                    <form method="get" action="download/{{$file->id}}">
                         <td>{{$file->name}}</td>
                         <td>{{$file->sub_category}}</td>
                         <td>{{$file->uploaded_by}}</td>
                         <td>{{$file->rate}}</td>
-                        <td><button>download</button></td>
+                        <td><input type="submit" value="Download"></td>
                     </form>
                 </tr>
                 @endforeach

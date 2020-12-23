@@ -42,16 +42,14 @@ Route::get('profile', function (){
 
 //Route para Termos e Condicoes
 Route::get('terms','Controller@termsView');
-//Routes para homepage
-Route::get('categories','Controller@categoriesView')->name("categories");
-Route::get('materialsList','Controller@materialsListView')->name('materials');
 //Routes para upload
 Route::post('upload', 'UploadController@handler');
-Route::get('upload', "Controller@uploadView");
-
-//Route para cursos
+Route::get('upload', "UploadController@view");
+//Route para download
+Route::get('download/{file}', 'DownloadController@download');
+//Route para navegacao
 Route::get('degrees', 'Controller@degreesView')->name("degrees");
-
-//Route para cadeiras
 Route::get('disciplinas', 'Controller@coursesView')->name("disciplinas");
+Route::get('categories','Controller@categoriesView')->name("categories");
+Route::get('materialsList','Controller@materialsListView')->name('materials');
 

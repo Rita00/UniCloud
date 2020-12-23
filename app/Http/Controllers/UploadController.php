@@ -8,6 +8,20 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UploadController extends Controller{
+    public function view(Request $request){
+        if ($request->get("course")) {
+            $resposta = array("courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($request->get("course"))));
+            return json_encode($resposta);
+        } else {
+            $this->collectActivity($request);
+            $degrees = DB::select('select id, nome from cursos order by nome');
+            $args_view = array(
+                "degrees" => $degrees,
+                "courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($degrees[0]->id))
+            );
+            return view('upload', $args_view);
+        }
+    }
     public function handler(Request $request){
         if($_POST["button"]=="Upload"){
             return $this->store($request);
@@ -15,7 +29,12 @@ class UploadController extends Controller{
             return redirect('/');
         }
     }
-    public function store(Request $request){
+
+
+
+
+
+    private function store(Request $request){
         $validationRules = [
             'degree' => 'required|max:255',
             'course' => 'required|max:255',
