@@ -3,7 +3,7 @@
   3 Anual
   4 Semestral (aka ambos os semestres)
 */
-    insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química Medicinal', 'Ciencias e tecnologias', 'LQM');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química Medicinal', 'Ciencias e tecnologias', 'LQM');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Geologia', 'Ciencias e tecnologias', 'LGEOL');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Física', 'Ciencias e tecnologias', 'LF');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Antropologia', 'Ciencias e tecnologias', 'LA');

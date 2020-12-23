@@ -38,7 +38,7 @@ class UploadController extends Controller{
         $validationRules = [
             'degree' => 'required|max:255',
             'course' => 'required|max:255',
-            'uploadedfile' => 'required',
+            'uploadedfile' => 'required|file|max:51200',
             'name' => 'required|max:255',
             'category' => 'required|max:255',
             'subcategory' => 'required|max:255',

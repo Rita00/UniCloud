@@ -9,12 +9,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
-use function MongoDB\BSON\toJSON;
 use Illuminate\Support\Facades\Validator;
 
 class Controller extends BaseController
@@ -205,7 +201,7 @@ class Controller extends BaseController
         $this->collectActivity($request);
         $courseBread = DB::select('select nome, id, cursoID from cadeiras where cadeiras.id = ?', array($request->get("course")));
         $curso = DB::select('select id, nome from cursos where cursos.id = ?', array($courseBread[0]->cursoID));
-        $files = DB::select('select id, name, sub_category, uploaded_by, rate from files where files.cadeiraID = ? and files.category = ?', array($request->get("course"), $request->get("category")));
+        $files = DB::select('select id, name, sub_category, uploaded_by, rate from files where files.cadeiraID = ? and files.category = ? order by sub_category, name', array($request->get("course"), $request->get("category")));
         $args_view = array(
             "cat" => $request->get("category"),
             "curso" => $curso[0],
