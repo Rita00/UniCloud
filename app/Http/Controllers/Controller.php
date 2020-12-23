@@ -96,7 +96,11 @@ class Controller extends BaseController
     public function home(Request $request)
     {
         $this->collectActivity($request);
-        return view("home");
+        $news = DB::select('select date, info from news');
+        $args_view = array(
+            "news" => $news
+        );
+        return view("home",$args_view);
     }
 
     public function sendConfirmationMail($request)

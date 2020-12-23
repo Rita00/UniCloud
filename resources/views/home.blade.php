@@ -42,11 +42,11 @@
                 </td>
                 <td class="news">
 
-                    <div>Novidades:</div>
-                    <div>-Pagina de Upload</div>
-                    <div>-Pagina de Login/SignIn</div>
-                    <div>-Pagina Principal</div>
+                    <div style="font-weight:bold;font-size:20px;">Novidades</div>
 
+                    @foreach($news as $n)
+                        <div>{{$n->date ." - " . $n->info}}</div>
+                    @endforeach
                 </td>
             </tr>
         </table>

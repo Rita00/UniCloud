@@ -1,7 +1,13 @@
 drop table cadeiras;
 drop table cursos;
 drop table files;
+drop table news;
 
+create table news
+(
+    date varchar(256) not null,
+    info varchar(256) not null
+);
 create table users
 (
     name varchar (256) not null,
