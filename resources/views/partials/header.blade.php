@@ -59,6 +59,7 @@
         text-align: center;
         text-decoration: none;
     }
+
     .horizontalBar {
         position: relative;
         margin-top:0.25%;
@@ -92,7 +93,7 @@
                     <a class="home" href="/">Home</a>
                 </td>
                 <td class="headerTableCol2">
-                    <a class="home_disabled">Upload</a>
+                    <a class="home_disabled" title="Login necessário para realizar upload">Upload</a>
                 </td>
                 <td class="headerTableCol3">|</td>
                 <td class="headerTableCol2">
