@@ -14,11 +14,6 @@
                 "Enunciados", "Exercicios Resolvidos", "Projetos", "Outros",
                 "Frequencias", "Testes", "Exames", "Outros"
             ];
-            let valuesArray = [
-                "handmade_notes","digital_notes","slides","syllabus","others",
-                "enunciations","exercises","projects","others",
-                "midterms","tests","exams","others"
-            ];
             var begin=0;
             var end=0;
             switch(document.getElementById('category').value){
@@ -42,7 +37,7 @@
             for(var i=begin;i<end;i++){
                 option = document.createElement("OPTION");
                 option.appendChild(document.createTextNode(namesArray[i]));
-                option.value=valuesArray[i];
+                option.value=namesArray[i];
                 subCatSelect.appendChild(option);
             }
         }
