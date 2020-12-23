@@ -15,7 +15,13 @@
         <div class="form">
             <table class="table">
                 <tr class="tableRow">
-                    <td class="tableCol">
+                    <td class="tableCol" style="text-align:justify">
+                        A equipa da Unicloud não se responsabiliza por qualquer tipo de download efetuado na plataforma.
+                    </td>
+                </tr>
+                <tr class="tableRow">
+                    <td class="tableCol" style="text-align:justify">
+                        Os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina – Processos de gestão e Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.
                     </td>
                 </tr>
             </table>

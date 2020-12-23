@@ -53,7 +53,7 @@
     <table class="footerTable">
         <tr class="footerTableRow">
             <td class="footerLegalAdvice">
-                Aviso legal: os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina– Processos de gestão e Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.
+                Aviso legal: os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina – Processos de gestão e Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.
             </td>
             <td class="footerTableCol">
                 <a href="https://www.facebook.com/unicloudpt/">
