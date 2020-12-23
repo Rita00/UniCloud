@@ -5,24 +5,25 @@
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        top: 0;
+        left: 0;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
         position: relative;
         width: inherit;
-        height: inherit;
+        height: 30%;
         text-align: left;
-        margin-top: 5%;
-        top: 15%;
+        top: 12%;
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
     }
     .main{
+        overflow-x: hidden;
+        overflow-y: scroll;
         height: 80%;
     }
     .yellowCircle {
@@ -81,7 +82,7 @@
         margin-left:5%;
     }
     .input_tag{
-        width: 31%;
+        width: 30%;
         height: 40%;
         margin-left:0.25%;
         border: 2px solid rgba(0,0,0,1);
@@ -89,7 +90,7 @@
         background: rgba(255,255,255,1);
     }
     .btn_form{
-        padding-top: 10%;
+        padding-top: 5%;
         height:15%;
     }
     .btn_return{
@@ -98,20 +99,29 @@
         left: 0;
         font-size: 26px;
         text-align: center;
-        background: rgba(255,255,255,1);
+        background: white;
         border: 2px solid rgba(0,0,0,1);
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .btn_return:hover{
+        cursor:pointer;
+        color: white;
+        background: black;
     }
     .btn_upload{
         height: 100%;
         width: 20%;
         font-size: 26px;
-        color: rgba(255,255,255,1);
         margin-left: 55%;
         text-align: center;
-        background: rgba(0,0,0,1);
+        background: white;
         border: 2px solid rgba(0,0,0,1);
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .btn_upload:hover{
+        cursor:pointer;
+        color: white;
+        background: black;
     }
 
 

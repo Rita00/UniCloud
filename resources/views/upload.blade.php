@@ -71,7 +71,7 @@
     @include('partials.header')
     <div class="main">
         <div class="yellowCircle"></div>
-        <label class="label_title">Upload</label>
+        <div class="label_title">Upload</div>
         <form class="form" method="post" enctype="multipart/form-data" id="uploadForm">
             <table class="table">
                 <tr class="tableRow">
