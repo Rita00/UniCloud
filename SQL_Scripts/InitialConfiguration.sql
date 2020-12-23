@@ -62,3 +62,13 @@ create table cadeiras
 
 alter table cadeiras
     add constraint cadeiras unique (nome, cursoID);
+
+create table downloads
+(
+    ip  varchar(256) not null,
+    fileID  varchar(256) not null,
+    userID  varchar(256),
+    downloadTime    datetime not null
+);
+
+select * from downloads

@@ -45,8 +45,10 @@ Route::get('terms','Controller@termsView');
 //Routes para upload
 Route::post('upload', 'UploadController@handler');
 Route::get('upload', "UploadController@view");
+
 //Route para download
 Route::get('download/{file}', 'DownloadController@download');
+
 //Route para navegacao
 Route::get('degrees', 'Controller@degreesView')->name("degrees");
 Route::get('disciplinas', 'Controller@coursesView')->name("disciplinas");
