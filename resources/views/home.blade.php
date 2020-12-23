@@ -29,13 +29,6 @@
                         @endif
                         <input class="btn_input" type="submit" id="course" value="Cursos" formaction="/degrees">
                     </form>
-                    <!---
-                    <div class="textos">
-                    <span class="tQue">+ O que é a UniCloud</span><br>
-                    <span class="tPorque">+ Porquê a UniCloud</span><br>
-                    <span class="tGuia">+ Guia UniCloud</span><br>
-                    </div>
-                    --->
                 </td>
                 <td class="bar">
                     <div class="verticalBar"></div>
