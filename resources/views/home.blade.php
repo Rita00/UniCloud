@@ -42,11 +42,8 @@
                 </td>
                 <td class="news">
 
-                    <div>Novidades:</div>
-                    <div>-Pagina de Upload</div>
-                    <div>-Pagina de Login/SignIn</div>
-                    <div>-Pagina Principal</div>
-
+                    <div style="font-weight:bold;font-size:20px;">Novidades</div>
+                    <div>2020/12/24 - Abertura da UniCloud</div>
                 </td>
             </tr>
         </table>
