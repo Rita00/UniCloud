@@ -12,10 +12,7 @@
     {{Breadcrumbs::render('materials', $courseBread, $curso, $cat)}}
     <div class="main">
         <div class="yellowCircle"></div>
-        <label class="label_title">Materiais</label>
-        <form class="uploadForm" method="post">
-            <input class="uploadButton" type="submit" value="Upload">
-        </form>
+        <div class="label_title">Materiais</div>
         <table class="table">
             <tr class="tableHead">
                 <th>Nome</th>
@@ -35,9 +32,7 @@
                     </form>
                 </tr>
                 @endforeach
-
         </table>
-
         @include('partials.formerrors')
     </div>
     <!--------------------------------------Footer-->

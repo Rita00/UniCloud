@@ -1,17 +1,12 @@
 <style>
-
-    body{
-        width: 100%;
-        height: 100%;
-    }
-    .fundo {
+    .background {
         width: 100%;
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         overflow: hidden;
     }
     .welcome{
@@ -27,7 +22,7 @@
         font-size: 20px;
         opacity: 1;
         text-align: center;
-        background: url("https://scontent.fopo2-2.fna.fbcdn.net/v/t1.15752-9/125277380_1029400880907489_245594132616440582_n.jpg?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=Gv3QZVs-gU4AX84UVem&_nc_ht=scontent.fopo2-2.fna&oh=aa2c0bfda8342ca3077033ee2fabebef&oe=5FDF70B5");
+        background: url("/images/home.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
@@ -75,6 +70,7 @@
         box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
     .btn_input:hover{
+        cursor:pointer;
         background: black;
         color: white;
     }

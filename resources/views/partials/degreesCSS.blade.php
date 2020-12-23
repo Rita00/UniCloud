@@ -4,6 +4,8 @@
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
+        top: 0;
+        left: 0;
         position: absolute;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
@@ -74,6 +76,7 @@
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
     button:hover{
+        cursor:pointer;
         color:white;
         background: black;
     }

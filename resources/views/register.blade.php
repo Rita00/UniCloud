@@ -57,14 +57,16 @@
                 </tr>
                 <tr class="tableRow">
                     <td class="tableCol">
-                        <a href="/login">Already signed up?</a>
                     </td>
                     <td class="tableCol">
-
+                        <input type="checkbox" name="terms" style="display:inline-block"><div style="display:inline-block">Aceito os <a href="/terms">Termos e Condições</a></div>
                     </td>
                 </tr>
             </table>
-            <input class="btn_login" type="submit" value="Sign Up">
+            <div class="btnDiv">
+                <a href="/login">Already signed up?</a>
+                <input class="btn_login" type="submit" value="Sign Up">
+            </div>
         </form>
         @include('partials.formerrors')
     </div>

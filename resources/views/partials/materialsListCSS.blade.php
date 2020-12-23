@@ -4,6 +4,8 @@
         height: 100%;
         background: rgba(255,255,255,1);
         opacity: 1;
+        top: 0;
+        left: 0;
         position: absolute;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow: hidden;
@@ -11,11 +13,12 @@
     .label_title {
         position: relative;
         width: inherit;
-        height: inherit;
+        height: 20%;
         text-align: left;
-        margin-top: 5%;
-        top: 15%;
-        left: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 8%;
+        margin-left: 13%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
@@ -33,7 +36,6 @@
         left: 21%;
         top: 18%;
         border-radius: 50%;
-
     }
     .table{
         width:60%;
