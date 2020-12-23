@@ -3,16 +3,16 @@
 <head>
     <title>UniCloud | Courses</title>
     <meta charset="UTF-8">
-    @include('partials.degreesCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    @include('partials.degreesCSS')
+    @include('partials.breadcrumbCSS')
 </head>
 
 <body>
 <div class="background">
     @include('partials.header')
-
+    {{Breadcrumbs::render('disciplinas', $curso)}}
     <div class="main">
-        {{Breadcrumbs::render('disciplinas', $curso)}}
         <div class="yellowCircle"></div>
         <label class="label_title">Cadeiras</label>
         <div class="row"></div>

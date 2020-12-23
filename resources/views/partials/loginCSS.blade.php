@@ -123,6 +123,16 @@
         background: black;
         color: white;
     }
+    .link{
+        text-decoration: none;
+        color: darkgoldenrod;
+        font-size: 20px;
+        padding-right: 5%;
+    }
+    .link:hover{
+        cursor:pointer;
+        color: gold;
+    }
 
 
 </style>

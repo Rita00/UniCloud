@@ -15,15 +15,14 @@
         width: inherit;
         height: inherit;
         text-align: left;
-        margin-top: 5%;
-        top: 15%;
+        top: 12%;
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
     }
     .main{
-        height: 80%;
+        height: 77%;
     }
     .yellowCircle {
         width: 133px;

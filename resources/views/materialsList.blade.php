@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>UniCloud | Upload</title>
+    <title>UniCloud | Materials</title>
     <meta charset="UTF-8">
-    @include('partials.materialsListCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
+    @include('partials.materialsListCSS')
+    @include('partials.breadcrumbCSS')
 </head>
 <body>
 <div class="background">
@@ -27,7 +28,7 @@
                         <td>{{$file->name}}</td>
                         <td>{{$file->sub_category}}</td>
                         <td>{{$file->uploaded_by}}</td>
-                        <td>⭐︎⭐︎⭐︎⭐︎⭐︎ (3.6)</td>
+                        <td>{{$file->rate}}</td>
                         <td><button>download</button></td>
                     </form>
                 </tr>

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     @include('partials.degreesCSS')
+    @include('partials.breadcrumbCSS')
 </head>
 <body>
 <div class="background">
     @include('partials.header')
     {{Breadcrumbs::render('degrees')}}
-
     <div class="main">
         <div class="yellowCircle"></div>
         <label class="label_title">Cursos</label>

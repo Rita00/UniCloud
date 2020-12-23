@@ -47,7 +47,7 @@
                 </tr>
             </table>
             <div class="btnDiv">
-                <a href="/register">Create new account</a>
+                <a class="link" href="/register">Create new account</a>
                 <input class="btn_login" type="submit" value="Log In">
             </div>
         </form>

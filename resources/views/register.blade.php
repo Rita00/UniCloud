@@ -64,7 +64,7 @@
                 </tr>
             </table>
             <div class="btnDiv">
-                <a href="/login">Already signed up?</a>
+                <a class="link" href="/login">Already signed up?</a>
                 <input class="btn_login" type="submit" value="Sign Up">
             </div>
         </form>

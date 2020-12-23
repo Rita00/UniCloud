@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UniCloud | Courses</title>
+    <title>UniCloud | Categories</title>
     <meta charset="UTF-8">
-    @include('partials.categoriesCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    @include('partials.categoriesCSS')
+    @include('partials.breadcrumbCSS')
 </head>
 <body>
 <div class="background">

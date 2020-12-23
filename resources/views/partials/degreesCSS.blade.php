@@ -15,15 +15,15 @@
         width: inherit;
         height: inherit;
         text-align: left;
-        margin-top: 5%;
-        top: 15%;
+        top: 12%;
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
     }
     .main{
-        height: 80%;
+        height: 77%;
+        overflow-x: hidden;
         overflow-y: scroll;
     }
     .yellowCircle {
@@ -80,5 +80,4 @@
         color:white;
         background: black;
     }
-
 </style>

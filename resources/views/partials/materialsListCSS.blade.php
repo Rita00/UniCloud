@@ -13,18 +13,17 @@
     .label_title {
         position: relative;
         width: inherit;
-        height: 20%;
+        height: 30%;
         text-align: left;
-        padding-left: 10%;
-        padding-right: 10%;
-        margin-top: 8%;
-        margin-left: 13%;
+        top: 12%;
+        left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
         font-size: 60px;
     }
     .main{
-        height: 80%;
+        height: 77%;
+        overflow-x: hidden;
         overflow-y: scroll;
     }
     .yellowCircle {
