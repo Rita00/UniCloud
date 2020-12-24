@@ -28,6 +28,7 @@ class UploadController extends Controller{
         }else if(isset($_POST["button"])){
             return redirect('/');
         }
+        return redirect("/");
     }
 
 
@@ -65,7 +66,6 @@ class UploadController extends Controller{
         $req = $request->all();
         $filename = $request->file('uploadedfile')->getClientOriginalName();
         $extension = $request->file('uploadedfile')->getClientOriginalExtension();
-        $filename .= $extension;
         $name = $req["name"];
         $cat = $req["category"];
         $subcat = $req["subcategory"];
