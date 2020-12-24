@@ -31,34 +31,17 @@ class Controller extends BaseController
             $message='The name, email or password is missing or accept terms and conditions, please try again';
             return "<script>alert('$message');window.location.href='/register';</script>";
         }
-        /*
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed'
-        ]);
-        */
         try {
             $user = User::create(request(['name', 'email', 'password']));
         } catch (QueryException $e) {
             $message = 'The provided email is already registered';
             return "<script>alert('$message');window.location.href='/register';</script>";
-            /*
-            return back()->withErrors([
-                'message' => 'The provided email is already registered'
-            ]);
-            */
         }
         try {
             $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
             $message = 'Confirmation email sending failed';
             return "<script>alert('$message');window.location.href='/register';</script>";
-            /*
-            return back()->withErrors([
-                'message' => 'Confirmation email sending failed'
-            ]);
-            */
         }
         auth()->login($user);
         return redirect("/");
@@ -103,7 +86,7 @@ class Controller extends BaseController
     {
         $ref = bcrypt($request['email']);
         DB::update("update users set verify_token = ? where email = ?", array($ref, $request['email']));
-        $ref = env('APP_URL' . 'unicloud.devo') . "/check?ref=" . $ref;
+        $ref = "unicloud.pt" . "/check?ref=" . $ref;
         Mail::send('mail.verify', array('link' => $ref), function ($message) use ($request) {
             $message->to($request['email'], $request['name'])->subject("Welcome to UniCloud");
         });
@@ -121,11 +104,11 @@ class Controller extends BaseController
         foreach ($users as $user) {
             echo json_encode($user->hasVerifiedEmail());
         }
-//        $results = DB::select("select * from users where verify_token = ?", array($request['ref']));
-//        if (count($results) == 1) {
-//            DB::update("update users set email_verified_at = NOW(), verify_token = null where verify_token = ?", array($request['ref']));
-//        }
-//        return redirect("/"); // todo with message?
+        $results = DB::select("select * from users where verify_token = ?", array($request['ref']));
+        if (count($results) == 1) {
+            DB::update("update users set email_verified_at = NOW(), verify_token = null where verify_token = ?", array($request['ref']));
+        }
+        return redirect("/"); // todo with message?
     }
 
     public function collectActivity(Request $request)

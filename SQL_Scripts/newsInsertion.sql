@@ -1,5 +1,5 @@
 drop table news;
-create table news
+create table if not exists news
 (
     date varchar(256) not null,
     info varchar(256) not null
