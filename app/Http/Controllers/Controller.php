@@ -37,12 +37,12 @@ class Controller extends BaseController
             $message = 'The provided email is already registered';
             return "<script>alert('$message');window.location.href='/register';</script>";
         }
-        try {
+        /*try {
             $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
             $message = 'Confirmation email sending failed';
             return "<script>alert('$message');window.location.href='/register';</script>";
-        }
+        }*/
         auth()->login($user);
         return redirect("/");
     }
@@ -86,7 +86,7 @@ class Controller extends BaseController
     {
         $ref = bcrypt($request['email']);
         DB::update("update users set verify_token = ? where email = ?", array($ref, $request['email']));
-        $ref = "unicloud.pt" . "/check?ref=" . $ref;
+        $ref = "unicloud.pt" . "/check?ref=" . $ref; // TODO get app_url from .env file
         Mail::send('mail.verify', array('link' => $ref), function ($message) use ($request) {
             $message->to($request['email'], $request['name'])->subject("Welcome to UniCloud");
         });
