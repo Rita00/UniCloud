@@ -123,6 +123,18 @@
         color: white;
         background: black;
     }
-
+    .btn_upload_disabled{
+        height: 100%;
+        width: 20%;
+        font-size: 26px;
+        margin-left: 55%;
+        text-align: center;
+        background: lightgray;
+        border: 2px solid rgba(0,0,0,1);
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .btn_upload_disabled:hover{
+        cursor:not-allowed;
+    }
 
 </style>

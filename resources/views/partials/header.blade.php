@@ -59,6 +59,9 @@
         text-align: center;
         text-decoration: none;
     }
+    .home_disabled:hover {
+        cursor:not-allowed;
+    }
 
     .horizontalBar {
         position: relative;

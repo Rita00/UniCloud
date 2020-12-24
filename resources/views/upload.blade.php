@@ -160,7 +160,12 @@
             </table>
             <div class="btn_form">
                 <input class="btn_return" type="submit" name="button" value="Voltar">
-                <input class="btn_upload" type="submit" name="button" value="Upload">
+                @if (auth()->check())
+                    <input class="btn_upload" type="submit" name="button" value="Upload">
+                @else
+                    <input class="btn_upload_disabled" type="submit" name="button" value="Upload" title="Login necessário para realizar upload">
+                @endif
+
             </div>
         @if(session()->has('message'))
             <div class="alert alert-success">
