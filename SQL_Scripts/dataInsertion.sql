@@ -3,7 +3,6 @@
   3 Anual
   4 Semestral (aka ambos os semestres)
 */
-insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química Medicinal', 'Ciencias e tecnologias', 'LQM');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Geologia', 'Ciencias e tecnologias', 'LGEOL');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Física', 'Ciencias e tecnologias', 'LF');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Antropologia', 'Ciencias e tecnologias', 'LA');
@@ -23,6 +22,7 @@ insert into cursos(nome, faculdade, sigla) values('Licenciatura em Design e Mult
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Engenharia e Ciência de Dados', 'Ciencias e tecnologias', 'LECD');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química', 'Ciencias e tecnologias', 'LQ');
 insert into cursos(nome, faculdade, sigla) values('Licenciatura em Bioquímica', 'Ciencias e tecnologias', 'LBIOQ');
+insert into cursos(nome, faculdade, sigla) values('Licenciatura em Química Medicinal', 'Ciencias e tecnologias', 'LQM');
 /*Geologia*/
 insert into cadeiras(nome, cursoID, ano, semestre) values('Geologia Geral', 1, 1, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Matemáticas Gerais I', 1, 1, 1);
