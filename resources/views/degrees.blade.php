@@ -20,7 +20,7 @@
                 @foreach($quart as $curso)
                     <form class="form" action='/disciplinas' method="get">
                         <input type="hidden" name="course" value={{$curso->id}}>
-                        <button class="button" type="Submit"><span>{{$curso->sigla}}</span></button>
+                        <button class="button" type="Submit" title="{{$curso->nome}}"><span>{{$curso->sigla}}</span></button>
                     </form>
                 @endforeach
                 @if(sizeof($quart)<4)

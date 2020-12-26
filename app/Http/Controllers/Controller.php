@@ -159,13 +159,7 @@ class Controller extends BaseController
     {
         $this->collectActivity($request);
 
-        $degrees = DB::select('select id, sigla from cursos order by sigla');
-
-        /*$degreesSigla = [];
-        $degreeIds = [];
-        foreach ($degrees as $degree) {
-            array_push($degreesSigla, $degree->sigla);
-        }*/
+        $degrees = DB::select('select id, sigla, nome from cursos order by sigla');
         $args_view = array(
             "quarts" => array_chunk($degrees, 4),
         );
