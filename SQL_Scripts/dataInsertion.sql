@@ -171,7 +171,7 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Álgebra Linear e Geo
 insert into cadeiras(nome, cursoID, ano, semestre) values('Análise Infinitesimal III', 5, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Equações Diferenciais e Modelação', 5, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Grupos e Simetrias', 5, 2, 1);
-insert into cadeiras(nome, cursoID, ano, semestre) values('Métodos de Programação', 5, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Métodos de Programação II', 5, 2, 1);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Análise Infinitesimal IV', 5, 2, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Corpos e Equações Algébricas', 5, 2, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Curvas e Superfícies', 5, 2, 2);
