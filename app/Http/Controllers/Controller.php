@@ -114,11 +114,17 @@ class Controller extends BaseController
     public function collectActivity(Request $request)
     {
         $value = url()->current();
-        $value = strstr($value, 'unicloud.devo', false);
+        $value = strstr($value, 'unicloud.pt', false); //TODO use ENV variable
         $value = strstr($value, '/', false);
-        if ($value == false)
+        if ($value == false){
             $value = "Home";
-        else $value = substr($value, 1);
+        } else{
+            $value = substr($value, 1);
+            if($value == "disciplinas"){
+                $curso = DB::select('select id, nome from cursos where id = ?', array($request->get("course")));
+                $value = $curso[0]->nome;
+            }
+        }
         if (auth()->check()) {
             $logged_user = auth()->user();
             $mail = $logged_user['email'];
