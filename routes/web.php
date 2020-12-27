@@ -40,6 +40,10 @@ Route::get('profile', function (){
     return view('profile');
 })->middleware("auth");
 
+Route::get('aboutUs', function (){
+    return view('aboutUs');
+});
+
 //Route para Termos e Condicoes
 Route::get('terms','Controller@termsView');
 //Routes para upload
