@@ -3,8 +3,11 @@
 <head>
     <title>UniCloud | Upload</title>
     <meta charset="UTF-8">
-    @include('partials.uploadCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
+    @include('partials.uploadCSS')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function changeType(){
