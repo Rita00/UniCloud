@@ -43,8 +43,8 @@ Route::get('profile', function (){
 //Route para Termos e Condicoes
 Route::get('terms','Controller@termsView');
 //Routes para upload
-Route::post('upload', 'UploadController@handler');
-Route::get('upload', "UploadController@view");
+Route::post('upload', 'UploadController@handler')->middleware("auth");
+Route::get('upload', "UploadController@view")->middleware("auth");
 
 //Route para download
 Route::get('download/{file}', 'DownloadController@download');

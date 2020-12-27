@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-class UploadController extends Controller{
-    public function view(Request $request){
+class UploadController extends Controller
+{
+    public function view(Request $request)
+    {
         if ($request->get("course")) {
             $resposta = array("courses" => DB::select('select id, nome, cursoID from cadeiras where cursoID = ? order by nome', array($request->get("course"))));
             return json_encode($resposta);
@@ -22,19 +24,20 @@ class UploadController extends Controller{
             return view('upload', $args_view);
         }
     }
-    public function handler(Request $request){
-        if($_POST["button"]=="Upload"){
+
+    public function handler(Request $request)
+    {
+        if ($_POST["button"] == "Upload") {
             return $this->store($request);
-        }else if(isset($_POST["button"])){
+        } else if (isset($_POST["button"])) {
             return redirect('/');
         }
+        return redirect("/");
     }
 
 
-
-
-
-    private function store(Request $request){
+    private function store(Request $request)
+    {
         $validationRules = [
             'degree' => 'required|max:255',
             'course' => 'required|max:255',
@@ -47,38 +50,39 @@ class UploadController extends Controller{
             'tag2' => 'max:255',
             'tag3' => 'max:255',
         ];
-        $validator = Validator::make($request->all(),$validationRules);
+        $validator = Validator::make($request->all(), $validationRules);
         if ($validator->fails()) {
-            $message='Missing Input(s):';
-            foreach ($validator->getMessageBag()->toArray() as $error){
-                $message .= " ".$error[0];
+            $message = 'Missing Input(s):';
+            foreach ($validator->getMessageBag()->toArray() as $error) {
+                $message .= " " . $error[0];
             }
             return "<script>alert('$message');window.location.href='/upload';</script>";
-        }else{
+        } else {
             $data = $this->addToDB($request);
-            $path = $request->file('uploadedfile')->storeAs('/files',$data[0]);
+            $path = $request->file('uploadedfile')->storeAs('/files', $data[0]);
             return redirect('/');
             //return $path;
         }
     }
-    private function addToDB(Request $request){
+
+    private function addToDB(Request $request)
+    {
         $req = $request->all();
         $filename = $request->file('uploadedfile')->getClientOriginalName();
         $extension = $request->file('uploadedfile')->getClientOriginalExtension();
-        $filename .= $extension;
         $name = $req["name"];
         $cat = $req["category"];
         $subcat = $req["subcategory"];
-        $desc = is_null($req["description"])?"":$req["description"];
-        $tag1 = is_null($req["tag1"])?"":$req["description"];
-        $tag2 = is_null($req["tag2"])?"":$req["description"];
-        $tag3 = is_null($req["tag3"])?"":$req["description"];
-        $uploader = Auth::user()['name'];
+        $desc = is_null($req["description"]) ? "" : $req["description"];
+        $tag1 = is_null($req["tag1"]) ? "" : $req["description"];
+        $tag2 = is_null($req["tag2"]) ? "" : $req["description"];
+        $tag3 = is_null($req["tag3"]) ? "" : $req["description"];
+        $uploader = Auth::user()['email'];
         $date = date("Ymdhis");
         $cadeiraID = $req['course'];
         $rate = 0;
-        $id =  $date ."_". $name . ".". $extension;
-        $data = [$id,$filename,$name,$cat,$subcat,$desc,$tag1,$tag2,$tag3,$uploader,$date, $cadeiraID,$rate];
+        $id = $date . "_" . $name . "." . $extension;
+        $data = [$id, $filename, $name, $cat, $subcat, $desc, $tag1, $tag2, $tag3, $uploader, $date, $cadeiraID, $rate];
         DB::insert('insert into files (id,file_name,name,category,sub_category,description,tag1,tag2,tag3,uploaded_by,uploaded_at, cadeiraID,rate) values (?,?,?,?,?,?,?,?,?,?,?,?,?)', $data);
         return $data;
     }

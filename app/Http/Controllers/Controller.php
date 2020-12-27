@@ -37,12 +37,12 @@ class Controller extends BaseController
             $message = 'The provided email is already registered';
             return "<script>alert('$message');window.location.href='/register';</script>";
         }
-        try {
+        /*try {
             $this->sendConfirmationMail($request);
         } catch (QueryException $e) {
             $message = 'Confirmation email sending failed';
             return "<script>alert('$message');window.location.href='/register';</script>";
-        }
+        }*/
         auth()->login($user);
         return redirect("/");
     }
@@ -86,7 +86,7 @@ class Controller extends BaseController
     {
         $ref = bcrypt($request['email']);
         DB::update("update users set verify_token = ? where email = ?", array($ref, $request['email']));
-        $ref = "unicloud.pt" . "/check?ref=" . $ref;
+        $ref = "unicloud.pt" . "/check?ref=" . $ref; // TODO get app_url from .env file
         Mail::send('mail.verify', array('link' => $ref), function ($message) use ($request) {
             $message->to($request['email'], $request['name'])->subject("Welcome to UniCloud");
         });
@@ -114,11 +114,17 @@ class Controller extends BaseController
     public function collectActivity(Request $request)
     {
         $value = url()->current();
-        $value = strstr($value, 'unicloud.devo', false);
+        $value = strstr($value, 'unicloud.pt', false); //TODO use ENV variable
         $value = strstr($value, '/', false);
-        if ($value == false)
+        if ($value == false){
             $value = "Home";
-        else $value = substr($value, 1);
+        } else{
+            $value = substr($value, 1);
+            if($value == "disciplinas"){
+                $curso = DB::select('select id, nome from cursos where id = ?', array($request->get("course")));
+                $value = $curso[0]->nome;
+            }
+        }
         if (auth()->check()) {
             $logged_user = auth()->user();
             $mail = $logged_user['email'];
@@ -153,13 +159,7 @@ class Controller extends BaseController
     {
         $this->collectActivity($request);
 
-        $degrees = DB::select('select id, sigla from cursos order by sigla');
-
-        /*$degreesSigla = [];
-        $degreeIds = [];
-        foreach ($degrees as $degree) {
-            array_push($degreesSigla, $degree->sigla);
-        }*/
+        $degrees = DB::select('select id, sigla, nome from cursos order by sigla');
         $args_view = array(
             "quarts" => array_chunk($degrees, 4),
         );
@@ -184,7 +184,7 @@ class Controller extends BaseController
         $this->collectActivity($request);
         $courseBread = DB::select('select nome, id, cursoID from cadeiras where cadeiras.id = ?', array($request->get("course")));
         $curso = DB::select('select id, nome from cursos where cursos.id = ?', array($courseBread[0]->cursoID));
-        $files = DB::select('select id, name, sub_category, uploaded_by, rate from files where files.cadeiraID = ? and files.category = ? order by sub_category, name', array($request->get("course"), $request->get("category")));
+        $files = DB::select('select id, files.name, sub_category, users.name as uploaded_by, rate from files, users where files.uploaded_by = users.email and files.cadeiraID = ? and files.category = ? order by sub_category, name', array($request->get("course"), $request->get("category")));
         $args_view = array(
             "cat" => $request->get("category"),
             "curso" => $curso[0],

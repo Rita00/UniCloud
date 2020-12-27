@@ -21,7 +21,7 @@
 
 <!--------------------------------------Main-->
     <div class="welcome">
-        <div class="yellowCircle">Bem Vindo à Unicloud!</div>
+        <div class="yellowCircle">Bem-vindo à UniCloud!</div>
         <table class="table">
             <tr>
                 <td class="tableButtons">

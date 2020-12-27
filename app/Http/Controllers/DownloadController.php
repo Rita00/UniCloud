@@ -18,6 +18,7 @@ class DownloadController extends Controller
         } else {
             DB::insert('insert into downloads(ip, fileID, downloadTime) values (?, ?, ?)', [$request->ip(), $file_name, NOW()]);
         }
-        return response()->download(storage_path() . '/app/files/' . $file_name);
+        $original_name = DB::select('select file_name from files where id = ?', array($file_name));
+        return response()->download(storage_path() . '/app/files/' . $file_name, $original_name[0]->file_name);
     }
 }
