@@ -22,7 +22,7 @@
         width:100%;
     }
     .headerTableCol{
-        width: 59%;
+        width: 49%;
         height: 100%;
     }
     .headerTableCol2{
