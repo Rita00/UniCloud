@@ -142,6 +142,12 @@ class Controller extends BaseController
         return view("login");
     }
 
+    public function aboutUsView(Request $request)
+    {
+        $this->collectActivity($request);
+        return view("aboutUs");
+    }
+
     public function registerView(Request $request)
     {
         $this->collectActivity($request);
