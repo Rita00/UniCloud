@@ -7,7 +7,7 @@
         top: 0;
         left: 0;
         position: absolute;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.260vw 0.260vw rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
@@ -19,7 +19,7 @@
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
-        font-size: 60px;
+        font-size: 3.906vw;
     }
     .main{
         height: 77%;
@@ -27,8 +27,8 @@
         overflow-y: scroll;
     }
     .yellowCircle {
-        width: 133px;
-        height: 133px;
+        width:  8.658vw;
+        height:  8.658vw;
         background: rgba(255,239,96,1);
         opacity: 1;
         position: absolute;
@@ -59,9 +59,9 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 24px;
-        border: 3px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        font-size: 1.562vw;
+        border:  0.195vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .button_course{
         width: 80%;
@@ -71,9 +71,9 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 14px;
-        border: 3px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        font-size: 0.911vw;
+        border: 0.195vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     button:hover{
         cursor:pointer;

@@ -8,7 +8,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 10px;
+        font-size: 0.651vw;
         opacity: 1;
         text-align: center;
         vertical-align: top;
@@ -44,7 +44,7 @@
     }
     .footerHorizontalBar {
         position: relative;
-        border-top: 3px solid black;
+        border-top: 0.195vw solid black;
 
     }
 </style>

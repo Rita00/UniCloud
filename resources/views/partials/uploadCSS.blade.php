@@ -7,7 +7,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0  0.260vw  0.260vw rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
@@ -19,7 +19,7 @@
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
-        font-size: 60px;
+        font-size: 3.906vw;
     }
     .main{
         overflow-x: hidden;
@@ -27,8 +27,8 @@
         height: 80%;
     }
     .yellowCircle {
-        width: 133px;
-        height: 133px;
+        width: 8.658vw;
+        height: 8.658vw;
         background: rgba(255,239,96,1);
         opacity: 1;
         position: absolute;
@@ -46,7 +46,7 @@
         padding-left: 20%;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         color: rgba(0,0,0,1);
     }
@@ -73,9 +73,9 @@
         width: 100%;
         height: 100%;
         margin-left:5%;
-        border: 2px solid rgba(0,0,0,1);
+        border: 0.1302vw solid rgba(0,0,0,1);
         background: rgba(255,255,255,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0.260vw  0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .tags{
         width: 100%;
@@ -85,8 +85,8 @@
         width: 30%;
         height: 40%;
         margin-left:0.25%;
-        border: 2px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 0.1302vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw  0.260vw 0 rgba(0, 0, 0, 0.25);
         background: rgba(255,255,255,1);
     }
     .btn_form{
@@ -97,11 +97,11 @@
         height: 100%;
         width: 20%;
         left: 0;
-        font-size: 26px;
+        font-size: 1.692vw;
         text-align: center;
         background: white;
-        border: 2px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 0.1302vw solid rgba(0,0,0,1);
+        box-shadow:  0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .btn_return:hover{
         cursor:pointer;
@@ -111,12 +111,12 @@
     .btn_upload{
         height: 100%;
         width: 20%;
-        font-size: 26px;
+        font-size: 1.692vw;
         margin-left: 55%;
         text-align: center;
         background: white;
-        border: 2px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 0.1302vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .btn_upload:hover{
         cursor:pointer;
@@ -126,12 +126,12 @@
     .btn_upload_disabled{
         height: 100%;
         width: 20%;
-        font-size: 26px;
+        font-size: 1.692vw;
         margin-left: 55%;
         text-align: center;
         background: lightgray;
-        border: 2px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 0.1302vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .btn_upload_disabled:hover{
         cursor:not-allowed;

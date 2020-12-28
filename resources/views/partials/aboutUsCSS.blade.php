@@ -1,4 +1,5 @@
 <style>
+
     .background {
         width: 100%;
         height: 100%;
@@ -7,7 +8,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.260vw 0.260vw rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
 
@@ -21,13 +22,13 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.305vw;
         opacity: 1;
         text-align: center;
         background: url("/images/S4_Teamwork.jpg");
         background-repeat: no-repeat;
         background-position: 90% center;
-        background-size: 500px 500px;
+        background-size: 32.55vw 32.55vw;
     }
 
     .label_title {
@@ -41,7 +42,7 @@
         margin-left: 5%;
         font-family: Poppins, serif;
         font-weight: Bold;
-        font-size: 60px;
+        font-size: 3.916vw;
     }
     .main{
         overflow-x: hidden;
@@ -58,7 +59,7 @@
         padding-left: 5%;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.305vw;
         opacity: 1;
         color: rgba(0,0,0,1);
     }
@@ -67,8 +68,8 @@
         height:50%
     }
     .yellowCircle {
-        width: 133px;
-        height: 133px;
+        width: 8.658vw;
+        height: 8.658vw;
         background: rgba(255,239,96,1);
         opacity: 1;
         position: absolute;
@@ -94,33 +95,7 @@
         text-align: right;
         vertical-align: center;
     }
-    .input_name {
-        height: 100%;
-        width: 100%;
-    }
-    .label_email{
-        padding-bottom: 0;
-        vertical-align: bottom;
-    }
-    .input_email {
-        height:100%;
-        width: 100%;
-        vertical-align: center;
-        border: 2px solid rgba(0,0,0,1);
-        background: rgba(255,255,255,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
-    .label_password{
-        padding-bottom: 0;
-        vertical-align: bottom;
-    }
-    .input_password {
-        height:100%;
-        width: 100%;
-        border: 2px solid rgba(0,0,0,1);
-        background: rgba(255,255,255,1);
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
+
     .btnDiv{
         height: 20%;
         margin-top: 5%;
@@ -130,7 +105,7 @@
         display:inline-block;
         height: 100%;
         width: 25%;
-        font-size: 26px;
+        font-size: 1.697vw;
         color: rgba(255,255,255,1);
         text-align: center;
         color: black;
@@ -138,15 +113,10 @@
         border: 2px solid rgba(0,0,0,1);
         box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
-    .btn_login:hover{
-        cursor:pointer;
-        background: black;
-        color: white;
-    }
     .link{
         text-decoration: none;
         color: darkgoldenrod;
-        font-size: 20px;
+        font-size: 1.305vw;
         padding-right: 5%;
     }
     .link:hover{
