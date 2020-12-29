@@ -75,7 +75,7 @@ class Controller extends BaseController
     public function home(Request $request)
     {
         $this->collectActivity($request);
-        $news = DB::select('select date, info from news');
+        $news = DB::select('select date, info from news order by date desc');
         $args_view = array(
             "news" => $news
         );

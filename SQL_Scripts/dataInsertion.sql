@@ -998,3 +998,50 @@ insert into cadeiras(nome, cursoID, ano, semestre) values('Química e Sociedade'
 insert into cadeiras(nome, cursoID, ano, semestre) values('Síntese Química', 19, 3, 2);
 insert into cadeiras(nome, cursoID, ano, semestre) values('Síntese de Bioconjugados', 19, 3, 2);
 /*Quimica Medicinal*/
+insert into cadeiras(nome, cursoID, ano, semestre) values('Biologia Celular e Molecular', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Elementos de Física', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Matemática I', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Perspectivas em Química Medicinal', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Geral I', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Técnicas Laboratoriais de Química', 20, 1, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Anatomia e Histologia', 20, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Complementos de Física', 20, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Elementos de Quimioinformática', 20, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Matemática II', 20, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Geral II', 20, 1, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Fundamentos de Fisiologia I', 20, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Laboratórios de Química I', 20, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Biológica', 20, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Inorgânica', 20, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Orgânica I', 20, 2, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Fundamentos de Fisiologia II', 20, 2, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Laboratórios de Química II', 20, 2, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Analítica I', 20, 2, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Física Médica', 20, 2, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Orgânica II', 20, 2, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Bioquímica', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Desenvolvimento de Fármacos I', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Farmacologia I', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Genética', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Imunologia', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Química Bioanalítica', 20, 3, 1);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Desenvolvimento de Fármacos II', 20, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Estrutura e Modelação de Biomacromoléculas', 20, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Estágio', 20, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Farmacologia II', 20, 3, 2);
+insert into cadeiras(nome, cursoID, ano, semestre) values('Síntese de Bioconjugados', 20, 3, 2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
