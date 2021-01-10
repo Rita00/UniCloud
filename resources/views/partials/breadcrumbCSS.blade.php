@@ -3,6 +3,7 @@
     .nav-wrapper{
         padding-left: 10%;
         padding-right: 10%;
+        font-size:1vw;
     }
     .breadcrumb{
         text-decoration: none;
@@ -10,6 +11,6 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 15px;
+        font-size: 0.976vw;
     }
 </style>

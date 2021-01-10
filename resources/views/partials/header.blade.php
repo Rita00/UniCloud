@@ -9,7 +9,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         text-align: center;
     }
@@ -66,7 +66,7 @@
     .horizontalBar {
         position: relative;
         margin-top:0.25%;
-        border-top: 3px solid black;
+        border-top: 0.195vw solid black;
 
     }
 </style>
@@ -78,13 +78,13 @@
             </td>
             @if (auth()->check())
                 <td class="headerTableCol2">
-                    <a class="home" href="/aboutUs">About Us</a>
-                </td>
-                <td class="headerTableCol2">
                     <a class="home" href="/">Home</a>
                 </td>
                 <td class="headerTableCol2">
                     <a class="home" href="/upload">Upload</a>
+                </td>
+                <td class="headerTableCol2">
+                    <a class="home" href="/aboutUs">About Us</a>
                 </td>
                 <td class="headerTableCol3">|</td>
                 <td class="headerTableCol2">
@@ -96,13 +96,13 @@
             @else
                 <td class="headerTableCol2"></td>
                 <td class="headerTableCol2">
-                    <a class="home" href="/aboutUs">About Us</a>
-                </td>
-                <td class="headerTableCol2">
                     <a class="home" href="/">Home</a>
                 </td>
                 <td class="headerTableCol2">
                     <a class="home_disabled" title="Login necessário para realizar upload">Upload</a>
+                </td>
+                <td class="headerTableCol2">
+                    <a class="home" href="/aboutUs">About Us</a>
                 </td>
                 <td class="headerTableCol3">|</td>
                 <td class="headerTableCol2">

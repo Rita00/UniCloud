@@ -19,7 +19,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         text-align: center;
         background: url("/images/home.jpg");
@@ -37,7 +37,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         text-align: center;
         width:60%;
@@ -49,7 +49,7 @@
         height:50%;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         color: rgba(0,0,0,1);
     }
@@ -62,12 +62,12 @@
         color: rgba(0,0,0,1);
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         text-align: center;
         background: rgba(255,255,255,1);
-        border: 3px solid rgba(0,0,0,1);
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+        border: 0.195vw solid rgba(0,0,0,1);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .btn_input:hover{
         cursor:pointer;
@@ -83,14 +83,14 @@
         color: white;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 20px;
+        font-size: 1.302vw;
         opacity: 1;
         text-align: center;
     }
 
     .yellowCircle {
-        width: 133px;
-        height: 133px;
+        width: 8.658vw;
+        height: 8.658vw;
         background: rgba(255,239,96,1);
         opacity: 1;
         position: absolute;
@@ -104,17 +104,17 @@
     .tBemVindo {
         color: rgba(0,0,0,1);
         position: relative;
-        top: 110px;
+        top: 7.161vw;
         left: 50%;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 24px;
+        font-size: 1.562vw;
         opacity: 1;
         text-align: center;
         width: 50%;
     }
     .barraVert {
-        border-left: 3px solid black;
+        border-left: 0.195vw solid black;
         height: 100%;
         position: relative;
         left: 73%;
@@ -130,7 +130,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 14px;
+        font-size: 0.911vw;
         opacity: 1;
         text-align: left;
     }
@@ -144,7 +144,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Bold;
-        font-size: 15px;
+        font-size: 0.9765vw;
         opacity: 1;
         text-align: left;
 
@@ -153,7 +153,7 @@
         width:15%;
     }
     .verticalBar {
-        border-left: 3px solid black;
+        border-left: 0.195vw solid black;
         height: 100%;
         left: 100%;
         position: relative;
@@ -166,7 +166,7 @@
         position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 14px;
+        font-size: 0.9114vw;
         opacity: 1;
         text-align: left;
         vertical-align: text-top;

@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,12 +29,12 @@
         <div class="label_title">About Us</div>
         <td>
             <div class="form">
-                <div style="font-weight:bold;font-size:25px;">Quem somos:</div>
+                <div style="font-weight:bold;font-size:1.627vw;">Quem somos:</div>
                 Um grupo de estudantes da Licenciatura em Engenharia Informática da Universidade de Coimbra.<br><br>
-                <div style="font-weight:bold;font-size:25px;">O que é a UniCloud:</div>
+                <div style="font-weight:bold;font-size:1.627vw;">O que é a UniCloud:</div>
                 É a plataforma que te vai ajudar quando sentes a falta de materiais de estudo, disponibilizando
                 apontamentos, exames resolvidos, entre outros.<br><br>
-                <div style="font-weight:bold;font-size:25px;">O nosso Objetivo:</div>
+                <div style="font-weight:bold;font-size:1.627vw;">O nosso Objetivo:</div>
                 Ser a principal escolha na procura de materiais de estudo ao longo do teu percurso académico.
             </div>
         </td>

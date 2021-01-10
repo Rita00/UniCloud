@@ -75,7 +75,7 @@ class Controller extends BaseController
     public function home(Request $request)
     {
         $this->collectActivity($request);
-        $news = DB::select('select date, info from news');
+        $news = DB::select('select date, info from news order by date desc');
         $args_view = array(
             "news" => $news
         );
@@ -114,7 +114,7 @@ class Controller extends BaseController
     public function collectActivity(Request $request)
     {
         $value = url()->current();
-        $value = strstr($value, 'unicloud.pt', false); //TODO use ENV variable
+        $value = strstr($value, 'unicloud.devo', false); //TODO use ENV variable
         $value = strstr($value, '/', false);
         if ($value == false){
             $value = "Home";

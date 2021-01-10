@@ -7,7 +7,7 @@
         top: 0;
         left: 0;
         position: absolute;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.260vw 0.260vw rgba(0, 0, 0, 0.25);
         overflow: hidden;
     }
     .label_title {
@@ -19,7 +19,7 @@
         left: 20%;
         font-family: Poppins, serif;
         font-weight: Bold;
-        font-size: 60px;
+        font-size: 3.906vw;
     }
     .main{
         height: 77%;
@@ -27,8 +27,8 @@
         overflow-y: scroll;
     }
     .yellowCircle {
-        width: 133px;
-        height: 133px;
+        width: 8.658vw;
+        height: 8.658vw;
         background: rgba(255,239,96,1);
         opacity: 1;
         position: absolute;
@@ -45,20 +45,20 @@
         margin-left: 20%;
         font-family: Poppins, serif;
         font-weight: Normal;
-        font-size: 14px;
+        font-size: 0.911vw;
         opacity: 1;
         color: black;
-        border: 2px solid black;
+        border: 0.130vw solid black;
         border-collapse: collapse;
         background: transparent;
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0.260vw 0.260vw 0 rgba(0, 0, 0, 0.25);
     }
 
     .tableHead{
         color: white;
         background: black;
         height:10%;
-        border-bottom: 2px solid black;
+        border-bottom: 0.130vw solid black;
     }
     .tableRow{
         height:10%;
@@ -86,12 +86,12 @@
     .uploadButton{
         height: 100%;
         width: 20%;
-        font-size: 16px;
+        font-size: 1.041vw;
         text-align: center;
         color: black;
         background: white;
-        border: 2px solid black;
-        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 0.130vw solid black;
+        box-shadow: 0.260vw  0.260vw 0 rgba(0, 0, 0, 0.25);
     }
     .uploadButton:hover{
         color: white;
