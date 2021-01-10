@@ -15,11 +15,10 @@
 </head>
 
 <body>
-<div class="background">
+	<div class="background">
     <!--------------------------------------Navigation-->
-@include('partials.header')
-
-<!--------------------------------------Main-->
+	@include('partials.header')
+	<!--------------------------------------Main-->
     <div class="welcome">
         <div class="yellowCircle">Bem-vindo à UniCloud!</div>
         <table class="table">
