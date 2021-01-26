@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
+
     <title>UniCloud | Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
+    <meta property="og:title" content="Unicloud" />
+    <meta property="og:description" content="A UniCloud é a plataforma que te vai ajudar quando sentes a falta de materiais de estudo, disponibilizando apontamentos, exames resolvidos e muito mais 🎓" />
+    <meta property="og:image" content="/images/preview.png" />
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16"/>
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32"/>
