@@ -39,8 +39,9 @@
             </div>
         @endforeach
     </div>
+
+</div>
     <!--------------------------------------Footer-->
     @include('partials.footer')
-</div>
 </body>
 </html>

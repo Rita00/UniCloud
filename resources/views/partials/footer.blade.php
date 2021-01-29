@@ -1,11 +1,19 @@
 <style>
+	html,body{
+		box-shadow: 0;
+	}
+	.background{
+		position: relative;
+		min-height: 100vh;
+	}
     .footer{
+		position: relative;
+		top: 10%;
         width: 80%;
         height: 15%;
         padding-right: 10%;
         padding-left: 10%;
         color: rgba(0,0,0,1);
-        position: relative;
         font-family: Poppins, serif;
         font-weight: Normal;
         font-size: 0.651vw;
