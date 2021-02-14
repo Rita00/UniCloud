@@ -11,24 +11,24 @@
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
-    @include('partials.degreesCSS')
-    @include('partials.breadcrumbCSS')
+	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/breadcrumb.css"> 
 </head>
 
 <body>
-<div class="background">
     @include('partials.header')
     {{Breadcrumbs::render('disciplinas', $curso)}}
     <div class="main">
         <div class="yellowCircle"></div>
-        <label class="label_title">Cadeiras</label>
-        <div class="row"></div>
+        <div class="title">Cadeiras</div>
         @foreach($quarts as $quart)
             <div class="row">
                 @foreach($quart as $cadeira)
                     <form class="form" action="/categories" method="get">
                         <input type="hidden" name="degree" value={{$cadeira->id}}>
-                        <button class="button_course" type="Submit"><span>{{$cadeira->nome}}</span></button>
+                        <button class="button" type="Submit"><span>{{$cadeira->nome}}</span></button>
                     </form>
                 @endforeach
                 @if(sizeof($quart)<4)
@@ -39,10 +39,9 @@
                     @endfor
                 @endif
             </div>
-        @endforeach
-    </div>
+		@endforeach
     <!--------------------------------------Footer-->
     @include('partials.footer')
-</div>
+    </div>
 </body>
 </html>

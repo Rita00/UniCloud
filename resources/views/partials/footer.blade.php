@@ -1,61 +1,6 @@
-<style>
-	html,body{
-		box-shadow: 0;
-	}
-	.background{
-		position: relative;
-		min-height: 100vh;
-	}
-    .footer{
-		position: relative;
-		top: 10%;
-        width: 80%;
-        height: 15%;
-        padding-right: 10%;
-        padding-left: 10%;
-        color: rgba(0,0,0,1);
-        font-family: Poppins, serif;
-        font-weight: Normal;
-        font-size: 0.651vw;
-        opacity: 1;
-        text-align: center;
-        vertical-align: top;
-    }
-    .footerTable{
-        position: relative;
-        vertical-align: top;
-        margin-top: 1%;
-        height: 100%;
-        width:100%;
-    }
-    .footerTableRow{
-        position: relative;
-        vertical-align: top;
-        height: 100%;
-        width:100%;
-    }
-    .footerLegalAdvice{
-        position: relative;
-        vertical-align: top;
-        width: 50%;
-        height: 100%;
-    }
-    .footerTableCol{
-        position: relative;
-        vertical-align: top;
-        width: 5%;
-        height: 100%;
-    }
-    .social{
-        position: relative;
-        width:30%;
-    }
-    .footerHorizontalBar {
-        position: relative;
-        border-top: 0.195vw solid black;
-
-    }
-</style>
+<!--CSS-->
+<link rel="stylesheet" href="css/footer.css">
+<!--HTML-->
 <div class="footer">
     <div class="footerHorizontalBar"></div>
     <table class="footerTable">

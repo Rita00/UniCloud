@@ -10,37 +10,41 @@
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
-    @include('partials.categoriesCSS')
-    @include('partials.breadcrumbCSS')
+	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/breadcrumb.css"> 
+
 </head>
 <body>
-<div class="background">
     @include('partials.header')
     {{Breadcrumbs::render('categories', $courseBread, $curso)}}
     <div class="main">
         <div class="yellowCircle"></div>
-        <label class="label_title">Categoria</label>
-        <div class="row"></div>
-            <div class="row">
-                <form class="form" action="/materialsList" method="get">
-                    <input type="hidden" name="course" value={{$course}}>
-                    <input type="hidden" name="category" value="Materiais Teóricos">
-                    <button class="button" type="Submit"><span>Materiais Teóricos</span></button>
-                </form>
-                <form class="form" action="/materialsList" method="get">
-                    <input type="hidden" name="course" value={{$course}}>
-                    <input type="hidden" name="category" value="Materiais Práticos">
-                    <button class="button" type="Submit"><span>Materiais Práticos</span></button>
-                </form>
-                <form class="form" action="/materialsList" method="get">
-                    <input type="hidden" name="course" value={{$course}}>
-                    <input type="hidden" name="category" value="Exames">
-                    <button class="button" type="Submit"><span>Exames</span></button>
-                </form>
-            </div>
+        <div class="title">Categoria</div>
+		<div class="row">
+			<form class="form" action="/materialsList" method="get">
+				<input type="hidden" name="course" value={{$course}}>
+				<input type="hidden" name="category" value="Materiais Teóricos">
+				<button class="button" type="Submit"><span>Materiais Teóricos</span></button>
+			</form>
+			<form class="form" action="/materialsList" method="get">
+				<input type="hidden" name="course" value={{$course}}>
+				<input type="hidden" name="category" value="Materiais Práticos">
+				<button class="button" type="Submit"><span>Materiais Práticos</span></button>
+			</form>
+			<form class="form" action="/materialsList" method="get">
+				<input type="hidden" name="course" value={{$course}}>
+				<input type="hidden" name="category" value="Exames">
+				<button class="button" type="Submit"><span>Exames</span></button>
+			</form>
+		</div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<!--------------------------------------Footer-->
+		@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>

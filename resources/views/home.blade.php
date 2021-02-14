@@ -14,15 +14,15 @@
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16"/>
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64"/>
-    @include('partials.homeCSS')
+	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/home.css"> 
 </head>
-
 <body>
-	<div class="background">
     <!--------------------------------------Navigation-->
 	@include('partials.header')
 	<!--------------------------------------Main-->
-    <div class="welcome">
+    <div class="main">
         <div class="yellowCircle">Bem-vindo à UniCloud!</div>
         <table class="table">
             <tr>
@@ -61,11 +61,11 @@
                             style="width:100%;border:0;overflow:hidden; height: 100vh;"></iframe>
                 </td>
             </tr>
-        </table>
+		</table>
+		<!--------------------------------------Footer-->
+		@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
+
 </body>
 </html>
 

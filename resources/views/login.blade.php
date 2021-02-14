@@ -6,18 +6,19 @@
     <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Upload</title>
     <meta charset="UTF-8">
-    @include('partials.loginCSS')
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
+	<link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
+	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/login.css"> 
 </head>
 <body>
-<div class="background">
     @include('partials.header')
     <div class="main">
         <div class="yellowCircle"></div>
-        <div class="label_title">LogIn</div>
+        <div class="title">LogIn</div>
         <form class="form" method="post">
             <table class="table">
                 <tr class="tableRow">
@@ -57,10 +58,8 @@
                 <input class="btn_login" type="submit" value="Log In">
             </div>
         </form>
-        @include('partials.formerrors')
+        <!--------------------------------------Footer-->
+   	 	@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>

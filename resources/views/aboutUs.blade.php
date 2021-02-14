@@ -15,7 +15,8 @@
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16"/>
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64"/>
-    @include('partials.aboutUsCSS')
+	<!--CSS-->
+	<link rel="stylesheet" href="css/aboutUs.css">
 </head>
 
 <body>

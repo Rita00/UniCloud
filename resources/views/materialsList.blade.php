@@ -9,17 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
-    @include('partials.materialsListCSS')
-    @include('partials.breadcrumbCSS')
+	<link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
+	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/menu.css"> 
+	<link rel="stylesheet" href="css/list.css"> 
+	<link rel="stylesheet" href="css/breadcrumb.css"> 
 </head>
 <body>
-<div class="background">
     @include('partials.header')
     {{Breadcrumbs::render('materials', $courseBread, $curso, $cat)}}
     <div class="main">
         <div class="yellowCircle"></div>
-        <div class="label_title">Materiais</div>
+        <div class="title">Materiais</div>
         <table class="table">
             <tr class="tableHead">
                 <th>Nome</th>
@@ -27,7 +29,7 @@
                 <th>Uploader</th>
                 <th>Rating</th>
                 <th></th>
-            </tr>
+			</tr>
                 @foreach($files as $file)
                 <tr class="tableRow">
                     <form method="get" action="download/{{$file->id}}">
@@ -38,12 +40,16 @@
                         <td><input type="submit" value="Download"></td>
                     </form>
                 </tr>
-                @endforeach
-        </table>
-        @include('partials.formerrors')
+				@endforeach
+		</table>
+		@if(count($files)<10)
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		@endif
+		<!--------------------------------------Footer-->
+		@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>
