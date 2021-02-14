@@ -1,7 +1,8 @@
-.DS_Store
+*.DS_Store
+*.env
 .idea/**
 /vendor/**
 composer.lock
 composer.json
-.env
-.env
+
+
