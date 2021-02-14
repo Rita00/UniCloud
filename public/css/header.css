@@ -2,7 +2,6 @@
 .navbar{
 	/*position*/
 	position: relative;
-	overflow: hidden;
 	width: 80%;
 	height: 10%;
 	padding-right: 10%;
@@ -61,7 +60,7 @@
 
 .horizontalBar {
 	position: relative;
-	margin-top:0.25%;
+	bottom:0;
 	border-top: 0.195vw solid black;
 
 }

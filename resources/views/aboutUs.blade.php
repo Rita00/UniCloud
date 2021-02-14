@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Home</title>
@@ -16,18 +16,18 @@
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64"/>
 	<!--CSS-->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/menu.css"> 
 	<link rel="stylesheet" href="css/aboutUs.css">
 </head>
 
 <body>
-<div class="background">
     <!--------------------------------------Navigation-->
-@include('partials.header')
-
-<!--------------------------------------Main-->
-    <div class="welcome">
+	@include('partials.header')
+	<!--------------------------------------Main-->
+    <div class="main">
         <div class="yellowCircle"></div>
-        <div class="label_title">About Us</div>
+        <div class="title">About Us</div>
         <td>
             <div class="form">
                 <div style="font-weight:bold;font-size:1.627vw;">Quem somos:</div>
@@ -39,11 +39,10 @@
                 Ser a principal escolha na procura de materiais de estudo ao longo do teu percurso académico.
             </div>
         </td>
-
+		<div class="row"></div>
+		<!--------------------------------------Footer-->
+		@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>
 

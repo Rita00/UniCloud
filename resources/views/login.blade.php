@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Upload</title>
@@ -12,6 +12,7 @@
 	<link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
 	<!--CSS-->
 	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/menu.css"> 
 	<link rel="stylesheet" href="css/login.css"> 
 </head>
 <body>
@@ -44,20 +45,15 @@
                         <input type="checkbox" name="remember"><label>Remember me?</label>
                     </td>
                 </tr>
-                <tr class="tableRow">
-                    <td class="tableCol"></td>
-                    <td class="tableCol"></td>
-                </tr>
-                <tr class="tableRow">
-                    <td class="tableCol"></td>
-                    <td class="tableCol"></td>
-                </tr>
+				
             </table>
+			<div class="row"></div>
             <div class="btnDiv">
                 <a class="link" href="/register">Create new account</a>
                 <input class="btn_login" type="submit" value="Log In">
             </div>
         </form>
+		<div class="row"></div>
         <!--------------------------------------Footer-->
    	 	@include('partials.footer')
     </div>

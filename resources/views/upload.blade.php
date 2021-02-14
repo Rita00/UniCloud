@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Upload</title>
@@ -11,75 +11,17 @@
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64" />
     <!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
 	<link rel="stylesheet" href="css/upload.css"> 
 	<!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        function changeType(){
-            let subCatSelect = document.getElementById('subcategory');
-            let namesArray = [
-                "Apontamentos Manuscritos","Apontamentos digitais","Slides","Sebentas","Outros",
-                "Enunciados", "Exercicios Resolvidos", "Projetos", "Outros",
-                "Frequencias", "Testes", "Exames", "Outros"
-            ];
-            var begin=0;
-            var end=0;
-            switch(document.getElementById('category').value){
-                case "Materiais Teóricos":
-                    begin=0;
-                    end=5;
-                    break;
-                case "Materiais Práticos":
-                    begin=5;
-                    end=9;
-                    break;
-                case "Exames":
-                    begin=9;
-                    end=namesArray.length;
-                    break;
-            }
-            var option;
-            while (subCatSelect.lastElementChild) {
-                subCatSelect.removeChild(subCatSelect.lastElementChild);
-            }
-            for(var i=begin;i<end;i++){
-                option = document.createElement("OPTION");
-                option.appendChild(document.createTextNode(namesArray[i]));
-                option.value=namesArray[i];
-                subCatSelect.appendChild(option);
-            }
-        }
-        function changeCourse(){
-            let id = document.getElementById("degree").value;
-            $.ajax({
-                type: "get",
-                url: "upload",
-                data: {course: id},
-                dataType: "json",
-                success: function (resposta){
-                    console.log(resposta);
-                    let options = document.getElementById("course").options;
-                    let len = options.length;
-                    for(let i = 0; i < len; i++){
-                        options.remove(0);
-                    }
-                    for (let course of resposta["courses"]){
-                        let option = document.createElement("option");
-                        option.value = course["id"];
-                        option.text = course["nome"];
-                        options.add(option);
-                    }
-                }
-                });
-        }
-    </script>
+    <script src="js/upload.js"></script>
 </head>
 <body onload="changeType()">
-<div class="background">
     @include('partials.header')
     <div class="main">
         <div class="yellowCircle"></div>
-        <div class="label_title">Upload</div>
+        <div class="title">Upload</div>
         <form class="form" method="post" enctype="multipart/form-data" id="uploadForm">
             <table class="table">
                 <tr class="tableRow">
@@ -181,9 +123,8 @@
             </div>
         @endif
     </form>
+	<!--------------------------------------Footer-->
+	@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>

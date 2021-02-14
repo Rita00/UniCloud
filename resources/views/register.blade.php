@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=16">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <title>UniCloud | Register</title>
@@ -12,14 +12,15 @@
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/images/favicon-64x64.png" sizes="64x64"/>
     <!--CSS-->
+	<link rel="stylesheet" href="css/main.css"> 
+	<link rel="stylesheet" href="css/menu.css"> 
 	<link rel="stylesheet" href="css/login.css"> 
 </head>
 <body>
-<div class="background">
     @include('partials.header')
     <div class="main">
         <div class="yellowCircle"></div>
-        <div class="label_title">SignUp</div>
+        <div class="title">SignUp</div>
         <form class="form" method="post">
             <table class="table">
                 <tr class="tableRow">
@@ -54,14 +55,7 @@
                         <input class="input_password" type="password" name="password_confirmation">
                     </td>
                 </tr>
-                <tr class="tableRow">
-                    <td class="tableCol"></td>
-                    <td class="tableCol"></td>
-                </tr>
-                <tr class="tableRow">
-                    <td class="tableCol"></td>
-                    <td class="tableCol"></td>
-                </tr>
+				<div class="row"></div>
                 <tr class="tableRow">
                     <td class="tableCol">
                     </td>
@@ -78,10 +72,9 @@
                 <input class="btn_login" type="submit" value="Sign Up">
             </div>
         </form>
-        @include('partials.formerrors')
+		<div class="row"></div>
+     	<!--------------------------------------Footer-->
+    	@include('partials.footer')
     </div>
-    <!--------------------------------------Footer-->
-    @include('partials.footer')
-</div>
 </body>
 </html>
