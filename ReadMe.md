@@ -5,3 +5,5 @@ This is a simple website where people can share their study materials. By defaul
 It was written in Laravel with a MySQL database and has been dockerized so you can easily preview it. If you have Docker and git installed you can easily run this website locally by cloning the repository and activating the docker-compose file. To do that open a terminal and run the following commands:
  - git clone https://github.com/Rita00/UniCloud.git
  - docker compose up -d
+
+It may take a minute to load up the database, even after Docker says it's up and running, please be patient. Once it's ready you can view the website at http://localhost.
